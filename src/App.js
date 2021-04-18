@@ -23,7 +23,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-      
+
        {isMobile ? (
           <div>
             <Home />
@@ -34,12 +34,12 @@ function App() {
         ) : (
           <div>
             <ScrollToTop />
+            <Home />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/project" component={Project} />
               <Route path="/contact" component={Contact} />
-              <Route path="/portfolio" component={Home}/>
             </Switch>
           </div>
         )}
