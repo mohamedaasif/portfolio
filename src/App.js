@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import "./App.scss";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
@@ -24,7 +28,7 @@ function App() {
       <div className="App">
         <Navbar />
 
-       {isMobile ? (
+        {isMobile ? (
           <div>
             <Home />
             <About />
@@ -42,13 +46,6 @@ function App() {
             </Switch>
           </div>
         )}
-          {/* <ScrollToTop />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/project" component={Project} />
-            <Route path="/contact" component={Contact} />
-          </Switch>   */}
         <Footer />
       </div>
     </Router>
