@@ -1,6 +1,6 @@
 import styles from "../../styles/Navbar/Navbar.module.scss";
 import { NavLink, useHistory } from "react-router-dom";
-import logo from "../../image/portfoliologo.png";
+import logo from "../../image/logo.png";
 
 const Navbar = () => {
 
