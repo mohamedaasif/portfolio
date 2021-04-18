@@ -1,0 +1,28 @@
+@import "./index.scss";
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $primary-clr; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-image: $bg-linear;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $primary-clr; 
+  }
+
+  @media (max-width:780px) {
+    ::-webkit-scrollbar {
+      width: 5px;
+  }
+  }

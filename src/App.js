@@ -1,24 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import './App.scss';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import Navbar from './components/Navbar/Navbar';
+import Project from './components/Project/Project';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(()=>{
+    if(window.innerWidth < 780) {
+      setIsMobile(true);
+      console.log(window.innerWidth);
+      console.log(isMobile);
+    }
+  },[])
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+       <Navbar /> 
+      {/*  <Home/>
+          <About/>
+          <Project/>
+          <Contact /> */}
+     {isMobile ? (
+        <div>
+          <Home/>
+          <About/>
+          <Project/>
+          <Contact />
+        </div>
+      ): (<div>
+          <ScrollToTop />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/project" component={Project} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+        </div>)
+        }
+       {/*  <ScrollToTop />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/project" component={Project} />
+            <Route path="/contact" component={Contact} />
+          </Switch>  */}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

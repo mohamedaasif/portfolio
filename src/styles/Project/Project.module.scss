@@ -1,0 +1,174 @@
+@import "../../index.scss";
+
+// extend flex
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  width: 100%;
+  background-image: $bg-linear;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.title {
+  @extend .flexbox;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  h3 {
+    font-size: 3rem;
+    padding: 10px;
+  }
+  p {
+    font-size: 1.2rem;
+    a {
+      color: #c77dff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  padding-bottom: 40px;
+  .cards {
+    width: 100%;
+    height: 100%;
+    background-color: #161a1d;
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    animation: animate 0.5s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+  .card {
+    @extend .flexbox;
+    height: 100%;
+    .cardLogo {
+      @extend .flexbox;
+      font-size: 4rem;
+      padding: 10px;
+      width: 20%;
+      color: #4e4376;
+    }
+
+    .cardContent {
+      width: 80%;
+      height: 100%;
+      background-color: #1e2226;
+      border-radius: 0 8px 8px 0;
+      padding: 10px;
+      div {
+        padding: 5px 0;
+        p {
+          font-size: 1.1rem;
+        }
+
+        p:nth-child(1) {
+          font-weight: 600;
+
+          span {
+            font-weight: normal;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes animate {
+    from {
+      transform: translateY(20%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+// Typography
+.span {
+  font-weight: normal;
+  font-size: 1.02rem;
+  color: black;
+}
+
+.typography {
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: #4e4376;
+  font-family: $myFont;
+}
+
+.typographyContent {
+  font-size: 1.02rem;
+  font-family: $myFont;
+}
+
+@media (max-width: 780px) {
+  .title {
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    h3 {
+      font-size: 1.5rem;
+      padding: 5px;
+    }
+    p {
+      font-size: 0.7rem;
+      text-align: center;
+    }
+  }
+
+  .gridContainer {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    padding-bottom: 20px;
+    .card {
+      .cardLogo {
+        font-size: 2.5rem;
+      }
+      .cardContent {
+        div {
+          padding: 5px 0;
+          h3 {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+
+          p:nth-child(1) {
+            font-weight: 500;
+
+            span {
+              font-weight: normal;
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        div:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}

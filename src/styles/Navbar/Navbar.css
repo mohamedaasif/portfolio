@@ -1,0 +1,46 @@
+.wrapper .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .container .logo {
+  font-size: 3.5rem;
+  color: white;
+}
+
+.wrapper .container .navbar {
+  width: 40%;
+}
+
+.wrapper .container .navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .container .navbar ul li {
+  list-style: none;
+}
+
+.wrapper .container .navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.wrapper .container .navbar ul li a:hover {
+  color: black;
+}
+/*# sourceMappingURL=Navbar.css.map */

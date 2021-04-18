@@ -1,0 +1,69 @@
+@import "../../index.scss";
+
+.wrapper {
+  width: 100%;
+  background-image: $bg-linear;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  .logo {
+    i {
+      font-size: 0.8rem;
+      position: relative;
+      top: -1px;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .navbar {
+    width: 30%;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 1.1rem;
+          padding: 5px 10px;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        .logo {
+          i {
+            font-size: 0.5rem;;
+          }
+          p {
+            font-size: .6rem;
+          }
+        }
+      
+        .navbar {
+          display: none;
+        }
+      }
+}
