@@ -25,10 +25,10 @@ const About = () => {
               Corporate Branding.
             </p>
             <p>
-              I am currently working in Ireland between Dublin and Galway. I am
+              I am currently working as a freelancer. I am
               always available to discuss your project over the phone or via
-              Skype. These days I enjoy spending my free time riding my bike,
-              baking and crocheting.
+              Skype. These days I enjoy spending my free time playing soccer,
+              reading books and gaming.
             </p>
           </div>
         </div>

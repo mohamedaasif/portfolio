@@ -35,7 +35,9 @@
     margin-top: 40px;
     .form {
       form {
+        width: 500px;
         div {
+          
           display: flex;
           justify-content: center;
           flex-direction: column;
@@ -47,8 +49,6 @@
           }
 
           input {
-            // width: 500px;
-            width: 180%;
             height: 40px;
             border: none;
             outline: none;
@@ -60,8 +60,6 @@
           }
 
           textarea {
-            // width: 500px;
-            width: 180%;
             height: 130px;
             border: none;
             outline: none;
@@ -73,7 +71,7 @@
           }
 
           button {
-            width: 80%;
+            width: 50%;
             font-size: 1.1rem;
             border: 2px solid #34a0a4;
             outline: none;
@@ -146,18 +144,11 @@
       margin-top: 20px;
       .form {
         form {
+          width: 100%;
           div{
 
             label {
               font-size: 1rem;
-            }
-
-            input {
-              width: 100%;
-            }
-
-            textarea {
-              width: 100%;
             }
 
             button {
