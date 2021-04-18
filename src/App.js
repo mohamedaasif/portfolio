@@ -16,8 +16,6 @@ function App() {
   useEffect(() => {
     if (window.innerWidth < 780) {
       setIsMobile(true);
-    } else {
-      <Redirect to="/" />
     }
   }, []);
 
