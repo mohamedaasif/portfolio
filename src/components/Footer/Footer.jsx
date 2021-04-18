@@ -8,7 +8,7 @@ const Footer = () => {
   const [isMobile,setIsMobile] = useState(false);
 
   useEffect(()=>{
-    if(window.innerWidth < 480) {
+    if(window.innerWidth < 780) {
       setIsMobile(true);
     }
   },[])
