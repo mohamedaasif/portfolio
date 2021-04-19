@@ -13,8 +13,7 @@ const About = () => {
             <p>
               After graduating in 2019 with a Bachelor’s Degree in Information
               Technology, I spent the last two years working both as a freelance
-              web developer and designer and as part of a team in various
-              companies across India. I acquired project and time management
+              web developer and designer. I acquired project and time management
               skills, as well as the ability to communicate with team members
               and clients while effectively meeting milestones and deadlines.
             </p>

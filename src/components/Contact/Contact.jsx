@@ -1,7 +1,34 @@
 import { NavLink } from "react-router-dom";
 import styles from "../../styles/Contact/Contact.module.scss";
+import { useForm } from 'react-hook-form';
+import { useState } from "react";
+import axios from 'axios';
 
 const Contact = () => {
+
+  const [showSuccess, setShowSuccess] = useState(false);
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+  const onSubmit = (data,event) => {
+    console.log(data);
+    setShowSuccess(true);
+    
+    setTimeout(()=>{
+      setShowSuccess(false);
+    },1500)
+
+    reset()
+    // axios.post('/api/form',data)
+    //   .then(res => {
+    //     console.log("success");
+    //   },reset())
+    //   .catch(()=>{
+    //     console.log("Message not sent");
+    //   })
+  }
+
+  
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -14,21 +41,52 @@ const Contact = () => {
         </div>
         <div className={styles.contact}>
           <div className={styles.form}>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <label>NAME</label>
-                <input type="text" autoComplete="off" />
+                <input 
+                type="name"
+                name="username" 
+                autoComplete="off" 
+                {...register('username',{required: true})}   
+                />
+               {errors.username && errors.username.type === "required" && (
+                 <p className={styles.errorMsg}>This field is required</p>
+                )}
               </div>
               <div>
                 <label>EMAIL</label>
-                <input type="text" autoComplete="off" />
+                <input 
+                type="email" 
+                name="email"
+                autoComplete="off"
+                {...register('email',{required:true})} 
+                />
+                {errors.email && errors.email.type === "required" && (
+                  <p className={styles.errorMsg}>This field is required</p>
+                 )} 
               </div>
               <div>
                 <label>MESSAGE</label>
-                <textarea type="text" />
+                <textarea 
+                type="text"
+                name="message"
+                {...register('message',{required:true})}  
+                />
+                {errors.message && errors.message.type === "required" && (
+                  <p className={styles.errorMsg}>This field is required</p>
+                 )} 
+                <div>
+                
+                </div>
               </div>
+              {
+                showSuccess ? (<div className={styles.successMsg}>
+                <p>Message has been sent successfully</p>
+                </div>) : null
+              }
               <div>
-                <button>Send Message</button>
+                <button type="submit">Send Message</button>
               </div>
             </form>
           </div>
