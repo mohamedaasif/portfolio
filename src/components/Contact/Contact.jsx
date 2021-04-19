@@ -6,7 +6,7 @@ const Contact = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1>Contact Me</h1>
+          <h3>Contact Me</h3>
           <p>
             If you’d like to chat about a project please fill in the form below
             and I’ll get back within 1-2 days.

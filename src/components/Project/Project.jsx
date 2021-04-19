@@ -58,7 +58,6 @@ const Project = () => {
   const handleClickOpen = (e) => {
     setOpen(true);
     setIndex(e.currentTarget.getAttribute("data-index"));
-    // console.log(e.currentTarget.getAttribute("data-index"));
   };
 
   const handleClose = () => {
@@ -141,16 +140,14 @@ const Project = () => {
               </p>
             </Typography>
             <Typography gutterBottom>
-            <p className={styles.typography}>Repository :{" "}
-            <span className={styles.span}>
-              <NavLink to="" className={styles.typography}>
-                 {projects[index].repo}
-              </NavLink>
-            </span>
-            
-            </p>
-            
-              
+              <p className={styles.typography}>
+                Repository :{" "}
+                <span className={styles.span}>
+                  <NavLink to="" className={styles.typography}>
+                    {projects[index].repo}
+                  </NavLink>
+                </span>
+              </p>
             </Typography>
             <Typography gutterBottom>
               <NavLink to="" className={styles.typography}>

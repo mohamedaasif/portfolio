@@ -1,4 +1,4 @@
-import svg from "../../image/undraw_coding_6mjf.svg"
+import avatar from "../../image/avatar-rbg.png";
 import styles from "../../styles/Home/Home.module.scss";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
           <p>"I know how to google and solve problems."</p>
         </div>
         <div className={styles.imgContainer}>
-          <img src={svg} alt="" className={styles.avatar}/>  
+          <img src={avatar} alt="" className={styles.avatar}/>
         </div>
       </div>
     </div>
