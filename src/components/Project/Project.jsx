@@ -143,17 +143,17 @@ const Project = () => {
               <p className={styles.typography}>
                 Repository :{" "}
                 <span className={styles.span}>
-                  <NavLink to="" className={styles.typography}>
+                  <a href={projects[index].repo} target="blank" className={styles.typography}>
                     {projects[index].repo}
-                  </NavLink>
+                  </a>
                 </span>
               </p>
             </Typography>
-            <Typography gutterBottom>
+            {/* <Typography gutterBottom>
               <NavLink to="" className={styles.typography}>
-                Need to add a link
+                {projects[index].link}
               </NavLink>
-            </Typography>
+            </Typography> */}
           </DialogContent>
         </Dialog>
       </div>

@@ -8,7 +8,8 @@ const projectsModal = [
     },
     duration: "10 days",
     tech: ["React"],
-    repo: "repo updating...",
+    repo: "https://github.com/mohamedaasif/portfolio",
+    link: " https://mohamedaasif.github.io/portfolio/"
   },
   {
     title: "Employee Management",
@@ -20,7 +21,7 @@ const projectsModal = [
     },
     duration: "2 months(JUNE2020-AUG2020)",
     tech: ["Angular", "Spring Boot", "MySQL"],
-    repo: "repo updating...",
+    repo: "https://github.com/mohamedaasif/EmployeeRegistrationForm",
   },
   {
     title: "Kajah Ecopack",
@@ -42,7 +43,7 @@ const projectsModal = [
         one : "Lykas is a perfect option for couples that want to share their budgeting process together. It uses the familiar envelope budgeting philosophy to power your proactive budget for all of your bills and spending.",
         two : "Because you can share and sync budgets with budgeting partners across the iPhone and Android spectrum, it is great for couples with shared finances, while working great for solo budgeters also."
     },
-    duration: "? months(MAR2021-)",
+    duration: "? months(MAR2021-PRESENT)",
     tech: ["React"],
     repo: "repo updating...",
   },

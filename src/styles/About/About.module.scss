@@ -20,7 +20,6 @@
 }
 
 .title {
-
     p {
         font-weight: 600;
         padding: 10px 0;
@@ -29,6 +28,7 @@
     }
 
     img{
+        width: 100%;
         -webkit-animation: animate .5s ease-in-out;
         animation: animate .5s ease-in-out;
     }
@@ -135,8 +135,6 @@
         }
     
         img {
-            width: 300px;
-            height: 150px;
             animation: none;
         }
     }
