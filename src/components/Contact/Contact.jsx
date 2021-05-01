@@ -1,23 +1,26 @@
-import { NavLink } from "react-router-dom";
 import styles from "../../styles/Contact/Contact.module.scss";
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 const Contact = () => {
-
   const [showSuccess, setShowSuccess] = useState(false);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  const onSubmit = (data,event) => {
+  const onSubmit = (data, event) => {
     console.log(data);
     setShowSuccess(true);
-    
-    setTimeout(()=>{
-      setShowSuccess(false);
-    },1500)
 
-    reset()
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 1500);
+
+    reset();
     // axios.post('/api/form',data)
     //   .then(res => {
     //     console.log("success");
@@ -25,9 +28,7 @@ const Contact = () => {
     //   .catch(()=>{
     //     console.log("Message not sent");
     //   })
-  }
-
-  
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -44,47 +45,45 @@ const Contact = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <label>NAME</label>
-                <input 
-                type="name"
-                name="username" 
-                autoComplete="off" 
-                {...register('username',{required: true})}   
+                <input
+                  type="name"
+                  name="username"
+                  autoComplete="off"
+                  {...register("username", { required: true })}
                 />
-               {errors.username && errors.username.type === "required" && (
-                 <p className={styles.errorMsg}>This field is required</p>
+                {errors.username && errors.username.type === "required" && (
+                  <p className={styles.errorMsg}>This field is required</p>
                 )}
               </div>
               <div>
                 <label>EMAIL</label>
-                <input 
-                type="email" 
-                name="email"
-                autoComplete="off"
-                {...register('email',{required:true})} 
+                <input
+                  type="email"
+                  name="email"
+                  autoComplete="off"
+                  {...register("email", { required: true })}
                 />
                 {errors.email && errors.email.type === "required" && (
                   <p className={styles.errorMsg}>This field is required</p>
-                 )} 
+                )}
               </div>
               <div>
                 <label>MESSAGE</label>
-                <textarea 
-                type="text"
-                name="message"
-                {...register('message',{required:true})}  
+                <textarea
+                  type="text"
+                  name="message"
+                  {...register("message", { required: true })}
                 />
                 {errors.message && errors.message.type === "required" && (
                   <p className={styles.errorMsg}>This field is required</p>
-                 )} 
-                <div>
-                
-                </div>
+                )}
+                <div></div>
               </div>
-              {
-                showSuccess ? (<div className={styles.successMsg}>
-                <p>Message has been sent successfully</p>
-                </div>) : null
-              }
+              {showSuccess ? (
+                <div className={styles.successMsg}>
+                  <p>Message has been sent successfully</p>
+                </div>
+              ) : null}
               <div>
                 <button type="submit">Send Message</button>
               </div>
@@ -95,22 +94,31 @@ const Contact = () => {
             <ul>
               <li className="email">
                 <i className="fas fa-envelope" style={{ color: "#B23121" }}></i>
-                <NavLink to="">mohamedaasif.md@gmail.com</NavLink>
+                <a href="mailto:mohamedaasif.md@gmail.com">
+                  mohamedaasif.md@gmail.com
+                </a>
               </li>
               <li className="instagram">
                 <i
-                  className="fab fa-instagram"
-                  style={{ color: "#C13584" }}
+                  className="fab fa-linkedin-in"
+                  style={{ color: "#0e76a8" }}
                 ></i>
-                <NavLink to="">Instagram</NavLink>
-              </li>
-              <li className="twitter">
-                <i className="fab fa-twitter" style={{ color: "#1DA1F2" }}></i>
-                <NavLink to="">Twitter</NavLink>
+                <a
+                  href="https://www.linkedin.com/in/mohamed-usoof-aasif/"
+                  target="blank"
+                >
+                  LinkedIn
+                </a>
               </li>
               <li className="github">
                 <i className="fab fa-github" style={{ color: "#6cc644" }}></i>
-                <NavLink to="">GitHub</NavLink>
+                <a href="https://github.com/mohamedaasif" target="blank">
+                  GitHub
+                </a>
+              </li>
+              <li className="twitter">
+                <i className="fab fa-twitter" style={{ color: "#1DA1F2" }}></i>
+                <a href="">Twitter</a>
               </li>
             </ul>
           </div>

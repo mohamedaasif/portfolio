@@ -15,7 +15,7 @@
     i {
       font-size: 0.8rem;
       position: relative;
-      top: -.5px;
+      top: -0.5px;
     }
     p {
       font-size: 1.1rem;
@@ -45,25 +45,24 @@
 }
 
 @media (max-width: 780px) {
-
-    .container {
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 0;
-        .logo {
-          i {
-            font-size: 0.5rem;;
-          }
-          p {
-            font-size: .6rem;
-          }
-        }
-      
-        .navbar {
-          display: none;
-        }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    .logo {
+      i {
+        font-size: 0.5rem;
       }
+      p {
+        font-size: 0.6rem;
+      }
+    }
+
+    .navbar {
+      display: none;
+    }
+  }
 }

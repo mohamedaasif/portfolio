@@ -13,9 +13,9 @@
   width: 80%;
   margin: 0 auto;
 
-  .successMsg{
+  .successMsg {
     font-size: 1.3rem;
-    color: #4BB543;
+    color: #4bb543;
     width: fit-content;
     font-weight: 600;
     margin: 0 auto;
@@ -101,9 +101,9 @@
         }
       }
 
-      .errorMsg{
-        color:#e71d36;
-        font-size: .9rem;
+      .errorMsg {
+        color: #e71d36;
+        font-size: 0.9rem;
       }
     }
     .socialmedia {
@@ -141,15 +141,13 @@
   }
 }
 
-
-
 @media (max-width: 780px) {
   .container {
     margin-top: 40px;
 
-    .successMsg{
+    .successMsg {
       font-size: 1rem;
-      color: #4BB543;
+      color: #4bb543;
       font-weight: 500;
       padding-bottom: 5px;
     }
@@ -174,7 +172,7 @@
             label {
               font-size: 1rem;
             }
-            textarea{
+            textarea {
               font-size: 1rem;
             }
             button {

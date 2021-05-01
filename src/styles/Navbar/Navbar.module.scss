@@ -19,8 +19,9 @@
 
     .logo {
       @extend .flex-box;
-      
-      img{
+      // animation: animatelogo 0.5s linear;
+
+      img {
         width: 40px;
         height: 40px;
       }
@@ -30,8 +31,8 @@
           font-size: 1.2rem;
           font-weight: 600;
         }
-        p:nth-child(2){
-          font-size: .9rem;
+        p:nth-child(2) {
+          font-size: 0.9rem;
           font-weight: 500;
         }
       }
@@ -39,6 +40,22 @@
         cursor: pointer;
       }
     }
+
+    // @keyframes animatelogo {
+    //   0% {
+    //     transform: translateX(-100%);
+    //   }
+    //   50% {
+    //     transform: translateX(20%);
+    //   }
+    //   90% {
+    //     transform: translateX(-20%);
+    //   }
+    //   100% {
+    //     transform: translateX(0);
+    //   }
+    // }
+
     .navbar {
       width: 40%;
       ul {
@@ -69,14 +86,14 @@
   }
 }
 
-@media (max-width:780px) {
+@media (max-width: 780px) {
   .wrapper {
     height: 7vh;
     .container {
-      .logo{
+      .logo {
         width: 100%;
         justify-content: space-between;
-        img{
+        img {
           width: 30px;
           height: 30px;
         }
@@ -85,12 +102,12 @@
           p:nth-child(1) {
             font-size: 1rem;
           }
-          p:nth-child(2){
-            font-size: .7rem;
+          p:nth-child(2) {
+            font-size: 0.7rem;
           }
         }
       }
-      .navbar{
+      .navbar {
         display: none;
       }
     }

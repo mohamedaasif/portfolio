@@ -4,7 +4,6 @@ import styles from "../../styles/Home/Home.module.scss";
 const Home = () => {
   return (
     <div className={styles.wrapper}>
-    
       <div className={styles.container}>
         <div className={styles.introduction}>
           <h1>Mohamed Aasif</h1>
@@ -16,7 +15,7 @@ const Home = () => {
           <p>"I know how to google and solve problems."</p>
         </div>
         <div className={styles.imgContainer}>
-          <img src={avatar} alt="" className={styles.avatar}/>
+          <img src={avatar} alt="" className={styles.avatar} />
         </div>
       </div>
     </div>

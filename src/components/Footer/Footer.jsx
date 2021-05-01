@@ -5,23 +5,22 @@ import styles from "../../styles/Footer/Footer.module.scss";
 const Footer = () => {
   const location = useLocation();
 
-  const [isMobile,setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(()=>{
-    if(window.innerWidth < 780) {
+  useEffect(() => {
+    if (window.innerWidth < 780) {
       setIsMobile(true);
     }
-  },[])
-  
+  }, []);
 
   const isActive = () => {
-    if(location.pathname === "/"){
+    if (location.pathname === "/") {
       return false;
-    } else if(location.pathname === "/contact"){
+    } else if (location.pathname === "/contact") {
       return false;
     }
     return true;
-  }
+  };
 
   return (
     <div className={styles.wrapper}>

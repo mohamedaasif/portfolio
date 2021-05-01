@@ -143,7 +143,7 @@ const Project = () => {
               <p className={styles.typography}>
                 Repository :{" "}
                 <span className={styles.span}>
-                  <a href={projects[index].repo} target="blank" className={styles.typography}>
+                  <a href={projects[index].repo} target="blank">
                     {projects[index].repo}
                   </a>
                 </span>
