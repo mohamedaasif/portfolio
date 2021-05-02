@@ -8,11 +8,17 @@ const Home = () => {
         <div className={styles.introduction}>
           <h1>Mohamed Aasif</h1>
           <p>
-            Hello, I am a Freelance Web Designer & Developer based in TamilNadu,
-            India. I help designers, small agencies and businesses bring their
-            ideas to life.
+            Hi. I am MERN Stack{" "}
+            <span>
+              (<s>MongoDB</s> MySql, Express, React, Node)
+            </span>{" "}
+            Developer based in Kanyakumari, TN. I specialize in creating
+            software for clients ranging from individuals and small-businesses
+            all the way to large enterprise corporations.
           </p>
-          <p>"I know how to google and solve problems."</p>
+          <p>
+            "I design and code beautifully simple things, and I love what I do."
+          </p>
         </div>
         <div className={styles.imgContainer}>
           <img src={avatar} alt="" className={styles.avatar} />

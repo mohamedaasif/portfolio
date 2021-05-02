@@ -1,7 +1,6 @@
 import styles from "../../styles/Contact/Contact.module.scss";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import axios from "axios";
 
 const Contact = () => {
   const [showSuccess, setShowSuccess] = useState(false);
@@ -13,7 +12,6 @@ const Contact = () => {
   } = useForm();
 
   const onSubmit = (data, event) => {
-    console.log(data);
     setShowSuccess(true);
 
     setTimeout(() => {
@@ -21,13 +19,6 @@ const Contact = () => {
     }, 1500);
 
     reset();
-    // axios.post('/api/form',data)
-    //   .then(res => {
-    //     console.log("success");
-    //   },reset())
-    //   .catch(()=>{
-    //     console.log("Message not sent");
-    //   })
   };
 
   return (
@@ -44,7 +35,7 @@ const Contact = () => {
           <div className={styles.form}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div>
-                <label>NAME</label>
+                <label>Name</label>
                 <input
                   type="name"
                   name="username"
@@ -56,7 +47,7 @@ const Contact = () => {
                 )}
               </div>
               <div>
-                <label>EMAIL</label>
+                <label>Email</label>
                 <input
                   type="email"
                   name="email"
@@ -68,7 +59,7 @@ const Contact = () => {
                 )}
               </div>
               <div>
-                <label>MESSAGE</label>
+                <label>Message</label>
                 <textarea
                   type="text"
                   name="message"
@@ -90,7 +81,7 @@ const Contact = () => {
             </form>
           </div>
           <div className={styles.socialmedia}>
-            <h2>Get In Touch</h2>
+            <h3>Get In Touch</h3>
             <ul>
               <li className="email">
                 <i className="fas fa-envelope" style={{ color: "#B23121" }}></i>

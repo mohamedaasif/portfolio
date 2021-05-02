@@ -21,11 +21,11 @@
   margin-bottom: 40px;
 
   h3 {
-    font-size: 3rem;
-    padding: 10px;
+    font-size: 2rem;
+    padding: 20px 0;
   }
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     a {
       color: #c77dff;
       text-decoration: none;
@@ -47,7 +47,7 @@
     height: 100%;
     background-color: #161a1d;
     color: white;
-    border-radius: 8px;
+    border-radius: 5px;
     transition: transform 0.3s ease-in-out;
     animation: animate 0.5s ease-in-out;
     &:hover {
@@ -76,14 +76,11 @@
       div {
         padding: 5px 0;
         p {
-          font-size: 1.1rem;
+          font-size: 1rem;
+          line-height: 1.5;
         }
-
         p:nth-child(1) {
-          font-weight: 600;
-
           span {
-            font-weight: normal;
             font-size: 1rem;
           }
         }
@@ -106,33 +103,46 @@
 // Typography
 .span {
   font-weight: normal;
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: black;
 }
 
 .typography {
   font-weight: 600;
-  font-size: 1.08rem;
+  font-size: 1rem;
   color: #4e4376;
   font-family: $myFont;
 }
 
 .typographyContent {
-  font-size: 1.02rem;
+  font-size: 1rem;
+  line-height: 1.5;
   font-family: $myFont;
 }
 
 @media (max-width: 780px) {
+  .wrapper {
+    margin-top: 40px;
+    background-image: none;
+    background-color: white;
+    color: black;
+  }
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
   .title {
     flex-direction: column;
     margin-bottom: 20px;
     padding-top: 20px;
     h3 {
-      font-size: 1.5rem;
-      padding: 5px;
+      font-size: 1.4rem;
+      padding: 0px 0px 20px 0px;
     }
     p {
       font-size: 1rem;
+      line-height: 1.5;
       text-align: center;
     }
   }
@@ -144,7 +154,7 @@
 
     .card {
       .cardLogo {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
       .cardContent {
         div {
@@ -157,8 +167,6 @@
           }
 
           p:nth-child(1) {
-            font-weight: 500;
-
             span {
               font-weight: normal;
               font-size: 0.9rem;

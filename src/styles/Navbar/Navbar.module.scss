@@ -19,11 +19,11 @@
 
     .logo {
       @extend .flex-box;
-      // animation: animatelogo 0.5s linear;
 
       img {
         width: 40px;
         height: 40px;
+        animation: animatelogo 0.5s linear;
       }
       .logoName {
         padding-left: 10px;
@@ -41,20 +41,20 @@
       }
     }
 
-    // @keyframes animatelogo {
-    //   0% {
-    //     transform: translateX(-100%);
-    //   }
-    //   50% {
-    //     transform: translateX(20%);
-    //   }
-    //   90% {
-    //     transform: translateX(-20%);
-    //   }
-    //   100% {
-    //     transform: translateX(0);
-    //   }
-    // }
+    @keyframes animatelogo {
+      0% {
+        transform: translateX(-200%);
+      }
+      50% {
+        transform: translateX(40%);
+      }
+      90% {
+        transform: translateX(-40%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
 
     .navbar {
       width: 40%;
@@ -72,12 +72,12 @@
             &:hover {
               color: black;
               background-color: white;
-              border-radius: 8px;
+              border-radius: 3px;
             }
           }
           .active {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 3px;
             color: black;
           }
         }
@@ -90,6 +90,8 @@
   .wrapper {
     height: 7vh;
     .container {
+      width: 100%;
+      padding: 0 10px;
       .logo {
         width: 100%;
         justify-content: space-between;

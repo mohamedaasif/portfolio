@@ -14,10 +14,9 @@
   margin: 0 auto;
 
   .successMsg {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #4bb543;
     width: fit-content;
-    font-weight: 600;
     margin: 0 auto;
     padding-bottom: 10px;
   }
@@ -28,13 +27,14 @@
     align-items: center;
     flex-direction: column;
     h3 {
-      font-size: 3rem;
-      padding: 10px;
+      font-size: 2rem;
+      padding: 20px 0;
     }
 
     p {
       width: 50%;
-      font-size: 1.2rem;
+      font-size: 1rem;
+      line-height: 1.5;
       text-align: center;
     }
   }
@@ -67,6 +67,7 @@
             outline: none;
             padding: 10px;
             font-size: 1rem;
+            border-radius: 3px;
             &:focus {
               border: 2px solid #34a0a4;
             }
@@ -78,6 +79,7 @@
             outline: none;
             padding: 10px;
             font-size: 1.2rem;
+            border-radius: 3px;
             &:focus {
               border: 2px solid #34a0a4;
             }
@@ -108,8 +110,8 @@
     }
     .socialmedia {
       animation: animate 0.5s linear;
-      h2 {
-        font-size: 2rem;
+      h3 {
+        font-size: 1.5rem;
       }
       li {
         list-style: none;
@@ -124,7 +126,7 @@
       a {
         text-decoration: none;
         color: white;
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
     }
 
@@ -142,8 +144,15 @@
 }
 
 @media (max-width: 780px) {
+  .wrapper {
+    background-image: none;
+    background-color: white;
+    color: black;
+  }
   .container {
     margin-top: 40px;
+    width: 100%;
+    padding: 0 10px;
 
     .successMsg {
       font-size: 1rem;
@@ -153,11 +162,12 @@
     }
     .header {
       h3 {
-        font-size: 1.5rem;
-        padding: 5px;
+        font-size: 1.4rem;
+        padding: 0px 0px 20px 0px;
       }
       p {
         font-size: 1rem;
+        line-height: 1.5;
         width: 100%;
       }
     }
@@ -172,12 +182,23 @@
             label {
               font-size: 1rem;
             }
+            input {
+              border: 2px solid $primary-clr;
+            }
             textarea {
-              font-size: 1rem;
+              border: 2px solid $primary-clr;
+              font-size: 1.05rem;
             }
             button {
-              width: 50%;
+              width: 31%;
+              font-size: 0.8rem;
               padding: 6px 5px;
+              color: black;
+              border: 2px solid $primary-clr;
+              &:hover {
+                color: white;
+                background-color: $primary-clr;
+              }
             }
           }
         }
@@ -187,7 +208,8 @@
         margin: 20px 0;
         animation: none;
         h2 {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
+          padding: 10px 0;
         }
         li {
           padding: 5px 0;
@@ -200,7 +222,7 @@
 
         a {
           text-decoration: none;
-          color: white;
+          color: black;
           font-size: 1rem;
         }
       }

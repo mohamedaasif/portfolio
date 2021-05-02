@@ -17,52 +17,42 @@
 
   .introduction {
     padding-right: 30px;
-    -webkit-animation: animateContent 0.5s ease-in-out;
-    animation: animateContent 0.5s ease-in-out;
 
     h1 {
       margin-bottom: 15px;
-      font-size: 4rem;
+      font-size: 3rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 1.4rem;
+      line-height: 1.5;
+    }
+    span {
+      font-size: 1.2rem;
     }
     p:nth-child(3) {
       padding-top: 10px;
-      font-size: 1.5rem;
-    }
-    @-webkit-keyframes animateContent {
-      0% {
-        -webkit-transform: translateX(-200%);
-      }
-      100% {
-        -webkit-transform: translateX(0);
-      }
-    }
-    @keyframes animateContent {
-      0% {
-        transform: translateX(-200%);
-      }
-      100% {
-        transform: translateX(0);
-      }
+      font-size: 1.1rem;
     }
   }
 
   .imgContainer {
-    -webkit-animation: animateAvatar 0.5s ease-in-out;
-    animation: animateAvatar 0.5s ease-in-out;
-    @-webkit-keyframes animateAvatar {
-      0% {
-        -webkit-transform: translateY(-200%);
-      }
-      100% {
-        -webkit-transform: translateY(0);
-      }
-    }
+    animation: animateAvatar 0.5s linear;
+
     @keyframes animateAvatar {
       0% {
         transform: translateY(-200%);
+      }
+      50% {
+        transform: translateY(50%);
+      }
+      80% {
+        transform: translateY(-50%);
+      }
+      90% {
+        transform: translateY(-20%);
+      }
+      95% {
+        transform: translateY(-10%);
       }
       100% {
         transform: translateY(0);
@@ -82,30 +72,52 @@
   .wrapper {
     min-height: (100vh-7vh);
     .container {
+      width: 100%;
+      padding: 0 10px;
+
       height: 60vh;
       flex-direction: column-reverse;
       justify-content: space-around;
     }
     .introduction {
       padding-right: 0;
-      animation: none;
       h1 {
-        margin-bottom: 3px;
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
       }
       p {
-        font-size: 1.05rem;
-        line-height: 1.4;
+        font-size: 1rem;
         text-align: center;
+      }
+      span {
+        font-size: 0.75rem;
       }
       p:nth-child(3) {
         padding-top: 2px;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
       }
     }
     .imgContainer {
-      animation: none;
+      @keyframes animateAvatar {
+        0% {
+          transform: translateY(-200%);
+        }
+        50% {
+          transform: translateY(30%);
+        }
+        80% {
+          transform: translateY(-50%);
+        }
+        90% {
+          transform: translateY(-20%);
+        }
+        95% {
+          transform: translateY(-10%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
     }
     .avatar {
       width: 200px;

@@ -1,5 +1,31 @@
 const projectsModal = [
   {
+    title: "Lykas",
+    summary:
+      "This is a financial site used to calculate your monthly and annual budget.",
+    description: {
+      one:
+        "Lykas is a perfect option for couples that want to share their budgeting process together. It uses the familiar envelope budgeting philosophy to power your proactive budget for all of your bills and spending.",
+      two:
+        "Because you can share and sync budgets with budgeting partners across the iPhone and Android spectrum, it is great for couples with shared finances, while working great for solo budgeters also.",
+    },
+    duration: "2 months(MAR2021-APR2021)",
+    tech: ["React"],
+    repo: "repo updating...",
+  },
+  {
+    title: "Kajah Ecopack",
+    summary: "A simple static site developement for my client rajah groups.",
+    description: {
+      one:
+        "A simple static site development to showcase the kajah products developed by me using Angular and Angular Animations.",
+      two: "",
+    },
+    duration: "1 month(FEB2021-MAR2021)",
+    tech: ["Angular"],
+    repo: "repo updating...",
+  },
+  {
     title: "My Portfolio",
     summary:
       "This is a portfolio site which was designed and developed by me using react.",
@@ -25,32 +51,6 @@ const projectsModal = [
     duration: "2 months(JUNE2020-AUG2020)",
     tech: ["Angular", "Spring Boot", "MySQL"],
     repo: "https://github.com/mohamedaasif/EmployeeRegistrationForm",
-  },
-  {
-    title: "Kajah Ecopack",
-    summary: "A simple static site developement for my client rajah groups.",
-    description: {
-      one:
-        "A simple static site development to showcase the kajah products developed by me using Angular and Angular Animations.",
-      two: "",
-    },
-    duration: "2 months(FEB2021-)",
-    tech: ["Angular"],
-    repo: "repo updating...",
-  },
-  {
-    title: "Lykas",
-    summary:
-      "This is a financial site used to calculate your monthly and annual budget.",
-    description: {
-      one:
-        "Lykas is a perfect option for couples that want to share their budgeting process together. It uses the familiar envelope budgeting philosophy to power your proactive budget for all of your bills and spending.",
-      two:
-        "Because you can share and sync budgets with budgeting partners across the iPhone and Android spectrum, it is great for couples with shared finances, while working great for solo budgeters also.",
-    },
-    duration: "? months(MAR2021-PRESENT)",
-    tech: ["React"],
-    repo: "repo updating...",
   },
   {
     title: "Tri-layer Architecture",

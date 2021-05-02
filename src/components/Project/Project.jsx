@@ -116,30 +116,30 @@ const Project = () => {
             {projects[index].title}
           </DialogTitle>
           <DialogContent dividers>
-            <Typography gutterBottom>
+            <Typography gutterBottom component={"div"}>
               <p className={styles.typography}>Description : </p>
               <p className={styles.typographyContent}>
                 {projects[index].description.one}
               </p>
             </Typography>
-            <Typography gutterBottom>
+            <Typography gutterBottom component={"div"}>
               <p className={styles.typographyContent}>
                 {projects[index].description.two}
               </p>
             </Typography>
-            <Typography gutterBottom>
+            <Typography gutterBottom component={"div"}>
               <p className={styles.typography}>
                 Duration :{" "}
                 <span className={styles.span}>{projects[index].duration}</span>
               </p>
             </Typography>
-            <Typography gutterBottom>
+            <Typography gutterBottom component={"div"}>
               <p className={styles.typography}>
                 Technology Used :{" "}
                 <span className={styles.span}>{`${projects[index].tech}`}</span>
               </p>
             </Typography>
-            <Typography gutterBottom>
+            <Typography gutterBottom component={"div"}>
               <p className={styles.typography}>
                 Repository :{" "}
                 <span className={styles.span}>
