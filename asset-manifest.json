@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0402070a.chunk.css",
-    "main.js": "/portfolio/static/js/main.923b6efa.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.923b6efa.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.69b2f15c.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.69b2f15c.js.map",
-    "static/js/2.893711d3.chunk.js": "/portfolio/static/js/2.893711d3.chunk.js",
-    "static/js/2.893711d3.chunk.js.map": "/portfolio/static/js/2.893711d3.chunk.js.map",
-    "static/js/3.c824fbc5.chunk.js": "/portfolio/static/js/3.c824fbc5.chunk.js",
-    "static/js/3.c824fbc5.chunk.js.map": "/portfolio/static/js/3.c824fbc5.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.ba78bcd4.chunk.css",
+    "main.js": "/portfolio/static/js/main.6af904f7.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.6af904f7.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.5f3ad2ec.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.5f3ad2ec.js.map",
+    "static/js/2.05f781b0.chunk.js": "/portfolio/static/js/2.05f781b0.chunk.js",
+    "static/js/2.05f781b0.chunk.js.map": "/portfolio/static/js/2.05f781b0.chunk.js.map",
+    "static/js/3.4b1b4336.chunk.js": "/portfolio/static/js/3.4b1b4336.chunk.js",
+    "static/js/3.4b1b4336.chunk.js.map": "/portfolio/static/js/3.4b1b4336.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.0402070a.chunk.css.map": "/portfolio/static/css/main.0402070a.chunk.css.map",
-    "static/js/2.893711d3.chunk.js.LICENSE.txt": "/portfolio/static/js/2.893711d3.chunk.js.LICENSE.txt",
+    "static/css/main.ba78bcd4.chunk.css.map": "/portfolio/static/css/main.ba78bcd4.chunk.css.map",
+    "static/js/2.05f781b0.chunk.js.LICENSE.txt": "/portfolio/static/js/2.05f781b0.chunk.js.LICENSE.txt",
     "static/media/avatar-rbg.7508743a.png": "/portfolio/static/media/avatar-rbg.7508743a.png",
     "static/media/logo.1fe4f3fe.png": "/portfolio/static/media/logo.1fe4f3fe.png",
     "static/media/undraw_Code_thinking_re_gka2.753f2580.svg": "/portfolio/static/media/undraw_Code_thinking_re_gka2.753f2580.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.69b2f15c.js",
-    "static/js/2.893711d3.chunk.js",
-    "static/css/main.0402070a.chunk.css",
-    "static/js/main.923b6efa.chunk.js"
+    "static/js/runtime-main.5f3ad2ec.js",
+    "static/js/2.05f781b0.chunk.js",
+    "static/css/main.ba78bcd4.chunk.css",
+    "static/js/main.6af904f7.chunk.js"
   ]
 }
