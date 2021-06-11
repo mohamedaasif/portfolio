@@ -1,5 +1,5 @@
 import styles from "../../styles/About/About.module.scss";
-import svg from "../../image/undraw_Code_thinking_re_gka2.svg";
+import svg from "../../image/about_svg.svg";
 const About = () => {
   return (
     <div className={styles.wrapper}>

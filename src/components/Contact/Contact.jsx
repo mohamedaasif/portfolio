@@ -109,7 +109,7 @@ const Contact = () => {
               </li>
               <li className="twitter">
                 <i className="fab fa-twitter" style={{ color: "#1DA1F2" }}></i>
-                <a href="">Twitter</a>
+                <a href="https://twitter.com/mohamedaasif_">Twitter</a>
               </li>
             </ul>
           </div>
