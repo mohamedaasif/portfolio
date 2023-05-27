@@ -1,13 +1,22 @@
 import styles from "../../styles/Navbar/Navbar.module.scss";
 import { NavLink, useHistory } from "react-router-dom";
 import logo from "../../image/logo.png";
+import {
+  LightMode as LightModeIcon,
+  DarkMode as DarkModeIcon,
+} from "@mui/icons-material";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const history = useHistory();
   const handleClick = () => {
     history.push({
       pathname: "/",
     });
+  };
+  const handleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
   };
 
   return (
@@ -42,6 +51,20 @@ const Navbar = () => {
               <NavLink exact to="/contact" activeClassName={styles.active}>
                 Contact
               </NavLink>
+            </li>
+            <li
+              className={
+                isDarkTheme
+                  ? `${styles.themeIconRight} ${styles.themeIcon}`
+                  : styles.themeIcon
+              }
+              onClick={handleTheme}
+            >
+              {isDarkTheme ? (
+                <DarkModeIcon className={styles.darkIcon} />
+              ) : (
+                <LightModeIcon className={styles.lightIcon} />
+              )}
             </li>
           </ul>
         </div>

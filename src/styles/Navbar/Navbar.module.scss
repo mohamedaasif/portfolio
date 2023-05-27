@@ -77,6 +77,25 @@
             border-bottom: 2px solid white;
           }
         }
+        .themeIcon {
+          background-color: rgb(108, 122, 137);
+          width: 50px;
+          border-radius: 10%;
+          @extend .flex-box;
+          justify-content: flex-start;
+          border-radius: 20px;
+          cursor: pointer;
+          .darkIcon {
+            color: rgb(26, 26, 26);
+          }
+          .lightIcon {
+            padding-left: 3px;
+            color: rgb(230, 205, 20);
+          }
+        }
+        .themeIconRight {
+          justify-content: flex-end;
+        }
       }
     }
   }
