@@ -107,10 +107,10 @@ const Contact = () => {
                   GitHub
                 </a>
               </li>
-              <li className="twitter">
+              {/* <li className="twitter">
                 <i className="fab fa-twitter" style={{ color: "#1DA1F2" }}></i>
                 <a href="https://twitter.com/mohamedaasif_">Twitter</a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
