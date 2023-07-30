@@ -8,16 +8,9 @@ const Home = () => {
         <div className={styles.introduction}>
           <h1>Mohamed Aasif</h1>
           <p>
-            Hi. I am MERN Stack{" "}
-            <span>
-              (<s>MongoDB</s> MySql, Express, React, Node)
-            </span>{" "}
-            Developer based in Kanyakumari, TN. I specialize in creating
+            I am ReactJS / Front End Developer. I specialize in creating
             software for clients ranging from individuals and small-businesses
             all the way to large enterprise corporations.
-          </p>
-          <p>
-            "I design and code beautifully simple things, and I love what I do."
           </p>
         </div>
         <div className={styles.imgContainer}>
