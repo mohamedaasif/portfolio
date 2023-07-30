@@ -128,10 +128,14 @@ const Project = () => {
               </p>
             </Typography>
             <Typography gutterBottom component={"div"}>
-              <p className={styles.typography}>
-                Duration :{" "}
-                <span className={styles.span}>{projects[index].duration}</span>
-              </p>
+              {projects[index].duration && (
+                <p className={styles.typography}>
+                  Duration :{" "}
+                  <span className={styles.span}>
+                    {projects[index].duration}
+                  </span>
+                </p>
+              )}
             </Typography>
             <Typography gutterBottom component={"div"}>
               <p className={styles.typography}>

@@ -1,38 +1,64 @@
 const projectsModal = [
   {
-    title: "Lykas",
+    title: "Telecommunication",
+    summary: "US based web application to purchase the standard sim or eSim.",
+    description: {
+      one: "This web application let the customer to purchase the standard sim or eSim, activate the purchased sim,purchase plans, purchase additional data, pay bills, enable/disable IR/ILD/DR, pause/enable data, view purchase history and also view used data.",
+      two: "",
+    },
+    duration: "(SEP2022-PRESENT)",
+    tech: ["ReactJS", "Typescript", "Google Analytics", "Axios", "Firebase"],
+    repo: "repo updating...",
+  },
+  {
+    title: "OTT Application",
+    summary:
+      "African based streaming application to watch tv series, movies and live tv online.",
+    description: {
+      one: "Hybrid Mobile Application and Web Application for Airtel Customers in Africa to streaming content over the internet.",
+      two: "",
+    },
+    duration: "(JULY2021-AUG2022)",
+    tech: [
+      "ReactJS",
+      "Typescript",
+      "Google Analytics",
+      "Axios",
+      "Video.js",
+      "lodash",
+    ],
+    repo: "repo updating...",
+  },
+  {
+    title: "Digital Learning",
+    summary:
+      "Developed an online educational platform for both students and ...",
+    description: {
+      one: "Developed an online educational platform for both students and professionals to learn new certified courses.",
+      two: "",
+    },
+    duration: "(NOV2020-JULY2021)",
+    tech: [
+      "ReactJS",
+      "Typescript",
+      "Google Analytics",
+      "Axios",
+      "Video.js",
+      "lodash",
+    ],
+    repo: "repo updating...",
+  },
+  {
+    title: "Financial Web Application",
     summary:
       "This is a financial site used to calculate your monthly and annual budget.",
     description: {
-      one: "Lykas is a perfect option for couples that want to share their budgeting process together. It uses the familiar envelope budgeting philosophy to power your proactive budget for all of your bills and spending.",
+      one: "This application is a perfect option for couples that want to share their budgeting process together. It uses the familiar envelope budgeting philosophy to power your proactive budget for all of your bills and spending.",
       two: "Because you can share and sync budgets with budgeting partners across the iPhone and Android spectrum, it is great for couples with shared finances, while working great for solo budgeters also.",
     },
-    duration: "2 months(MAR2021-APR2021)",
-    tech: ["React"],
+    duration: "(FEB2020-OCT2020)",
+    tech: ["ReactJS, Redux, Axios"],
     repo: "repo updating...",
-  },
-  {
-    title: "Kajah Ecopack",
-    summary: "A simple static site developement for my client rajah groups.",
-    description: {
-      one: "A simple static site development to showcase the kajah products developed by me using Angular and Angular Animations.",
-      two: "",
-    },
-    duration: "1 month(FEB2021-MAR2021)",
-    tech: ["Angular"],
-    repo: "repo updating...",
-  },
-  {
-    title: "My Portfolio",
-    summary:
-      "This is a portfolio site which was designed and developed by me using react.",
-    description: {
-      one: "Built with React Javascript library, this website is a showcase of my recent projects as a Full-Stack Web Developer.",
-    },
-    duration: "10 days",
-    tech: ["React"],
-    repo: "https://github.com/mohamedaasif/portfolio",
-    link: " https://mohamedaasif.github.io/portfolio/",
   },
   {
     title: "Employee Management",
@@ -42,20 +68,9 @@ const projectsModal = [
       one: "This project is used to develop single page application using Angular as front-end technology.",
       two: "And also this project is used to develop CRUD RESTFul APIs for a simple Employee Management System using Spring Boot and MySQL as a database.",
     },
-    duration: "2 months(JUNE2020-AUG2020)",
+    duration: "",
     tech: ["Angular", "Spring Boot", "MySQL"],
     repo: "https://github.com/mohamedaasif/EmployeeRegistrationForm",
-  },
-  {
-    title: "Crypto Inventory",
-    summary: "Crypto inventory is the process of managing ...",
-    description: {
-      one: "Crypto inventory is the process of managing the cryptoasset like Bitcoin (BTC), Ethereum (ETH), and Litecoin (LTC). This application has all the current real value of cryptocurrency which is fetching from Nomics API.",
-      two: "",
-    },
-    duration: "2 days",
-    tech: ["React", "Node", "Express", "Mysql"],
-    repo: "https://github.com/mohamedaasif/crypto-inventory",
   },
 ];
 
