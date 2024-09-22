@@ -41,6 +41,7 @@ const Header = () => {
       >
         <Box className={styles.headerLink}>Home</Box>
         <Box className={styles.headerLink}>About</Box>
+        <Box className={styles.headerLink}>Experience</Box>
         <Box className={styles.headerLink}>Projects</Box>
         <Box className={styles.headerLink}>Blog</Box>
       </Box>
