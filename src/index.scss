@@ -1,0 +1,39 @@
+:root {
+  --primary-main: hsl(210, 100%, 60%);
+  --primary-light: hsl(210, 100%, 70%);
+  --primary-dark: hsl(210, 100%, 38%);
+  --text-color: hsl(210, 14%, 7%);
+  --text-grey-800: hsl(215, 15%, 22%);
+  --text-grey-500: hsl(215, 15%, 40%);
+  --text-primary: hsl(215, 15%, 12%);
+  --background-color-dark: hsla(210, 14%, 7%);
+  --grey-color: #f9f9f9;
+  --grey-color-dark: #d2d2d2;
+  --ff-black: "DMSans-Black";
+  --ff-regular: "DMSans-Regular";
+  --ff-medium: "DMSans-Medium";
+  --ff-bold: "DMSans-Bold";
+  --white: #fff;
+  --black: #000;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-medium);
+  @font-face {
+    font-family: "DMSans-Black";
+    src: url("./assets/fonts/DMSans-Black.ttf") format("trueType");
+  }
+  @font-face {
+    font-family: "DMSans-Regular";
+    src: url("./assets/fonts/DMSans-Regular.ttf") format("trueType");
+  }
+  @font-face {
+    font-family: "DMSans-Medium";
+    src: url("./assets/fonts/DMSans-Medium.ttf") format("trueType");
+  }
+  @font-face {
+    font-family: "DMSans-Bold";
+    src: url("./assets/fonts/DMSans-Bold.ttf") format("trueType");
+  }
+}
