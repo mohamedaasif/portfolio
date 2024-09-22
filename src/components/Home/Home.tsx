@@ -39,17 +39,14 @@ const Home = () => {
           how I can help bring your ideas to life!
         </Typography>
       </Box>
-      <Box className={styles.imgContainer}>
-        <Box className={styles.rotatingBorder}></Box>
-        <Box
-          component="img"
-          className={styles.img}
-          src={avatar}
-          alt="avatar"
-          width="200x"
-          height="200px"
-        />
-      </Box>
+      <Box
+        component="img"
+        className={styles.img}
+        src={avatar}
+        alt="avatar"
+        width="200x"
+        height="200px"
+      />
     </Box>
   );
 };
