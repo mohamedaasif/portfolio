@@ -21,6 +21,7 @@ const Header = () => {
         borderBottom: darkTheme
           ? "2px solid var(--text-primary)"
           : "2px solid var(--grey-color)",
+        background: darkTheme ? "var(--background-color-dark)" : "var(--white)",
       }}
       className={styles.headerContainer}
     >
