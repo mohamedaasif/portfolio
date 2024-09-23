@@ -1,16 +1,17 @@
 import { Box, Typography } from "@mui/material";
-import styles from "./About.module.scss";
 import img from "../../assets/gif.gif";
 const About = () => {
   return (
     <Box
       sx={{
-        padding: "0px 200px",
+        width: "75%",
+        margin: "0 auto",
+        height: "calc(100vh - 60px)",
       }}
     >
       <Box
         sx={{
-          fontSize: "24px",
+          fontSize: "32px",
           fontFamily: "var(--ff-bold)",
           color: "var(--primary-main)",
           mb: "24px",
@@ -84,7 +85,6 @@ const About = () => {
         </Box>
         <Box
           component="img"
-          className={styles.img}
           src={img}
           alt="avatar"
           width="300x"

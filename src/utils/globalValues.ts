@@ -6,3 +6,9 @@ export const skills: string[] = [
   "Redux",
   "MongoDB",
 ];
+
+export const experience: string[] = [
+  "Reach Mobile",
+  "QuikieApps",
+  "Zeroes & Ones",
+];

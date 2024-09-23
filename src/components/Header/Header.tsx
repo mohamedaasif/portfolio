@@ -17,7 +17,7 @@ const Header = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "0px 200px",
+        padding: "0px 190px",
         borderBottom: darkTheme
           ? "2px solid var(--text-primary)"
           : "2px solid var(--grey-color)",

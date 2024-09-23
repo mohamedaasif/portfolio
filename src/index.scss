@@ -20,6 +20,7 @@
 body {
   margin: 0;
   font-family: var(--ff-medium);
+  color: var(--text-color);
   @font-face {
     font-family: "DMSans-Black";
     src: url("./assets/fonts/DMSans-Black.ttf") format("trueType");
