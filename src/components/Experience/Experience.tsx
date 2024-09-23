@@ -1,9 +1,17 @@
 import { Box } from "@mui/material";
 // import styles from "./Experience.module.scss";
-import { experience } from "../../utils/globalValues";
-import { useState } from "react";
+import {
+  experience,
+  experienceInDetails,
+  jobTitle,
+} from "../../utils/globalValues";
+import { useContext, useState } from "react";
+import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 const Experience = () => {
-  const [selectId, setSelectId] = useState<number>(0);
+  const [selectItem, setSelectItem] = useState<string>(experience[0]);
+  const { darkTheme }: any = useContext<ThemeContextType | undefined>(
+    ThemeContext
+  );
   return (
     <Box
       sx={{
@@ -26,32 +34,74 @@ const Experience = () => {
       <Box>
         <Box
           sx={{
-            width: "fit-content",
-            height: "auto",
+            display: "flex",
+            gap: "30px",
           }}
         >
-          {experience.map((data: string, idx: number) => (
+          <Box>
+            {experience.map((data: string, idx: number) => (
+              <Box
+                onClick={() => setSelectItem(data)}
+                key={idx}
+                sx={{
+                  width: "120px",
+                  padding: "15px 30px",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                  fontFamily: "var(--ff-medium)",
+                  borderLeft:
+                    data === selectItem
+                      ? "2px solid var(--primary-dark)"
+                      : darkTheme
+                      ? "2px solid var(--text-grey-800)"
+                      : "2px solid var(--grey-color-dark)",
+                  color:
+                    data === selectItem ? "var(--primary-dark)" : "inherit",
+                  "&:hover": {
+                    background: "rgba(250, 250, 250, 0.05)",
+                  },
+                }}
+              >
+                {data}
+              </Box>
+            ))}
+          </Box>
+          <Box>
             <Box
-              onClick={() => setSelectId(idx)}
-              key={idx}
               sx={{
-                padding: "15px 30px",
-                cursor: "pointer",
-                fontSize: "16px",
-                fontFamily: "var(--ff-medium)",
-                borderLeft:
-                  idx === selectId
-                    ? "2px solid var(--primary-main)"
-                    : "2px solid var(--text-grey-800)",
-                color: idx === selectId ? "var(--primary-main)" : "inherit",
-                "&:hover": {
-                  background: "rgba(250, 250, 250, 0.05)",
-                },
+                color: "var(--primary-main)",
+                fontFamily: "var(--ff-bold)",
+                fontSize: "24px",
+                mb: "24px",
               }}
             >
-              {data}
+              {jobTitle[selectItem]}
             </Box>
-          ))}
+            {/*; */}
+            {experienceInDetails?.[selectItem].map(
+              (list: string, id: number) => (
+                <Box
+                  key={selectItem + id}
+                  sx={{
+                    color: darkTheme ? "var(--text-grey-500)" : "inherit",
+                    fontFamily: "var(--ff-medium)",
+                    fontSize: "14px",
+                    mb: "24px",
+                    position: "relative",
+                    paddingLeft: "30px",
+                    "&::before": {
+                      content: '"▹"',
+                      position: "absolute",
+                      left: "0px",
+                      color: "var(--primary-main)",
+                    },
+                  }}
+                >
+                  {list}
+                </Box>
+              )
+            )}
+          </Box>
         </Box>
       </Box>
     </Box>
