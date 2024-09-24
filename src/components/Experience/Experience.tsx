@@ -69,13 +69,23 @@ const Experience = () => {
           <Box>
             <Box
               sx={{
-                color: "var(--primary-main)",
+                color: "var(--primary-light)",
                 fontFamily: "var(--ff-bold)",
                 fontSize: "24px",
                 mb: "24px",
               }}
             >
-              {jobTitle[selectItem]}
+              {jobTitle[selectItem].title}
+            </Box>
+            <Box
+              sx={{
+                color: darkTheme ? "var(--text-grey-500)" : "inherit",
+                fontFamily: "var(--ff-medium)",
+                fontSize: "14px",
+                mb: "24px",
+              }}
+            >
+              {jobTitle[selectItem].duration}
             </Box>
             {/*; */}
             {experienceInDetails?.[selectItem].map(

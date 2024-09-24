@@ -14,9 +14,18 @@ export const experience: string[] = [
 ];
 
 export const jobTitle: any = {
-  "Reach Mobile": "ReactJS Developer",
-  QuikieApps: "Software Development Engineer",
-  "Zeroes & Ones": "Frontend Developer",
+  "Reach Mobile": {
+    title: "ReactJS Developer",
+    duration: "September 2022 - Present",
+  },
+  QuikieApps: {
+    title: "Software Development Engineer",
+    duration: "February 2020 - August 2022",
+  },
+  "Zeroes & Ones": {
+    title: "Frontend Developer",
+    duration: "September 2019 - January 2020",
+  },
 };
 
 export const experienceInDetails: any = {
