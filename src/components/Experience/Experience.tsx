@@ -58,7 +58,9 @@ const Experience = () => {
                   color:
                     data === selectItem ? "var(--primary-dark)" : "inherit",
                   "&:hover": {
-                    background: "rgba(250, 250, 250, 0.05)",
+                    background: darkTheme
+                      ? "rgba(250, 250, 250, 0.05)"
+                      : "rgba(236, 236, 236, 0.5)",
                   },
                 }}
               >
