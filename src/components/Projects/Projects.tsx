@@ -5,20 +5,20 @@ import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 import { projectDesc } from "../../utils/globalValues";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import EastIcon from "@mui/icons-material/East";
+import { redirectLinkHandler } from "../../utils/resuableFunctions";
 
 const Projects = () => {
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
     ThemeContext
   );
-  const redirectLinkHandler = (link: string) => {
-    window.open(link);
-  };
+
   return (
     <Box
       sx={{
         width: "65%",
         margin: "0 auto",
-        // mb: "120px",
+        pb: "120px",
         // height: "calc(100vh - 60px)",
       }}
     >
@@ -151,6 +151,22 @@ const Projects = () => {
           </Box>
         </Box>
       ))}
+      <Box
+        sx={{
+          textTransform: "uppercase",
+          color: "var(--primary-main)",
+          fontFamily: "var(--ff-bold)",
+          fontSize: "16px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "10px",
+          cursor: "pointer",
+        }}
+      >
+        View All Projects
+        <EastIcon />
+      </Box>
     </Box>
   );
 };
