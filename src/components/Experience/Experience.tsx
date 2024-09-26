@@ -17,7 +17,7 @@ const Experience = () => {
       sx={{
         width: "50%",
         margin: "0 auto",
-        mb: "120px",
+        mb: "80px",
         height: "calc(100vh - 60px)",
       }}
     >

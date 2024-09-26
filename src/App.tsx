@@ -6,6 +6,7 @@ import styles from "./App.module.scss";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Experience from "./components/Experience/Experience";
+import Projects from "./components/Projects/Projects";
 
 function App() {
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
@@ -17,6 +18,7 @@ function App() {
       <Home />
       <About />
       <Experience />
+      <Projects />
     </Box>
   );
 }

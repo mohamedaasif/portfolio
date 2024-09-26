@@ -1,6 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import img from "../../assets/gif.gif";
+import { skills } from "../../utils/globalValues";
+import { ThemeContext, ThemeContextType } from "../../ThemeContext";
+import { useContext } from "react";
+
 const About = () => {
+  const { darkTheme }: any = useContext<ThemeContextType | undefined>(
+    ThemeContext
+  );
   return (
     <Box
       sx={{
@@ -37,51 +44,91 @@ const About = () => {
               fontFamily: "var(--ff-medium)",
             }}
           >
-            Hi there! I’m{" "}
-            <Box
-              component={"span"}
+            Hello! My name is Aasif and I enjoy creating things that live on the
+            internet. My interest in web development started back in 2018 when I
+            decided to create a static website using HTML & CSS. That initial
+            project ignited my passion for coding, leading me to explore HTML,
+            CSS, and JavaScript in depth.
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "var(--ff-medium)",
+            }}
+          >
+            Fast-forward to today, and I’ve had the privilege of working at a
+            telecom company, a start-up and a huge corporation. My main focus
+            these days is building accessible, inclusive products and digital
+            experiences at{" "}
+            <Typography
+              component="span"
               sx={{
                 color: "var(--primary-dark)",
               }}
             >
-              Mohamed Aasif
+              Reach Mobile
+            </Typography>{" "}
+            for a variety of clients.
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "var(--ff-medium)",
+            }}
+          >
+            Here are a few technologies I’ve been working with recently:
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "36px",
+            }}
+          >
+            <Box>
+              {skills.slice(0, 3).map((list: string, id: number) => (
+                <Box
+                  key={id}
+                  sx={{
+                    color: darkTheme ? "var(--text-grey-500)" : "inherit",
+                    fontFamily: "var(--ff-medium)",
+                    fontSize: "14px",
+                    mb: "24px",
+                    position: "relative",
+                    paddingLeft: "30px",
+                    "&::before": {
+                      content: '"▹"',
+                      position: "absolute",
+                      left: "0px",
+                      color: "var(--primary-main)",
+                    },
+                  }}
+                >
+                  {list}
+                </Box>
+              ))}
             </Box>
-            , a passionate Full Stack Developer with a knack for turning ideas
-            into dynamic web applications. With a solid foundation in both
-            front-end and back-end technologies, I love building seamless user
-            experiences and scalable systems. I thrive in collaborative
-            environments and am always eager to learn new technologies and
-            methodologies.
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "var(--ff-medium)",
-            }}
-          >
-            My journey in tech began with a simple curiosity about how websites
-            are built. In college, I created a blog to share my thoughts on
-            video games and quickly became fascinated by the code behind it.
-            That initial project ignited my passion for coding, leading me to
-            explore HTML, CSS, and JavaScript in depth. Since then, I’ve worked
-            on various projects, including a personal portfolio and an
-            e-commerce website, which have fueled my drive to continuously
-            improve and innovate.
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "var(--ff-medium)",
-            }}
-          >
-            I’m excited to connect with fellow developers, share knowledge, and
-            tackle new challenges together.
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "var(--ff-medium)",
-            }}
-          >
-            Let’s build something amazing!
-          </Typography>
+            <Box>
+              {skills.slice(3, 6).map((list: string, id: number) => (
+                <Box
+                  key={id}
+                  sx={{
+                    color: darkTheme ? "var(--text-grey-500)" : "inherit",
+                    fontFamily: "var(--ff-medium)",
+                    fontSize: "14px",
+                    mb: "24px",
+                    position: "relative",
+                    paddingLeft: "30px",
+                    "&::before": {
+                      content: '"▹"',
+                      position: "absolute",
+                      left: "0px",
+                      color: "var(--primary-main)",
+                    },
+                  }}
+                >
+                  {list}
+                </Box>
+              ))}
+            </Box>
+          </Box>
         </Box>
         <Box
           component="img"

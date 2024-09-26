@@ -51,3 +51,27 @@ export const experienceInDetails: any = {
     "Attended daily standups meetings to discuss project roadblocks, status updates, and solutions and consistently achieved the project milestones.",
   ],
 };
+
+export const projectDesc: any = [
+  {
+    name: "Telecom Web App",
+    desc: "A web app to provide wireless communication services, leveraging existing networks (typically Verizon’s network) to deliver coverage and connectivity. It offers a variety of plans, often including options for unlimited talk and text, as well as data packages that can be customized based on user needs.",
+    skills: ["React", "Redux", "TypeScript", "Axios", "Material UI"],
+    gitLink: "",
+    webLink: "https://www.reachmobile.com/",
+  },
+  {
+    name: "OTT Hybrid Application",
+    desc: "Developed a robust OTT hybrid application designed to deliver streaming media content across multiple platforms, including iOS, Android, and web. The application provides users with a seamless viewing experience, offering features such as live TV, on-demand content, and personalized recommendations.",
+    skills: ["React", "Redux", "Video.js", "TypeScript", "Axios"],
+    gitLink: "",
+    webLink: "",
+  },
+  {
+    name: "Gal(e)re Web App",
+    desc: "The Private Gallery Web App allows users to securely upload, store, and manage their images in a private online gallery. Users can create personalized galleries that are accessible only to them, ensuring their images remain confidential and protected.",
+    skills: ["React", "Express", "Node.js", "MySql"],
+    gitLink: "https://github.com/mohamedaasif/gal-e-re",
+    webLink: "",
+  },
+];
