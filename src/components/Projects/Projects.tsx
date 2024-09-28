@@ -7,11 +7,13 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import EastIcon from "@mui/icons-material/East";
 import { redirectLinkHandler } from "../../utils/resuableFunctions";
+import { ProjectsProps } from "../../utils/typeInterface";
 
-const Projects = () => {
+const Projects = (props: ProjectsProps) => {
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
     ThemeContext
   );
+  const { setIsArchiveProjects } = props;
 
   return (
     <Box
@@ -19,7 +21,6 @@ const Projects = () => {
         width: "65%",
         margin: "0 auto",
         pb: "120px",
-        // height: "calc(100vh - 60px)",
       }}
     >
       <Box
@@ -163,6 +164,7 @@ const Projects = () => {
           gap: "10px",
           cursor: "pointer",
         }}
+        onClick={() => setIsArchiveProjects(true)}
       >
         View All Projects
         <EastIcon />

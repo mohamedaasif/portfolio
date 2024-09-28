@@ -8,7 +8,7 @@ export interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [darkTheme, setDarkTheme] = useState<boolean>(false);
+  const [darkTheme, setDarkTheme] = useState<boolean>(true);
 
   const toggleTheme = () => {
     setDarkTheme((prevTheme) => !prevTheme);
