@@ -85,7 +85,17 @@ const ArchiveProjects = (props: ProjectsProps) => {
             </TableHead>
             <TableBody>
               {archiveProjectDetails.map((row: any, idx: number) => (
-                <TableRow key={idx} sx={{ "td, th": { border: 0 } }}>
+                <TableRow
+                  key={idx}
+                  sx={{
+                    "td, th": { border: 0 },
+                    "&:hover": {
+                      background: darkTheme
+                        ? "rgba(250, 250, 250, 0.05)"
+                        : "rgba(236, 236, 236, 0.5)",
+                    },
+                  }}
+                >
                   <TableCell
                     component="th"
                     scope="row"

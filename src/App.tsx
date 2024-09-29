@@ -9,6 +9,7 @@ import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import ArchiveProjects from "./components/Projects/ArchiveProjects";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
@@ -29,6 +30,7 @@ function App() {
       ) : (
         <ArchiveProjects setIsArchiveProjects={setIsArchiveProjects} />
       )}
+      <Footer darkTheme={darkTheme} />
     </Box>
   );
 }

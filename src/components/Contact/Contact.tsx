@@ -98,15 +98,6 @@ const Contact = () => {
           />
         </Box>
       </Box>
-      <Box
-        sx={{
-          color: darkTheme ? "var(--text-grey-500)" : "inherit",
-          fontFamily: "var(--ff-medium)",
-          fontSize: "14px",
-        }}
-      >
-        Design & Built by Mohamed Aasif
-      </Box>
     </Box>
   );
 };
