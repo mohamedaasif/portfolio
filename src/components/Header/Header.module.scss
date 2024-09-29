@@ -10,4 +10,7 @@
       color: var(--primary-dark);
     }
   }
+  .active {
+    color: var(--primary-dark) !important;
+  }
 }

@@ -6,10 +6,29 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import { useContext } from "react";
 import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 
-const Header = () => {
+interface HeaderProps {
+  activeSection: any;
+  scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
+  homeRef: React.RefObject<HTMLDivElement>;
+  aboutRef: React.RefObject<HTMLDivElement>;
+  experienceRef: React.RefObject<HTMLDivElement>;
+  projectRef: React.RefObject<HTMLDivElement>;
+  contactRef: React.RefObject<HTMLDivElement>;
+}
+
+const Header = (props: HeaderProps) => {
   const { darkTheme, toggleTheme }: any = useContext<
     ThemeContextType | undefined
   >(ThemeContext);
+  const {
+    activeSection,
+    scrollToSection,
+    homeRef,
+    aboutRef,
+    experienceRef,
+    projectRef,
+    contactRef,
+  } = props;
   return (
     <Box
       sx={{
@@ -40,10 +59,38 @@ const Header = () => {
           gap: "30px",
         }}
       >
-        <Box className={styles.headerLink}>Home</Box>
-        <Box className={styles.headerLink}>About</Box>
-        <Box className={styles.headerLink}>Experience</Box>
-        <Box className={styles.headerLink}>Projects</Box>
+        <Box
+          className={`${styles.headerLink} ${
+            activeSection === homeRef.current ? styles.active : ""
+          }`}
+          onClick={() => scrollToSection(homeRef)}
+        >
+          Home
+        </Box>
+        <Box
+          className={`${styles.headerLink} ${
+            activeSection === aboutRef.current ? styles.active : ""
+          }`}
+          onClick={() => scrollToSection(aboutRef)}
+        >
+          About
+        </Box>
+        <Box
+          className={`${styles.headerLink} ${
+            activeSection === experienceRef.current ? styles.active : ""
+          }`}
+          onClick={() => scrollToSection(experienceRef)}
+        >
+          Experience
+        </Box>
+        <Box
+          className={`${styles.headerLink} ${
+            activeSection === projectRef.current ? styles.active : ""
+          }`}
+          onClick={() => scrollToSection(projectRef)}
+        >
+          Projects
+        </Box>
         <Box className={styles.headerLink}>Blog</Box>
       </Box>
       <Box
@@ -54,7 +101,9 @@ const Header = () => {
         }}
       >
         <Box
-          className={styles.headerLink}
+          className={`${styles.headerLink} ${
+            activeSection === contactRef.current ? styles.active : ""
+          }`}
           sx={{
             border: darkTheme
               ? "2px solid var(--text-grey-800)"
@@ -62,6 +111,7 @@ const Header = () => {
             padding: "5px 10px",
             borderRadius: "8px",
           }}
+          onClick={() => scrollToSection(contactRef)}
         >
           Say Hello
         </Box>

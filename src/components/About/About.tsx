@@ -4,12 +4,17 @@ import { skills } from "../../utils/globalValues";
 import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 import { useContext } from "react";
 
-const About = () => {
+interface AboutProps {
+  aboutRef: React.RefObject<HTMLDivElement | null>;
+}
+
+const About = (props: AboutProps) => {
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
     ThemeContext
   );
   return (
     <Box
+      ref={props?.aboutRef}
       sx={{
         width: "75%",
         margin: "0 auto",

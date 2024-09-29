@@ -2,9 +2,13 @@ import { Box, Typography } from "@mui/material";
 import styles from "./Home.module.scss";
 import avatar from "../../assets/avatar-rbg.png";
 
-const Home = () => {
+interface HomeProps {
+  homeRef: React.RefObject<HTMLDivElement | null>;
+}
+
+const Home = (props: HomeProps) => {
   return (
-    <Box className={styles.homeContainer}>
+    <Box className={styles.homeContainer} ref={props?.homeRef}>
       <Box
         sx={{
           textAlign: "center",

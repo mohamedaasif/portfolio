@@ -1,7 +1,5 @@
 import { Box } from "@mui/material";
 import img from "../../assets/mcc.png";
-import { useContext } from "react";
-import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 import { projectDesc } from "../../utils/globalValues";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -10,13 +8,11 @@ import { redirectLinkHandler } from "../../utils/resuableFunctions";
 import { ProjectsProps } from "../../utils/typeInterface";
 
 const Projects = (props: ProjectsProps) => {
-  const { darkTheme }: any = useContext<ThemeContextType | undefined>(
-    ThemeContext
-  );
-  const { setIsArchiveProjects } = props;
+  const { setIsArchiveProjects, projectRef } = props;
 
   return (
     <Box
+      ref={projectRef}
       sx={{
         width: "65%",
         margin: "0 auto",

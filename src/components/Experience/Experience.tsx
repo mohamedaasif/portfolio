@@ -7,13 +7,18 @@ import {
 } from "../../utils/globalValues";
 import { useContext, useState } from "react";
 import { ThemeContext, ThemeContextType } from "../../ThemeContext";
-const Experience = () => {
+
+interface ExperienceProps {
+  experienceRef: React.RefObject<HTMLDivElement | null>;
+}
+const Experience = (props: ExperienceProps) => {
   const [selectItem, setSelectItem] = useState<string>(experience[0]);
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
     ThemeContext
   );
   return (
     <Box
+      ref={props?.experienceRef}
       sx={{
         width: "50%",
         margin: "0 auto",

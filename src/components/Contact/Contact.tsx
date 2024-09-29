@@ -7,12 +7,14 @@ import { openEmail, redirectLinkHandler } from "../../utils/resuableFunctions";
 import { useContext } from "react";
 import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 
-const Contact = () => {
-  const { darkTheme }: any = useContext<ThemeContextType | undefined>(
-    ThemeContext
-  );
+interface ContactProps {
+  contactRef: React.RefObject<HTMLDivElement | null>;
+}
+
+const Contact = (props: ContactProps) => {
   return (
     <Box
+      ref={props.contactRef}
       sx={{
         height: "calc(100vh - 60px)",
         display: "flex",
