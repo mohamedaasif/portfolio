@@ -16,7 +16,6 @@ const Projects = (props: ProjectsProps) => {
       sx={{
         width: "65%",
         margin: "0 auto",
-        pb: "120px",
       }}
     >
       <Box
