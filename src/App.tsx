@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import Header from "./components/Header/Header";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext, ThemeContextType } from "./ThemeContext";
 import styles from "./App.module.scss";
 import Home from "./components/Home/Home";
@@ -23,8 +23,10 @@ function App() {
   const projectRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
   const [activeSection, setActiveSection] = useState<any>("");
+  const [scrollingByUser, setScrollingByUser] = useState<boolean>(true);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    setScrollingByUser(false);
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
 
@@ -38,7 +40,41 @@ function App() {
       });
       setActiveSection(ref.current);
     }
+    setTimeout(() => {
+      setScrollingByUser(true);
+    }, 1000);
   };
+
+  const sections = [
+    { ref: homeRef },
+    { ref: aboutRef },
+    { ref: experienceRef },
+    { ref: projectRef },
+    { ref: contactRef },
+  ];
+
+  const handleScroll = () => {
+    if (!scrollingByUser) return;
+    const scrollPosition = window.scrollY + 140;
+    sections.forEach(({ ref }) => {
+      if (ref.current) {
+        const sectionTop = ref.current.offsetTop;
+        const sectionBottom = sectionTop + ref.current.clientHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          setActiveSection(ref.current);
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollingByUser]);
 
   return (
     <Box className={darkTheme ? styles.darkMode : styles.lightMode}>

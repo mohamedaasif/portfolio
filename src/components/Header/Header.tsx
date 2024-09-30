@@ -91,7 +91,7 @@ const Header = (props: HeaderProps) => {
         >
           Projects
         </Box>
-        <Box className={styles.headerLink}>Blog</Box>
+        {/* <Box className={styles.headerLink}>Blog</Box> */}
       </Box>
       <Box
         sx={{
