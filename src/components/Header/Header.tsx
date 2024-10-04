@@ -36,7 +36,7 @@ const Header = (props: HeaderProps) => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "0px 190px",
+        padding: { xs: "0px 10px", md: "0px 190px" },
         borderBottom: darkTheme
           ? "2px solid var(--text-primary)"
           : "2px solid var(--grey-color)",
@@ -58,6 +58,7 @@ const Header = (props: HeaderProps) => {
           display: "flex",
           gap: "30px",
         }}
+        className={styles.headerPrimayItem}
       >
         <Box
           className={`${styles.headerLink} ${

@@ -6,4 +6,9 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  @media screen and (max-width: 600px) {
+    height: auto;
+    width: 95%;
+    margin: 100px auto;
+  }
 }

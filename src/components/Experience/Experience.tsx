@@ -20,15 +20,15 @@ const Experience = (props: ExperienceProps) => {
     <Box
       ref={props?.experienceRef}
       sx={{
-        width: "50%",
-        margin: "0 auto",
+        width: { xs: "95%", md: "50%" },
+        margin: { xs: "100px auto", md: "0 auto" },
         mb: "80px",
-        height: "calc(100vh - 60px)",
+        height: { xs: "auto", md: "calc(100vh - 60px)" },
       }}
     >
       <Box
         sx={{
-          fontSize: "32px",
+          fontSize: { xs: "24px", md: "32px" },
           fontFamily: "var(--ff-bold)",
           color: "var(--primary-main)",
           mb: "36px",
@@ -40,26 +40,49 @@ const Experience = (props: ExperienceProps) => {
         <Box
           sx={{
             display: "flex",
+            flexDirection: { xs: "column", md: "row" },
             gap: "30px",
           }}
         >
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "row", md: "column" },
+              overflowX: { xs: "auto", md: "unset" },
+            }}
+          >
             {experience.map((data: string, idx: number) => (
               <Box
                 onClick={() => setSelectItem(data)}
                 key={idx}
                 sx={{
                   width: "120px",
-                  padding: "15px 30px",
+                  textAlign: "center",
+                  padding: {
+                    xs: "15px 10px",
+                    sm: "15px 30px",
+                  },
                   cursor: "pointer",
-                  fontSize: "16px",
+                  fontSize: { xs: "14px", sm: "16px" },
                   fontFamily: "var(--ff-medium)",
-                  borderLeft:
-                    data === selectItem
-                      ? "2px solid var(--primary-dark)"
-                      : darkTheme
-                      ? "2px solid var(--text-grey-800)"
-                      : "2px solid var(--grey-color-dark)",
+                  borderLeft: {
+                    xs: "none",
+                    md:
+                      data === selectItem
+                        ? "2px solid var(--primary-dark)"
+                        : darkTheme
+                        ? "2px solid var(--text-grey-800)"
+                        : "2px solid var(--grey-color-dark)",
+                  },
+                  borderBottom: {
+                    xs:
+                      data === selectItem
+                        ? "2px solid var(--primary-dark)"
+                        : darkTheme
+                        ? "2px solid var(--text-grey-800)"
+                        : "2px solid var(--grey-color-dark)",
+                    md: "none",
+                  },
                   color:
                     data === selectItem ? "var(--primary-dark)" : "inherit",
                   "&:hover": {

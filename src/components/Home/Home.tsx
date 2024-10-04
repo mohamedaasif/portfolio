@@ -18,7 +18,7 @@ const Home = (props: HomeProps) => {
           sx={{
             color: "var(--primary-main)",
             fontFamily: "var(--ff-bold)",
-            fontSize: "36px",
+            fontSize: { xs: "24px", md: "36px" },
             mb: "24px",
           }}
         >
@@ -28,7 +28,7 @@ const Home = (props: HomeProps) => {
           sx={{
             color: "var(--text-grey-500)",
             fontFamily: "var(--ff-medium)",
-            fontSize: "18px",
+            fontSize: { xs: "16px", md: "18px" },
             mb: "24px ",
           }}
         >

@@ -14,13 +14,13 @@ const Projects = (props: ProjectsProps) => {
     <Box
       ref={projectRef}
       sx={{
-        width: "65%",
+        width: { xs: "95%", md: "65%" },
         margin: "0 auto",
       }}
     >
       <Box
         sx={{
-          fontSize: "32px",
+          fontSize: { xs: "24px", md: "32px" },
           fontFamily: "var(--ff-bold)",
           color: "var(--primary-main)",
           mb: "36px",
@@ -57,8 +57,9 @@ const Projects = (props: ProjectsProps) => {
             />
             <Box
               sx={{
-                background: "var(--primary-light)",
-                opacity: "0.5",
+                backgroundColor: "rgba(0,0,0,0.95)",
+                // background: "var(--primary-light)",
+                // opacity: "0.5",
                 width: "100%",
                 height: "100%",
                 position: "absolute",
@@ -74,20 +75,22 @@ const Projects = (props: ProjectsProps) => {
           </Box>
           <Box
             sx={{
-              width: "500px",
+              width: { xs: "95%", md: "500px" },
               position: "absolute",
               top: "50%",
-              right: (idx + 1) % 2 === 0 ? "unset" : "0%",
-              left: (idx + 1) % 2 === 0 ? "0%" : "unset",
+              right: { xs: "unset", md: (idx + 1) % 2 === 0 ? "unset" : "0%" },
+              left: { xs: "unset", md: (idx + 1) % 2 === 0 ? "0%" : "unset" },
               transform: "translate(0%, -50%)",
-              textAlign: (idx + 1) % 2 === 0 ? "left" : "right",
-              //   p: "24px",
+              textAlign: {
+                xs: "left",
+                md: (idx + 1) % 2 === 0 ? "left" : "right",
+              },
             }}
           >
             <Box
               sx={{
                 pb: "24px",
-                fontSize: "24px",
+                fontSize: { xs: "18px", sm: "24px" },
                 fontWeight: "var(--ff-bold)",
                 color: "var(--primary-main)",
               }}
@@ -97,8 +100,8 @@ const Projects = (props: ProjectsProps) => {
             <Box
               sx={{
                 mb: "24px",
-                background: "var(--text-grey-800)",
-                p: "24px",
+                background: { xs: "none", md: "var(--text-grey-800)" },
+                p: { xs: "0px", md: "24px" },
                 borderRadius: "4px",
                 color: "var(--white)",
               }}
@@ -108,7 +111,11 @@ const Projects = (props: ProjectsProps) => {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: (idx + 1) % 2 === 0 ? "flex-start" : "flex-end",
+                justifyContent: {
+                  xs: "flex-start",
+                  md: (idx + 1) % 2 === 0 ? "flex-start" : "flex-end",
+                },
+                flexWrap: "wrap",
                 gap: "24px",
                 mb: "24px",
               }}
@@ -127,7 +134,10 @@ const Projects = (props: ProjectsProps) => {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: (idx + 1) % 2 === 0 ? "flex-start" : "flex-end",
+                justifyContent: {
+                  xs: "flex-start",
+                  md: (idx + 1) % 2 === 0 ? "flex-start" : "flex-end",
+                },
                 gap: "24px",
                 color: "var(--primary-main)",
                 cursor: "pointer",

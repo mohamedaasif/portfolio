@@ -27,7 +27,7 @@ const ArchiveProjects = (props: ProjectsProps) => {
   return (
     <Box
       sx={{
-        width: "75%",
+        width: { xs: "95%", md: "75%" },
         margin: "0px auto",
         p: "100px 0px",
       }}

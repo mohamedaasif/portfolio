@@ -16,14 +16,14 @@ const About = (props: AboutProps) => {
     <Box
       ref={props?.aboutRef}
       sx={{
-        width: "75%",
+        width: { xs: "95%", md: "75%" },
         margin: "0 auto",
-        height: "calc(100vh - 60px)",
+        height: { xs: "auto", md: "calc(100vh - 60px)" },
       }}
     >
       <Box
         sx={{
-          fontSize: "32px",
+          fontSize: { xs: "24px", md: "32px" },
           fontFamily: "var(--ff-bold)",
           color: "var(--primary-main)",
           mb: "24px",
@@ -34,7 +34,8 @@ const About = (props: AboutProps) => {
       <Box
         sx={{
           display: "flex",
-          gap: "120px",
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: "60px", md: "120px" },
         }}
       >
         <Box

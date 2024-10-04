@@ -13,4 +13,9 @@
   .active {
     color: var(--primary-dark) !important;
   }
+  .headerPrimayItem {
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
 }

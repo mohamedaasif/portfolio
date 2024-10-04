@@ -16,7 +16,7 @@ const Contact = (props: ContactProps) => {
     <Box
       ref={props.contactRef}
       sx={{
-        height: "calc(100vh - 60px)",
+        height: { xs: "auto", md: "calc(100vh - 60px)" },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -25,8 +25,8 @@ const Contact = (props: ContactProps) => {
     >
       <Box
         sx={{
-          width: "45%",
-          margin: "0 auto",
+          width: { xs: "95%", md: "45%" },
+          margin: { xs: "100px auto", md: "0 auto" },
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -35,7 +35,7 @@ const Contact = (props: ContactProps) => {
       >
         <Box
           sx={{
-            fontSize: "32px",
+            fontSize: { xs: "24px", md: "32px" },
             fontFamily: "var(--ff-bold)",
             color: "var(--primary-main)",
             mb: "24px",
@@ -66,6 +66,7 @@ const Contact = (props: ContactProps) => {
         <Box
           sx={{
             mb: "24px",
+            textAlign: "center",
           }}
         >
           Feel free to reach out if you’d like to collaborate or chat!
