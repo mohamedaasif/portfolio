@@ -1,10 +1,14 @@
 .homeContainer {
-  height: calc(100vh - 64px);
+  height: calc(100vh - 60px);
+  width: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 200px;
-  .imgContainer {
+  margin: 0 auto;
+  @media screen and (max-width: 600px) {
+    height: auto;
+    width: 95%;
+    margin: 100px auto;
   }
 }

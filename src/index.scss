@@ -13,13 +13,14 @@
   --ff-regular: "DMSans-Regular";
   --ff-medium: "DMSans-Medium";
   --ff-bold: "DMSans-Bold";
-  --white: #fff;
+  --white: #fdfffc;
   --black: #000;
 }
 
 body {
   margin: 0;
   font-family: var(--ff-medium);
+  color: var(--text-color);
   @font-face {
     font-family: "DMSans-Black";
     src: url("./assets/fonts/DMSans-Black.ttf") format("trueType");

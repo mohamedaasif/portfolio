@@ -1,10 +1,21 @@
 .headerContainer {
+  position: sticky;
+  top: 0;
+  z-index: 999;
   .headerLink {
     font-family: var(--ff-bold);
     font-size: 14px;
     cursor: pointer;
     &:hover {
       color: var(--primary-dark);
+    }
+  }
+  .active {
+    color: var(--primary-dark) !important;
+  }
+  .headerPrimayItem {
+    @media screen and (max-width: 600px) {
+      display: none;
     }
   }
 }
