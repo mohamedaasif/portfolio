@@ -5,6 +5,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { useContext } from "react";
 import { ThemeContext, ThemeContextType } from "../../ThemeContext";
+import avatar from "../../assets/avatar-rbg.png";
 
 interface HeaderProps {
   activeSection: any;
@@ -49,8 +50,18 @@ const Header = (props: HeaderProps) => {
           fontFamily: "var(--ff-black)",
           color: "var(--primary-main)",
           fontSize: "16px",
+          display: "flex",
+          alignItems: "center",
         }}
       >
+        <Box
+          component="img"
+          className={styles.img}
+          src={avatar}
+          alt="avatar"
+          width="38px"
+          height="38px"
+        />
         Mohamed Aasif
       </Box>
       <Box

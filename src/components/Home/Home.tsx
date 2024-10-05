@@ -1,12 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import styles from "./Home.module.scss";
-import avatar from "../../assets/avatar-rbg.png";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 interface HomeProps {
   homeRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const Home = (props: HomeProps) => {
+  const handleViewPdf = () => {
+    const pdfUrl = "/mohamed-aasif-frontend-developer.pdf";
+    window.open(pdfUrl, "_blank");
+  };
   return (
     <Box className={styles.homeContainer} ref={props?.homeRef}>
       <Box
@@ -29,7 +33,7 @@ const Home = (props: HomeProps) => {
             color: "var(--text-grey-500)",
             fontFamily: "var(--ff-medium)",
             fontSize: { xs: "16px", md: "18px" },
-            mb: "24px ",
+            mb: "48px ",
           }}
         >
           Welcome to my portfolio! I am a passionate Full Stack Developer with
@@ -42,15 +46,32 @@ const Home = (props: HomeProps) => {
           scalable solutions that meet client needs. Explore my projects to see
           how I can help bring your ideas to life!
         </Typography>
+        <Box
+          sx={{
+            margin: "0 auto",
+            background: "var(--primary-main)",
+            width: "fit-content",
+            padding: "8px 16px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontFamily: "var(--ff-bold)",
+            fontSize: "16px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "8px",
+            color: "var(--white)",
+          }}
+          onClick={handleViewPdf}
+        >
+          Download Resume
+          <FileDownloadIcon
+            sx={{
+              fontSize: "18px",
+            }}
+          />
+        </Box>
       </Box>
-      <Box
-        component="img"
-        className={styles.img}
-        src={avatar}
-        alt="avatar"
-        width="200x"
-        height="200px"
-      />
     </Box>
   );
 };
