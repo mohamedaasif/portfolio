@@ -1,5 +1,7 @@
 import { Box } from "@mui/material";
-import img from "../../assets/mcc.png";
+import img1 from "../../assets/matrix.png";
+import img2 from "../../assets/ott.png.png";
+import img3 from "../../assets/galere_project.png";
 import { projectDesc } from "../../utils/globalValues";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -48,29 +50,14 @@ const Projects = (props: ProjectsProps) => {
           >
             <Box
               component="img"
-              src={img}
+              src={idx === 0 ? img1 : idx === 1 ? img2 : img3}
               alt="avatar"
               sx={{
-                borderRadius: "4px",
+                borderRadius: "16px",
                 zIndex: "0",
               }}
-            />
-            <Box
-              sx={{
-                backgroundColor: "rgba(0,0,0,0.95)",
-                // background: "var(--primary-light)",
-                // opacity: "0.5",
-                width: "100%",
-                height: "100%",
-                position: "absolute",
-                top: "0",
-                left: "0",
-                borderRadius: "4px",
-                "&:hover": {
-                  background: " var(--primary-light)",
-                  opacity: "0.05",
-                },
-              }}
+              width={"580px"}
+              height={"380px"}
             />
           </Box>
           <Box
