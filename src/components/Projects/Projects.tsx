@@ -6,20 +6,22 @@ import { projectDesc } from "../../utils/globalValues";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import EastIcon from "@mui/icons-material/East";
-import {
-  getResolutionDetails,
-  redirectLinkHandler,
-} from "../../utils/resuableFunctions";
+import { redirectLinkHandler } from "../../utils/resuableFunctions";
 import { ProjectsProps } from "../../utils/typeInterface";
 import { useContext } from "react";
 import { ThemeContext, ThemeContextType } from "../../ThemeContext";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const Projects = (props: ProjectsProps) => {
   const { setIsArchiveProjects, projectRef } = props;
-  const { mobile, ipad } = getResolutionDetails();
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
     ThemeContext
   );
+  const theme = useTheme();
+  // const largeDesktop = useMediaQuery(theme.breakpoints.up("lg"));
+  // const desktop = useMediaQuery(theme.breakpoints.between("md", "lg"));
+  const ipad = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       ref={projectRef}
