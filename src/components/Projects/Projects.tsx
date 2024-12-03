@@ -6,12 +6,20 @@ import { projectDesc } from "../../utils/globalValues";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import EastIcon from "@mui/icons-material/East";
-import { redirectLinkHandler } from "../../utils/resuableFunctions";
+import {
+  getResolutionDetails,
+  redirectLinkHandler,
+} from "../../utils/resuableFunctions";
 import { ProjectsProps } from "../../utils/typeInterface";
+import { useContext } from "react";
+import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 
 const Projects = (props: ProjectsProps) => {
   const { setIsArchiveProjects, projectRef } = props;
-
+  const { mobile, ipad } = getResolutionDetails();
+  const { darkTheme }: any = useContext<ThemeContextType | undefined>(
+    ThemeContext
+  );
   return (
     <Box
       ref={projectRef}
@@ -35,39 +43,50 @@ const Projects = (props: ProjectsProps) => {
           key={data.name + idx}
           sx={{
             display: "flex",
-            flexDirection: (idx + 1) % 2 === 0 ? "row-reverse" : "row",
+            flexDirection:
+              (idx + 1) % 2 === 0 && !mobile && !ipad ? "row-reverse" : "row",
             position: "relative",
-            mb: "100px",
+            mb: { xs: "50px", sm: "100px" },
+            background: {
+              xs: darkTheme
+                ? "rgba(250, 250, 250, 0.05)"
+                : "rgba(236, 236, 236, 0.5)",
+              md: "none",
+            },
+            p: { xs: "30px 15px", md: "0" },
+            borderRadius: { xs: "4px", md: "0" },
           }}
         >
-          <Box
-            sx={{
-              position: "relative",
-              width: "fit-content",
-              height: "fit-content",
-              overflow: "hidden",
-            }}
-          >
+          {!mobile && !ipad && (
             <Box
-              component="img"
-              src={idx === 0 ? img1 : idx === 1 ? img2 : img3}
-              alt="avatar"
               sx={{
-                borderRadius: "16px",
-                zIndex: "0",
+                position: "relative",
+                width: "fit-content",
+                height: "fit-content",
+                overflow: "hidden",
               }}
-              width={"580px"}
-              height={"380px"}
-            />
-          </Box>
+            >
+              <Box
+                component="img"
+                src={idx === 0 ? img1 : idx === 1 ? img2 : img3}
+                alt="avatar"
+                sx={{
+                  borderRadius: "16px",
+                  zIndex: "0",
+                }}
+                width={"580px"}
+                height={"380px"}
+              />
+            </Box>
+          )}
           <Box
             sx={{
               width: { xs: "95%", md: "500px" },
-              position: "absolute",
-              top: "50%",
+              position: !mobile && !ipad ? "absolute" : "unset",
+              top: !mobile && !ipad ? "50%" : "0",
               right: { xs: "unset", md: (idx + 1) % 2 === 0 ? "unset" : "0%" },
               left: { xs: "unset", md: (idx + 1) % 2 === 0 ? "0%" : "unset" },
-              transform: "translate(0%, -50%)",
+              transform: !mobile && !ipad ? "translate(0%, -50%)" : "unset",
               textAlign: {
                 xs: "left",
                 md: (idx + 1) % 2 === 0 ? "left" : "right",
@@ -90,7 +109,9 @@ const Projects = (props: ProjectsProps) => {
                 background: { xs: "none", md: "var(--text-grey-800)" },
                 p: { xs: "0px", md: "24px" },
                 borderRadius: "4px",
-                color: "var(--white)",
+                color: darkTheme
+                  ? "var(--white)"
+                  : { xs: "var(--black)", md: "var(--white)" },
               }}
             >
               {data.desc}
