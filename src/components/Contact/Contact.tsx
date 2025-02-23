@@ -16,17 +16,17 @@ const Contact = (props: ContactProps) => {
     <Box
       ref={props.contactRef}
       sx={{
-        height: { xs: "auto", md: "calc(100vh - 60px)" },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-around",
+        margin: "120px auto",
       }}
     >
       <Box
         sx={{
-          width: { xs: "95%", md: "45%" },
-          margin: { xs: "100px auto", md: "0 auto" },
+          width: { xs: "95%", sm: "65%", lg: "45%" },
+          margin: "0 auto",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

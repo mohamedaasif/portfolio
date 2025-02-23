@@ -26,7 +26,7 @@ const Projects = (props: ProjectsProps) => {
     <Box
       ref={projectRef}
       sx={{
-        width: { xs: "95%", md: "65%" },
+        width: { xs: "95%", md: "75%" },
         margin: "0 auto",
       }}
     >
@@ -48,7 +48,7 @@ const Projects = (props: ProjectsProps) => {
             flexDirection:
               (idx + 1) % 2 === 0 && !mobile && !ipad ? "row-reverse" : "row",
             position: "relative",
-            mb: { xs: "50px", sm: "100px" },
+            mb: { xs: "50px", sm: "120px" },
             background: {
               xs: darkTheme
                 ? "rgba(250, 250, 250, 0.05)"
