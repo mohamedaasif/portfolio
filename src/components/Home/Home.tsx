@@ -9,7 +9,11 @@ interface HomeProps {
 const Home = (props: HomeProps) => {
   const handleViewPdf = () => {
     const pdfUrl = "/mohamed-aasif-frontend-developer.pdf";
-    window.open(pdfUrl, "_blank");
+
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "mohamed-aasif-frontend-developer.pdf";
+    link.click();
   };
   return (
     <Box className={styles.homeContainer} ref={props?.homeRef}>
