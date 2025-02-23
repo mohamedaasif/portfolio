@@ -66,6 +66,8 @@ const Projects = (props: ProjectsProps) => {
                 width: "fit-content",
                 height: "fit-content",
                 overflow: "hidden",
+                backgroundColor: "var(--background-color-dark)",
+                borderRadius: "8px",
               }}
             >
               <Box
@@ -73,8 +75,8 @@ const Projects = (props: ProjectsProps) => {
                 src={idx === 0 ? img1 : idx === 1 ? img2 : img3}
                 alt="avatar"
                 sx={{
-                  borderRadius: "16px",
                   zIndex: "0",
+                  padding: "10px 10px 7px",
                 }}
                 width={"580px"}
                 height={"380px"}
