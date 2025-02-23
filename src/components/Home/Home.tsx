@@ -8,7 +8,8 @@ interface HomeProps {
 
 const Home = (props: HomeProps) => {
   const handleViewPdf = () => {
-    const pdfUrl = "/mohamed-aasif-frontend-developer.pdf";
+    const pdfUrl =
+      "https://mohamedaasif.github.io/portfolio/mohamed-aasif-frontend-developer.pdf";
 
     const link = document.createElement("a");
     link.href = pdfUrl;

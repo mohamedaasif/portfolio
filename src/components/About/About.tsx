@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import img from "../../assets/gif.gif";
+import img from "../../assets/about2.png";
 import { skills } from "../../utils/globalValues";
 import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 import { useContext } from "react";
@@ -16,7 +16,7 @@ const About = (props: AboutProps) => {
     <Box
       ref={props?.aboutRef}
       sx={{
-        width: { xs: "95%", md: "75%" },
+        width: { xs: "95%", sm: "75%" },
         margin: "0 auto",
       }}
     >
@@ -33,7 +33,8 @@ const About = (props: AboutProps) => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", lg: "row" },
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: { sm: "center", md: "unset" },
           gap: { xs: "60px", lg: "120px" },
         }}
       >
@@ -139,7 +140,7 @@ const About = (props: AboutProps) => {
           component="img"
           src={img}
           alt="avatar"
-          width="300x"
+          width={{ xs: "100%", sm: "300px" }}
           height="300px"
         />
       </Box>
