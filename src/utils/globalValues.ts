@@ -35,7 +35,7 @@ export const experienceInDetails: any = {
     "Significantly enhanced web traffic by 125% through strategic improvements in navigation, integration of social media plugins, and implementation of advanced SEO techniques.",
     "Led a team of 3+ junior developers, providing mentorship to enhance their proficiency in setting and achieving goals, priorities, and deliverables aligned with product milestones.",
     "Conducted 250+ code reviews over the past year and left 100+ comments to help ensure that the code meets quality standards and find bugs.",
-    "Enhanced user experience by implementing responsive design principles; increased mobile traffic by 40% and reduced bounce rates by 25% within three months",
+    "Enhanced user experience by implementing responsive design principles; increased mobile traffic by 40% and reduced bounce rates by 25% within three months.",
   ],
   QuikieApps: [
     "Engineered a cutting-edge hybrid application enabling seamless streaming of video content across 10,000+ internet-connected devices; optimized video delivery, reducing buffering time by 40% and enhancing user experience.",
@@ -77,6 +77,22 @@ export const projectDesc: any = [
 ];
 
 export const archiveProjectDetails: any = [
+  {
+    year: 2025,
+    project: "Lyca Mobile",
+    madeAt: "Reach",
+    builtWith: ["React", "Redux", "TypeScript", "Axios"],
+    gitLink: "",
+    webLink: "",
+  },
+  {
+    year: 2024,
+    project: "Cube Mobile",
+    madeAt: "Reach",
+    builtWith: ["React", "Redux", "TypeScript", "Axios"],
+    gitLink: "",
+    webLink: "",
+  },
   {
     year: 2024,
     project: "Mediacom Mobile",
@@ -183,7 +199,7 @@ export const archiveProjectDetails: any = [
   },
   {
     year: 2019,
-    project: "Kajah Ecopack",
+    project: "Ecopack: Paper baking molds for industries and distributors",
     madeAt: "Zeroes & Ones",
     builtWith: ["Angular", "JavaScript"],
     gitLink: "",

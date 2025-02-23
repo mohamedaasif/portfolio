@@ -37,7 +37,7 @@ const Header = (props: HeaderProps) => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: { xs: "0px 10px", md: "0px 190px" },
+        padding: { xs: "0px 10px", lg: "0px 190px" },
         borderBottom: darkTheme
           ? "2px solid var(--text-primary)"
           : "2px solid var(--grey-color)",

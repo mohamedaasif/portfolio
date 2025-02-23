@@ -55,7 +55,7 @@ function App() {
 
   const handleScroll = () => {
     if (!scrollingByUser) return;
-    const scrollPosition = window.scrollY + 140;
+    const scrollPosition = window.scrollY + 300;
     sections.forEach(({ ref }) => {
       if (ref.current) {
         const sectionTop = ref.current.offsetTop;

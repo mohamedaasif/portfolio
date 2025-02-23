@@ -45,10 +45,18 @@ const Projects = (props: ProjectsProps) => {
           key={data.name + idx}
           sx={{
             display: "flex",
-            flexDirection:
-              (idx + 1) % 2 === 0 && !mobile && !ipad ? "row-reverse" : "row",
-            position: "relative",
-            mb: { xs: "50px", sm: "120px" },
+            flexDirection: {
+              xs: "row",
+              md: "column",
+              lg:
+                (idx + 1) % 2 === 0 && !mobile && !ipad ? "row-reverse" : "row",
+            },
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: {
+              xs: "50px",
+              sm: projectDesc?.length === idx + 1 ? "60px" : "120px",
+            },
             background: {
               xs: darkTheme
                 ? "rgba(250, 250, 250, 0.05)"
@@ -65,7 +73,8 @@ const Projects = (props: ProjectsProps) => {
                 position: "relative",
                 width: "fit-content",
                 height: "fit-content",
-                overflow: "hidden",
+                backgroundColor: "var(--background-color-dark)",
+                borderRadius: "4px",
               }}
             >
               <Box
@@ -73,8 +82,8 @@ const Projects = (props: ProjectsProps) => {
                 src={idx === 0 ? img1 : idx === 1 ? img2 : img3}
                 alt="avatar"
                 sx={{
-                  borderRadius: "16px",
-                  zIndex: "0",
+                  borderRadius: "4px",
+                  padding: "10px 10px 7px",
                 }}
                 width={"580px"}
                 height={"380px"}
@@ -83,12 +92,7 @@ const Projects = (props: ProjectsProps) => {
           )}
           <Box
             sx={{
-              width: { xs: "95%", md: "500px" },
-              position: !mobile && !ipad ? "absolute" : "unset",
-              top: !mobile && !ipad ? "50%" : "0",
-              right: { xs: "unset", md: (idx + 1) % 2 === 0 ? "unset" : "0%" },
-              left: { xs: "unset", md: (idx + 1) % 2 === 0 ? "0%" : "unset" },
-              transform: !mobile && !ipad ? "translate(0%, -50%)" : "unset",
+              width: { xs: "95%", md: "75%", lg: "500px" },
               textAlign: {
                 xs: "left",
                 md: (idx + 1) % 2 === 0 ? "left" : "right",
