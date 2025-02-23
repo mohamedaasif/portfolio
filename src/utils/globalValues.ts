@@ -78,6 +78,22 @@ export const projectDesc: any = [
 
 export const archiveProjectDetails: any = [
   {
+    year: 2025,
+    project: "Lyca Mobile",
+    madeAt: "Reach",
+    builtWith: ["React", "Redux", "TypeScript", "Axios"],
+    gitLink: "",
+    webLink: "",
+  },
+  {
+    year: 2024,
+    project: "Cube Mobile",
+    madeAt: "Reach",
+    builtWith: ["React", "Redux", "TypeScript", "Axios"],
+    gitLink: "",
+    webLink: "",
+  },
+  {
     year: 2024,
     project: "Mediacom Mobile",
     madeAt: "Reach",
@@ -183,7 +199,7 @@ export const archiveProjectDetails: any = [
   },
   {
     year: 2019,
-    project: "Kajah Ecopack",
+    project: "Ecopack: Paper baking molds for industries and distributors",
     madeAt: "Zeroes & Ones",
     builtWith: ["Angular", "JavaScript"],
     gitLink: "",
