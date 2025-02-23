@@ -18,7 +18,6 @@ const About = (props: AboutProps) => {
       sx={{
         width: { xs: "95%", md: "75%" },
         margin: "0 auto",
-        height: { xs: "auto", md: "calc(100vh - 60px)" },
       }}
     >
       <Box
@@ -34,8 +33,8 @@ const About = (props: AboutProps) => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          gap: { xs: "60px", md: "120px" },
+          flexDirection: { xs: "column", lg: "row" },
+          gap: { xs: "60px", lg: "120px" },
         }}
       >
         <Box
