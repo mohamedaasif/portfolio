@@ -53,7 +53,10 @@ const Projects = (props: ProjectsProps) => {
             },
             justifyContent: "space-between",
             alignItems: "center",
-            mb: { xs: "50px", sm: "120px" },
+            mb: {
+              xs: "50px",
+              sm: projectDesc?.length === idx + 1 ? "60px" : "120px",
+            },
             background: {
               xs: darkTheme
                 ? "rgba(250, 250, 250, 0.05)"
