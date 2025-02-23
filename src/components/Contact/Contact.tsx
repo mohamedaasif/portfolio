@@ -36,7 +36,7 @@ const Contact = (props: ContactProps) => {
         <Box
           sx={{
             fontSize: { xs: "24px", md: "32px" },
-            fontFamily: "var(--ff-bold)",
+            fontFamily: "var(--ff-black)",
             color: "var(--primary-main)",
             mb: "24px",
           }}

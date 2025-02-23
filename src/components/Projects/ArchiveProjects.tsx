@@ -56,7 +56,7 @@ const ArchiveProjects = (props: ProjectsProps) => {
       <Box
         sx={{
           fontSize: "32px",
-          fontFamily: "var(--ff-bold)",
+          fontFamily: "var(--ff-black)",
           color: "var(--primary-main)",
           mb: "36px",
         }}

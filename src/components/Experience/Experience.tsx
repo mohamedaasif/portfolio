@@ -27,7 +27,7 @@ const Experience = (props: ExperienceProps) => {
       <Box
         sx={{
           fontSize: { xs: "24px", md: "32px" },
-          fontFamily: "var(--ff-bold)",
+          fontFamily: "var(--ff-black)",
           color: "var(--primary-main)",
           mb: "36px",
         }}
@@ -62,7 +62,7 @@ const Experience = (props: ExperienceProps) => {
                   },
                   cursor: "pointer",
                   fontSize: { xs: "14px", sm: "16px" },
-                  fontFamily: "var(--ff-medium)",
+                  fontFamily: "var(--ff-bold)",
                   borderLeft: {
                     xs: "none",
                     md:
@@ -98,7 +98,7 @@ const Experience = (props: ExperienceProps) => {
             <Box
               sx={{
                 color: "var(--primary-light)",
-                fontFamily: "var(--ff-bold)",
+                fontFamily: "var(--ff-black)",
                 fontSize: "24px",
                 mb: "24px",
               }}

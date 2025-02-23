@@ -33,7 +33,7 @@ const Projects = (props: ProjectsProps) => {
       <Box
         sx={{
           fontSize: { xs: "24px", md: "32px" },
-          fontFamily: "var(--ff-bold)",
+          fontFamily: "var(--ff-black)",
           color: "var(--primary-main)",
           mb: "36px",
         }}
@@ -103,8 +103,8 @@ const Projects = (props: ProjectsProps) => {
               sx={{
                 pb: "24px",
                 fontSize: { xs: "18px", sm: "24px" },
-                fontWeight: "var(--ff-bold)",
                 color: "var(--primary-main)",
+                fontFamily: "var(--ff-bold)",
               }}
             >
               {data.name}
