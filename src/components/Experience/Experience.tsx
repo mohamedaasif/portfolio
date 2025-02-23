@@ -20,7 +20,7 @@ const Experience = (props: ExperienceProps) => {
     <Box
       ref={props?.experienceRef}
       sx={{
-        width: { xs: "95%", md: "75%", lg: "50%" },
+        width: { xs: "95%", sm: "75%", lg: "50%" },
         margin: "120px auto",
       }}
     >
