@@ -1,3 +1,7 @@
+import lyca from "../assets/lyca.png";
+import airtel from "../assets/airtel.png";
+import mcc from "../assets/mcc.png";
+
 export const skills: string[] = [
   "JavaScript (ES6+)",
   "React",
@@ -54,11 +58,20 @@ export const experienceInDetails: any = {
 
 export const projectDesc: any = [
   {
-    name: "Telecom Web App",
-    desc: "A web app to provide wireless communication services, leveraging existing networks (typically Verizon’s network) to deliver coverage and connectivity. It offers a variety of plans, often including options for unlimited talk and text, as well as data packages that can be customized based on user needs.",
+    name: "Lyca Mobile",
+    desc: "As a Frontend Developer for Lycamobile, I developed a responsive website interface for their U.S. mobile service, focusing on prepaid plans with unlimited talk, text, and data options. My work ensured a seamless platform for customers to access services and international calling features.",
     skills: ["React", "Redux", "TypeScript", "Axios", "Material UI"],
     gitLink: "",
-    webLink: "https://www.reachmobile.com/",
+    webLink: "https://www.lycamobile.us/en/",
+    img: lyca,
+  },
+  {
+    name: "Mediacom Mobile",
+    desc: "As a Frontend Developer for Mediacom Mobile’s 2024 launch, I designed and implemented a responsive user interface for their mobile service website. My work optimized the customer experience for the Unlimited and By the Gig Plans, complementing Mediacom's Xtream Internet service.",
+    skills: ["React", "Redux", "TypeScript", "Axios", "Material UI"],
+    gitLink: "",
+    webLink: "https://mediacommobile.com/",
+    img: mcc,
   },
   {
     name: "OTT Hybrid Application",
@@ -66,13 +79,7 @@ export const projectDesc: any = [
     skills: ["React", "Redux", "Video.js", "TypeScript", "Axios"],
     gitLink: "",
     webLink: "",
-  },
-  {
-    name: "Gal(e)re Web App",
-    desc: "The Private Gallery Web App allows users to securely upload, store, and manage their images in a private online gallery. Users can create personalized galleries that are accessible only to them, ensuring their images remain confidential and protected.",
-    skills: ["React", "Express", "Node.js", "MySql"],
-    gitLink: "https://github.com/mohamedaasif/gal-e-re",
-    webLink: "",
+    img: airtel,
   },
 ];
 

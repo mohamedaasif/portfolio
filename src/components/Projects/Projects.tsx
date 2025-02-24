@@ -1,7 +1,4 @@
 import { Box } from "@mui/material";
-import img1 from "../../assets/matrix.png";
-import img2 from "../../assets/ott.png.png";
-import img3 from "../../assets/galere_project.png";
 import { projectDesc } from "../../utils/globalValues";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -26,14 +23,14 @@ const Projects = (props: ProjectsProps) => {
     <Box
       ref={projectRef}
       sx={{
-        width: { xs: "95%", sm: "75%" },
+        width: { xs: "95%", sm: "80%" },
         margin: "0 auto",
       }}
     >
       <Box
         sx={{
           fontSize: { xs: "24px", md: "32px" },
-          fontFamily: "var(--ff-bold)",
+          fontFamily: "var(--ff-black)",
           color: "var(--primary-main)",
           mb: "36px",
         }}
@@ -51,8 +48,9 @@ const Projects = (props: ProjectsProps) => {
               lg:
                 (idx + 1) % 2 === 0 && !mobile && !ipad ? "row-reverse" : "row",
             },
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "center",
+            gap: "40px",
             mb: {
               xs: "50px",
               sm: projectDesc?.length === idx + 1 ? "60px" : "120px",
@@ -70,20 +68,16 @@ const Projects = (props: ProjectsProps) => {
           {!mobile && !ipad && (
             <Box
               sx={{
-                position: "relative",
                 width: "fit-content",
                 height: "fit-content",
-                backgroundColor: "var(--background-color-dark)",
-                borderRadius: "4px",
               }}
             >
               <Box
                 component="img"
-                src={idx === 0 ? img1 : idx === 1 ? img2 : img3}
+                src={data?.img}
                 alt="avatar"
                 sx={{
                   borderRadius: "4px",
-                  padding: "10px 10px 7px",
                 }}
                 width={"550px"}
                 height={"350px"}
@@ -103,8 +97,8 @@ const Projects = (props: ProjectsProps) => {
               sx={{
                 pb: "24px",
                 fontSize: { xs: "18px", sm: "24px" },
-                fontWeight: "var(--ff-bold)",
                 color: "var(--primary-main)",
+                fontFamily: "var(--ff-bold)",
               }}
             >
               {data.name}

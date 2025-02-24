@@ -26,7 +26,7 @@ const Home = (props: HomeProps) => {
         <Typography
           sx={{
             color: "var(--primary-main)",
-            fontFamily: "var(--ff-bold)",
+            fontFamily: "var(--ff-black)",
             fontSize: { xs: "24px", md: "36px" },
             mb: "24px",
           }}
