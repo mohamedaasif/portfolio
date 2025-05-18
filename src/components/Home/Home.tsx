@@ -1,12 +1,17 @@
 import { Box, Typography } from "@mui/material";
 import styles from "./Home.module.scss";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import { useContext } from "react";
+import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 
 interface HomeProps {
   homeRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const Home = (props: HomeProps) => {
+  const { darkTheme }: any = useContext<ThemeContextType | undefined>(
+    ThemeContext
+  );
   const handleViewPdf = () => {
     const pdfUrl =
       "https://mohamedaasif.github.io/portfolio/mohamed-aasif-frontend-developer.pdf";
@@ -35,7 +40,9 @@ const Home = (props: HomeProps) => {
         </Typography>
         <Typography
           sx={{
-            color: "var(--text-grey-500)",
+            color: darkTheme
+              ? "var(--text-grey-500) !important"
+              : "var(--black) !important",
             fontFamily: "var(--ff-medium)",
             fontSize: { xs: "16px", md: "18px" },
             mb: "48px ",
@@ -71,6 +78,7 @@ const Home = (props: HomeProps) => {
         >
           Download Resume
           <FileDownloadIcon
+            className={styles.downloadIcon}
             sx={{
               fontSize: "18px",
             }}

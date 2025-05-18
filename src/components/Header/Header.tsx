@@ -137,6 +137,15 @@ const Header = (props: HeaderProps) => {
             padding: "2px",
             borderRadius: "8px",
             cursor: "pointer",
+            transition: "all 0.3s ease",
+            "& svg": {
+              transition: "transform 0.4s ease, opacity 0.3s ease",
+              transform: "rotate(0deg)",
+              opacity: 1,
+            },
+            "&:active svg": {
+              transform: "rotate(360deg)",
+            },
           }}
           onClick={toggleTheme}
         >
@@ -144,12 +153,14 @@ const Header = (props: HeaderProps) => {
             <DarkModeIcon
               sx={{
                 color: "var(--primary-main)",
+                transition: "transform 0.4s ease, opacity 0.3s ease",
               }}
             />
           ) : (
             <LightModeIcon
               sx={{
                 color: "var(--primary-main)",
+                transition: "transform 0.4s ease, opacity 0.3s ease",
               }}
             />
           )}
