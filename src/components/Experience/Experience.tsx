@@ -63,6 +63,8 @@ const Experience = (props: ExperienceProps) => {
                   cursor: "pointer",
                   fontSize: { xs: "14px", sm: "16px" },
                   fontFamily: "var(--ff-bold)",
+                  transition:
+                    "background 0.3s ease, color 0.3s ease, border 0.3s ease",
                   borderLeft: {
                     xs: "none",
                     md:
@@ -83,6 +85,12 @@ const Experience = (props: ExperienceProps) => {
                   },
                   color:
                     data === selectItem ? "var(--primary-dark)" : "inherit",
+                  background:
+                    data === selectItem
+                      ? darkTheme
+                        ? "rgba(250, 250, 250, 0.05)"
+                        : "rgba(236, 236, 236, 0.5)"
+                      : "transparent",
                   "&:hover": {
                     background: darkTheme
                       ? "rgba(250, 250, 250, 0.05)"

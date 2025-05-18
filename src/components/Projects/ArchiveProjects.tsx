@@ -89,6 +89,7 @@ const ArchiveProjects = (props: ProjectsProps) => {
                   key={idx}
                   sx={{
                     "td, th": { border: 0 },
+                    transition: "background 0.3s ease",
                     "&:hover": {
                       background: darkTheme
                         ? "rgba(250, 250, 250, 0.05)"
@@ -173,6 +174,7 @@ const ArchiveProjects = (props: ProjectsProps) => {
                     {row?.webLink && (
                       <OpenInNewIcon
                         sx={{
+                          transition: "color 0.3s ease",
                           "&:hover": {
                             color: "var(--primary-main) !important",
                           },

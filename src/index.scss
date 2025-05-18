@@ -4,7 +4,8 @@
   --primary-dark: hsl(210, 100%, 38%);
   --text-color: hsl(210, 14%, 7%);
   --text-grey-800: hsl(215, 15%, 22%);
-  --text-grey-500: hsl(215, 15%, 40%);
+  // --text-grey-500: hsl(215, 15%, 40%);
+  --text-grey-500: #cacbf9;
   --text-primary: hsl(215, 15%, 12%);
   --background-color-dark: hsla(210, 14%, 7%);
   --grey-color: #f9f9f9;
@@ -13,8 +14,10 @@
   --ff-regular: "DMSans-Regular";
   --ff-medium: "DMSans-Medium";
   --ff-bold: "DMSans-Bold";
-  --white: #fdfffc;
+  // --white: #fdfffc;
+  --white: rgb(248 250 252);
   --black: #000;
+  --green: rgb(89 253 160);
 }
 
 body {

@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import img from "../../assets/about2.png";
+import img from "../../assets/Happy_Laptop.svg";
 import { skills } from "../../utils/globalValues";
 import { ThemeContext, ThemeContextType } from "../../ThemeContext";
 import { useContext } from "react";
@@ -33,9 +33,9 @@ const About = (props: AboutProps) => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          alignItems: { sm: "center", md: "unset" },
-          gap: { xs: "60px", lg: "120px" },
+          flexDirection: { xs: "column", lg: "row" },
+          alignItems: { sm: "center", lg: "unset" },
+          gap: { xs: "10px", lg: "120px" },
         }}
       >
         <Box
@@ -50,21 +50,25 @@ const About = (props: AboutProps) => {
               fontFamily: "var(--ff-medium)",
             }}
           >
-            Hello! My name is Aasif and I enjoy creating things that live on the
-            internet. My interest in web development started back in 2018 when I
-            decided to create a static website using HTML & CSS. That initial
-            project ignited my passion for coding, leading me to explore HTML,
-            CSS, and JavaScript in depth.
+            Hello! I’m Aasif — a passionate web developer who loves building
+            things for the internet.
           </Typography>
           <Typography
             sx={{
               fontFamily: "var(--ff-medium)",
             }}
           >
-            Fast-forward to today, and I’ve had the privilege of working at a
-            telecom company, a start-up and a huge corporation. My main focus
-            these days is building accessible, inclusive products and digital
-            experiences at{" "}
+            My interest in web development began in 2018 when I created a simple
+            static site using HTML and CSS — a project that sparked my passion
+            for coding. Since then, I’ve explored the full stack and worked
+            across a telecom company, a startup, and a large corporation.
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "var(--ff-medium)",
+            }}
+          >
+            Currently, I build accessible, user-friendly digital experiences at{" "}
             <Typography
               component="span"
               sx={{
@@ -73,7 +77,7 @@ const About = (props: AboutProps) => {
             >
               Reach Mobile
             </Typography>{" "}
-            for a variety of clients.
+            , helping deliver solutions for a range of clients.
           </Typography>
           <Typography
             sx={{
@@ -140,7 +144,7 @@ const About = (props: AboutProps) => {
           component="img"
           src={img}
           alt="avatar"
-          width={{ xs: "100%", sm: "300px" }}
+          width={{ xs: "100%", sm: "500px" }}
           height="300px"
         />
       </Box>

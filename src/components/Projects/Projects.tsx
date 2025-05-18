@@ -15,7 +15,7 @@ const Projects = (props: ProjectsProps) => {
     ThemeContext
   );
   const theme = useTheme();
-  // const largeDesktop = useMediaQuery(theme.breakpoints.up("lg"));
+  const largeDesktop = useMediaQuery(theme.breakpoints.up("lg"));
   // const desktop = useMediaQuery(theme.breakpoints.between("md", "lg"));
   const ipad = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -44,7 +44,7 @@ const Projects = (props: ProjectsProps) => {
             display: "flex",
             flexDirection: {
               xs: "row",
-              md: "column",
+              // md: "column",
               lg:
                 (idx + 1) % 2 === 0 && !mobile && !ipad ? "row-reverse" : "row",
             },
@@ -65,7 +65,7 @@ const Projects = (props: ProjectsProps) => {
             borderRadius: { xs: "4px", md: "0" },
           }}
         >
-          {!mobile && !ipad && (
+          {largeDesktop && (
             <Box
               sx={{
                 width: "fit-content",
@@ -176,11 +176,18 @@ const Projects = (props: ProjectsProps) => {
           justifyContent: "center",
           gap: "10px",
           cursor: "pointer",
+          transition: "all 0.3s ease",
+          "&:hover .arrow-icon": {
+            transform: "translateX(4px)",
+          },
+          "& .arrow-icon": {
+            transition: "transform 0.3s ease",
+          },
         }}
         onClick={() => setIsArchiveProjects(true)}
       >
         View All Projects
-        <EastIcon />
+        <EastIcon className="arrow-icon" />
       </Box>
     </Box>
   );
