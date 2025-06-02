@@ -90,7 +90,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "",
+    webLink: "https://www.lycamobile.us/en/",
   },
   {
     year: 2024,
@@ -98,7 +98,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "",
+    webLink: "https://cubemobile.us/en",
   },
   {
     year: 2024,
@@ -114,7 +114,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "",
+    webLink: "https://mobile.tdstelecom.com/",
   },
   {
     year: 2024,
@@ -130,7 +130,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios", "Firebase"],
     gitLink: "",
-    webLink: "https://www.sparklight.com/",
+    webLink: "https://flexconnectinternet.com/",
   },
   {
     year: 2023,
@@ -138,7 +138,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios", "Firebase"],
     gitLink: "",
-    webLink: "",
+    webLink: "https://www.astound.com/mobile/",
   },
   {
     year: 2023,
@@ -177,7 +177,7 @@ export const archiveProjectDetails: any = [
     project: "Gallery - A vault web app",
     madeAt: "-",
     builtWith: ["React", "Express", "Node.js", "MySql"],
-    gitLink: "",
+    gitLink: "https://github.com/mohamedaasif/gal-e-re",
     webLink: "",
   },
   {
