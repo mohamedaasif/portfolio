@@ -35,7 +35,7 @@ const Home = (props: HomeProps) => {
             mb: "24px",
           }}
         >
-          Full Stack Developer | React, Node.js, MongoDB.
+          Full Stack Developer | Delivering End-to-End Web Experiences
         </Typography>
         <Typography
           sx={{

@@ -2,13 +2,67 @@ import lyca from "../assets/lyca.png";
 import airtel from "../assets/airtel.png";
 import mcc from "../assets/mcc.png";
 
-export const skills: string[] = [
-  "JavaScript (ES6+)",
-  "React",
-  "Node.js",
-  "TypeScript",
-  "Redux",
-  "MongoDB",
+export const skills: any = [
+  {
+    skill: "HTML5",
+    color: "#DD4B25",
+  },
+  {
+    skill: "CSS3",
+    color: "#214ED4",
+  },
+  {
+    skill: "JavaScript",
+    color: "#EBDA1C",
+  },
+  {
+    skill: "TypeScript",
+    color: "#2F74C0",
+  },
+  {
+    skill: "Sass",
+    color: "#CE679A",
+  },
+  {
+    skill: "Material UI",
+    color: "#007CF7",
+  },
+  {
+    skill: "ReactJS",
+    color: "#00D1F7",
+  },
+  {
+    skill: "Redux",
+    color: "#764ABC",
+  },
+  {
+    skill: "NextJS",
+    color: "#000000",
+  },
+  {
+    skill: "Node.js",
+    color: "#417E38",
+  },
+  {
+    skill: "MongoDB",
+    color: "#419432",
+  },
+  {
+    skill: "MySQL",
+    color: "#045C88",
+  },
+  {
+    skill: "AWS",
+    color: "#E49200",
+  },
+  {
+    skill: "Firebase",
+    color: "#D62B00",
+  },
+  {
+    skill: "Strapi",
+    color: "#9079FF",
+  },
 ];
 
 export const experience: string[] = [

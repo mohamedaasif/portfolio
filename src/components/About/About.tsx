@@ -93,63 +93,39 @@ const About = (props: AboutProps) => {
           <Box
             sx={{
               display: "flex",
-              gap: "36px",
+              flexWrap: "wrap",
+              gap: "8px",
+              // display: "grid",
+              // gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             }}
           >
-            <Box>
-              {skills.slice(0, 3).map((list: string, id: number) => (
-                <Box
-                  key={id}
-                  sx={{
-                    color: darkTheme
-                      ? "var(--dark_secondary_text_color)"
-                      : "var(--light_secondary_text_color)",
-                    fontFamily: "var(--ff-regular)",
-                    fontSize: "14px",
-                    mb: "24px",
-                    position: "relative",
-                    paddingLeft: "30px",
-                    "&::before": {
-                      content: '"▹"',
-                      position: "absolute",
-                      left: "0px",
-                      color: darkTheme
-                        ? "var(--dark_accent_color)"
-                        : "var(--light_accent_color)",
-                    },
-                  }}
-                >
-                  {list}
-                </Box>
-              ))}
-            </Box>
-            <Box>
-              {skills.slice(3, 6).map((list: string, id: number) => (
-                <Box
-                  key={id}
-                  sx={{
-                    color: darkTheme
-                      ? "var(--dark_secondary_text_color)"
-                      : "var(--light_secondary_text_color)",
-                    fontFamily: "var(--ff-regular)",
-                    fontSize: "14px",
-                    mb: "24px",
-                    position: "relative",
-                    paddingLeft: "30px",
-                    "&::before": {
-                      content: '"▹"',
-                      position: "absolute",
-                      left: "0px",
-                      color: darkTheme
-                        ? "var(--dark_accent_color)"
-                        : "var(--light_accent_color)",
-                    },
-                  }}
-                >
-                  {list}
-                </Box>
-              ))}
-            </Box>
+            {skills.map((list: any, id: number) => (
+              <Box
+                key={id}
+                sx={{
+                  color: "var(--white)",
+                  fontFamily: "var(--ff-regular)",
+                  fontSize: "14px",
+                  // mb: "24px",
+                  position: "relative",
+                  background: list?.color,
+                  borderRadius: "8px",
+                  padding: "8px 16px",
+                  height: "fit-content",
+                  // paddingLeft: "30px",
+                  // "&::before": {
+                  //   content: '"▹"',
+                  //   position: "absolute",
+                  //   left: "0px",
+                  //   color: darkTheme
+                  //     ? "var(--dark_accent_color)"
+                  //     : "var(--light_accent_color)",
+                  // },
+                }}
+              >
+                {list?.skill}
+              </Box>
+            ))}
           </Box>
         </Box>
         <Box
