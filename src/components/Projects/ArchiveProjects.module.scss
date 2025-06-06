@@ -1,9 +1,14 @@
-.tableHeadCell {
-  color: var(--primary-light) !important;
+.tableHeadCellDark {
+  color: var(--dark_accent_color) !important;
   font-size: 18px !important;
-  font-family: var(--ff-bold) !important;
+  font-family: var(--ff-semibold) !important;
+}
+.tableHeadCellLight {
+  color: var(--light_accent_color) !important;
+  font-size: 18px !important;
+  font-family: var(--ff-semibold) !important;
 }
 .tableDataCell {
   font-size: 14px !important;
-  font-family: var(--ff-medium) !important;
+  font-family: var(--ff-regular) !important;
 }

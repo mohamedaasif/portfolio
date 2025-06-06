@@ -1,9 +1,9 @@
 .darkMode {
-  background-color: var(--background-color-dark);
-  color: var(--white);
+  background-color: var(--dark_bg_color);
+  color: var(--dark_primary_text_color);
 }
 
 .lightMode {
-  background-color: var(--white);
-  color: var(--text-color);
+  background-color: var(--light_bg_color);
+  color: var(--light_primary_text_color);
 }

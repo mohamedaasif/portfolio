@@ -12,6 +12,9 @@ interface ContactProps {
 }
 
 const Contact = (props: ContactProps) => {
+  const { darkTheme }: any = useContext<ThemeContextType | undefined>(
+    ThemeContext
+  );
   return (
     <Box
       ref={props.contactRef}
@@ -36,8 +39,10 @@ const Contact = (props: ContactProps) => {
         <Box
           sx={{
             fontSize: { xs: "24px", md: "32px" },
-            fontFamily: "var(--ff-black)",
-            color: "var(--primary-main)",
+            fontFamily: "var(--ff-bold)",
+            color: darkTheme
+              ? "var(--dark_accent_color)"
+              : "var(--light_accent_color)",
             mb: "24px",
           }}
         >
@@ -48,6 +53,7 @@ const Contact = (props: ContactProps) => {
             textAlign: "center",
             lineHeight: "24px",
             mb: "24px",
+            fontFamily: "var(--ff-regular)",
           }}
         >
           I’m currently exploring new job opportunities and excited to connect.
@@ -58,6 +64,7 @@ const Contact = (props: ContactProps) => {
         <Box
           sx={{
             mb: "24px",
+            fontFamily: "var(--ff-regular)",
           }}
         >
           {" "}
@@ -67,6 +74,7 @@ const Contact = (props: ContactProps) => {
           sx={{
             mb: "24px",
             textAlign: "center",
+            fontFamily: "var(--ff-regular)",
           }}
         >
           Feel free to reach out if you’d like to collaborate or chat!
@@ -75,7 +83,9 @@ const Contact = (props: ContactProps) => {
           sx={{
             display: "flex",
             gap: "24px",
-            color: "var(--primary-main)",
+            color: darkTheme
+              ? "var(--dark_accent_color)"
+              : "var(--light_accent_color)",
             cursor: "pointer",
           }}
         >

@@ -30,8 +30,10 @@ const Projects = (props: ProjectsProps) => {
       <Box
         sx={{
           fontSize: { xs: "24px", md: "32px" },
-          fontFamily: "var(--ff-black)",
-          color: "var(--primary-main)",
+          fontFamily: "var(--ff-bold)",
+          color: darkTheme
+            ? "var(--dark_accent_color)"
+            : "var(--light_accent_color)",
           mb: "36px",
         }}
       >
@@ -97,8 +99,7 @@ const Projects = (props: ProjectsProps) => {
               sx={{
                 pb: "24px",
                 fontSize: { xs: "18px", sm: "24px" },
-                color: "var(--primary-main)",
-                fontFamily: "var(--ff-bold)",
+                fontFamily: "var(--ff-semibold)",
               }}
             >
               {data.name}
@@ -106,12 +107,15 @@ const Projects = (props: ProjectsProps) => {
             <Box
               sx={{
                 mb: "24px",
-                background: { xs: "none", md: "var(--text-grey-800)" },
+                background: {
+                  xs: "none",
+                  md: darkTheme
+                    ? "var(--dark_card_bg_color)"
+                    : "var(--light_card_bg_color)",
+                },
                 p: { xs: "0px", md: "24px" },
                 borderRadius: "4px",
-                color: darkTheme
-                  ? "var(--white)"
-                  : { xs: "var(--black)", md: "var(--white)" },
+                fontFamily: "var(--ff-regular)",
               }}
             >
               {data.desc}
@@ -132,7 +136,10 @@ const Projects = (props: ProjectsProps) => {
                 <Box
                   key={idx}
                   sx={{
-                    color: "var(--primary-dark)",
+                    fontFamily: "var(--ff-regular)",
+                    color: darkTheme
+                      ? "var(--dark_accent_color)"
+                      : "var(--light_accent_color)",
                   }}
                 >
                   {skill}
@@ -147,7 +154,9 @@ const Projects = (props: ProjectsProps) => {
                   md: (idx + 1) % 2 === 0 ? "flex-start" : "flex-end",
                 },
                 gap: "24px",
-                color: "var(--primary-main)",
+                color: darkTheme
+                  ? "var(--dark_accent_color)"
+                  : "var(--light_accent_color)",
                 cursor: "pointer",
               }}
             >
@@ -168,8 +177,10 @@ const Projects = (props: ProjectsProps) => {
       <Box
         sx={{
           textTransform: "uppercase",
-          color: "var(--primary-main)",
-          fontFamily: "var(--ff-bold)",
+          color: darkTheme
+            ? "var(--dark_accent_color)"
+            : "var(--light_accent_color)",
+          fontFamily: "var(--ff-medium)",
           fontSize: "16px",
           display: "flex",
           alignItems: "center",
@@ -177,8 +188,16 @@ const Projects = (props: ProjectsProps) => {
           gap: "10px",
           cursor: "pointer",
           transition: "all 0.3s ease",
+          "&:hover": {
+            color: darkTheme
+              ? "var(--dark_accent_hover_color)"
+              : "var(--light_accent_hover_color)",
+          },
           "&:hover .arrow-icon": {
             transform: "translateX(4px)",
+            color: darkTheme
+              ? "var(--dark_accent_hover_color)"
+              : "var(--light_accent_hover_color)",
           },
           "& .arrow-icon": {
             transition: "transform 0.3s ease",
