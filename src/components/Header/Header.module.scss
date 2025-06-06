@@ -3,15 +3,25 @@
   top: 0;
   z-index: 999;
   .headerLink {
-    font-family: var(--ff-bold);
+    font-family: var(--ff-semibold);
     font-size: 14px;
     cursor: pointer;
+  }
+  .headerLinkLight {
     &:hover {
-      color: var(--primary-dark);
+      color: var(--light_accent_hover_color);
     }
   }
-  .active {
-    color: var(--primary-dark) !important;
+  .headerLinkDark {
+    &:hover {
+      color: var(--dark_accent_hover_color);
+    }
+  }
+  .activeLight {
+    color: var(--light_accent_color) !important;
+  }
+  .activeDark {
+    color: var(--dark_accent_color) !important;
   }
   .headerPrimayItem {
     @media screen and (max-width: 600px) {

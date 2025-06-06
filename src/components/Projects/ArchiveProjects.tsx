@@ -34,8 +34,10 @@ const ArchiveProjects = (props: ProjectsProps) => {
     >
       <Box
         sx={{
-          color: "var(--primary-main)",
-          fontFamily: "var(--ff-bold)",
+          color: darkTheme
+            ? "var(--dark_accent_color)"
+            : "var(--light_accent_color)",
+          fontFamily: "var(--ff-medium)",
           fontSize: "16px",
           display: "flex",
           alignItems: "center",
@@ -43,8 +45,8 @@ const ArchiveProjects = (props: ProjectsProps) => {
           gap: "4px",
           cursor: "pointer",
           borderBottom: darkTheme
-            ? "1px solid var(--text-grey-800)"
-            : "1px solid var(--grey-color-dark)",
+            ? "1px solid var(--dark_border_color)"
+            : "1px solid var(--light_border_color)",
           pb: "8px",
           mb: "24px",
         }}
@@ -56,8 +58,10 @@ const ArchiveProjects = (props: ProjectsProps) => {
       <Box
         sx={{
           fontSize: "32px",
-          fontFamily: "var(--ff-black)",
-          color: "var(--primary-main)",
+          fontFamily: "var(--ff-bold)",
+          color: darkTheme
+            ? "var(--dark_accent_color)"
+            : "var(--light_accent_color)",
           mb: "36px",
         }}
       >
@@ -74,13 +78,51 @@ const ArchiveProjects = (props: ProjectsProps) => {
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow sx={{ "td, th": { border: 0 } }}>
-                <TableCell className={styles.tableHeadCell}>Year</TableCell>
-                <TableCell className={styles.tableHeadCell}>Project</TableCell>
-                <TableCell className={styles.tableHeadCell}>Made at</TableCell>
-                <TableCell className={styles.tableHeadCell}>
+                <TableCell
+                  className={
+                    darkTheme
+                      ? styles.tableHeadCellDark
+                      : styles.tableHeadCellLight
+                  }
+                >
+                  Year
+                </TableCell>
+                <TableCell
+                  className={
+                    darkTheme
+                      ? styles.tableHeadCellDark
+                      : styles.tableHeadCellLight
+                  }
+                >
+                  Project
+                </TableCell>
+                <TableCell
+                  className={
+                    darkTheme
+                      ? styles.tableHeadCellDark
+                      : styles.tableHeadCellLight
+                  }
+                >
+                  Made at
+                </TableCell>
+                <TableCell
+                  className={
+                    darkTheme
+                      ? styles.tableHeadCellDark
+                      : styles.tableHeadCellLight
+                  }
+                >
                   Built with
                 </TableCell>
-                <TableCell className={styles.tableHeadCell}>Link</TableCell>
+                <TableCell
+                  className={
+                    darkTheme
+                      ? styles.tableHeadCellDark
+                      : styles.tableHeadCellLight
+                  }
+                >
+                  Link
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -103,18 +145,18 @@ const ArchiveProjects = (props: ProjectsProps) => {
                     className={styles.tableDataCell}
                     sx={{
                       color: darkTheme
-                        ? "var(--text-grey-500) !important"
-                        : "var(--black) !important",
+                        ? "var(--dark_secondary_text_color) !important"
+                        : "var(--light_secondary_text_color) !important",
                     }}
                   >
                     {row.year}
                   </TableCell>
                   <TableCell
                     sx={{
-                      fontFamily: "var(--ff-bold) !important",
+                      fontFamily: "var(--ff-medium) !important",
                       color: darkTheme
-                        ? "var(--white) !important"
-                        : "var(--black) !important",
+                        ? "var(--dark_primary_text_color) !important"
+                        : "var(--light_primary_text_color) !important",
                     }}
                     className={styles.tableDataCell}
                   >
@@ -123,8 +165,8 @@ const ArchiveProjects = (props: ProjectsProps) => {
                   <TableCell
                     sx={{
                       color: darkTheme
-                        ? "var(--text-grey-500) !important"
-                        : "var(--black) !important",
+                        ? "var(--dark_secondary_text_color) !important"
+                        : "var(--light_secondary_text_color) !important",
                     }}
                     className={styles.tableDataCell}
                   >
@@ -140,7 +182,9 @@ const ArchiveProjects = (props: ProjectsProps) => {
                       <Box
                         key={data + idx}
                         sx={{
-                          color: "var(--primary-main)",
+                          color: darkTheme
+                            ? "var(--dark_accent_color)"
+                            : "var(--light_accent_color)",
                           fontSize: "12px",
                           padding: "4px 12px",
                           borderRadius: "25px",
@@ -154,8 +198,8 @@ const ArchiveProjects = (props: ProjectsProps) => {
                   <TableCell
                     sx={{
                       color: darkTheme
-                        ? "var(--text-grey-500) !important"
-                        : "var(--black) !important",
+                        ? "var(--dark_secondary_text_color) !important"
+                        : "var(--light_secondary_text_color) !important",
                       cursor: "pointer",
                     }}
                     className={styles.tableDataCell}
@@ -165,7 +209,9 @@ const ArchiveProjects = (props: ProjectsProps) => {
                         sx={{
                           mr: "8px",
                           "&:hover": {
-                            color: "var(--primary-main) !important",
+                            color: darkTheme
+                              ? "var(--dark_accent_color)"
+                              : "var(--light_accent_color)",
                           },
                         }}
                         onClick={() => redirectLinkHandler(row?.gitLink)}
@@ -176,7 +222,9 @@ const ArchiveProjects = (props: ProjectsProps) => {
                         sx={{
                           transition: "color 0.3s ease",
                           "&:hover": {
-                            color: "var(--primary-main) !important",
+                            color: darkTheme
+                              ? "var(--dark_accent_color)"
+                              : "var(--light_accent_color)",
                           },
                         }}
                         onClick={() => redirectLinkHandler(row?.webLink)}

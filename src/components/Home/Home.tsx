@@ -30,8 +30,7 @@ const Home = (props: HomeProps) => {
       >
         <Typography
           sx={{
-            color: "var(--primary-main)",
-            fontFamily: "var(--ff-black)",
+            fontFamily: "var(--ff-bold)",
             fontSize: { xs: "24px", md: "36px" },
             mb: "24px",
           }}
@@ -40,10 +39,7 @@ const Home = (props: HomeProps) => {
         </Typography>
         <Typography
           sx={{
-            color: darkTheme
-              ? "var(--text-grey-500) !important"
-              : "var(--black) !important",
-            fontFamily: "var(--ff-medium)",
+            fontFamily: "var(--ff-regular)",
             fontSize: { xs: "16px", md: "18px" },
             mb: "48px ",
           }}
@@ -61,18 +57,25 @@ const Home = (props: HomeProps) => {
         <Box
           sx={{
             margin: "0 auto",
-            background: "var(--primary-main)",
+            background: darkTheme
+              ? "var(--dark_accent_color)"
+              : "var(--light_accent_color)",
             width: "fit-content",
             padding: "8px 16px",
             borderRadius: "8px",
             cursor: "pointer",
-            fontFamily: "var(--ff-bold)",
+            fontFamily: "var(--ff-medium)",
             fontSize: "16px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             gap: "8px",
             color: "var(--white)",
+            "&:hover": {
+              background: darkTheme
+                ? "var(--dark_accent_hover_color)"
+                : "var(--light_accent_hover_color)",
+            },
           }}
           onClick={handleViewPdf}
         >

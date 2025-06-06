@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import logo from "../../assets/logo_blue.png";
 import styles from "./Header.module.scss";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -39,16 +38,20 @@ const Header = (props: HeaderProps) => {
         alignItems: "center",
         padding: { xs: "0px 10px", lg: "0px 190px" },
         borderBottom: darkTheme
-          ? "2px solid var(--text-primary)"
-          : "2px solid var(--grey-color)",
-        background: darkTheme ? "var(--background-color-dark)" : "var(--white)",
+          ? "1px solid var(--dark_border_color)"
+          : "1px solid var(--light_border_color)",
+        background: darkTheme
+          ? "var(--dark_bg_color)"
+          : "var(--light_bg_color)",
       }}
       className={styles.headerContainer}
     >
       <Box
         sx={{
-          fontFamily: "var(--ff-black)",
-          color: "var(--primary-main)",
+          fontFamily: "var(--ff-semibold)",
+          color: darkTheme
+            ? "var(--dark_accent_color)"
+            : "var(--light_accent_color)",
           fontSize: "16px",
           display: "flex",
           alignItems: "center",
@@ -73,7 +76,13 @@ const Header = (props: HeaderProps) => {
       >
         <Box
           className={`${styles.headerLink} ${
-            activeSection === homeRef.current ? styles.active : ""
+            darkTheme ? styles.headerLinkDark : styles.headerLinkLight
+          } ${
+            activeSection === homeRef.current
+              ? darkTheme
+                ? styles.activeDark
+                : styles.activeLight
+              : ""
           }`}
           onClick={() => scrollToSection(homeRef)}
         >
@@ -81,7 +90,13 @@ const Header = (props: HeaderProps) => {
         </Box>
         <Box
           className={`${styles.headerLink} ${
-            activeSection === aboutRef.current ? styles.active : ""
+            darkTheme ? styles.headerLinkDark : styles.headerLinkLight
+          } ${
+            activeSection === aboutRef.current
+              ? darkTheme
+                ? styles.activeDark
+                : styles.activeLight
+              : ""
           }`}
           onClick={() => scrollToSection(aboutRef)}
         >
@@ -89,7 +104,13 @@ const Header = (props: HeaderProps) => {
         </Box>
         <Box
           className={`${styles.headerLink} ${
-            activeSection === experienceRef.current ? styles.active : ""
+            darkTheme ? styles.headerLinkDark : styles.headerLinkLight
+          } ${
+            activeSection === experienceRef.current
+              ? darkTheme
+                ? styles.activeDark
+                : styles.activeLight
+              : ""
           }`}
           onClick={() => scrollToSection(experienceRef)}
         >
@@ -97,7 +118,13 @@ const Header = (props: HeaderProps) => {
         </Box>
         <Box
           className={`${styles.headerLink} ${
-            activeSection === projectRef.current ? styles.active : ""
+            darkTheme ? styles.headerLinkDark : styles.headerLinkLight
+          } ${
+            activeSection === projectRef.current
+              ? darkTheme
+                ? styles.activeDark
+                : styles.activeLight
+              : ""
           }`}
           onClick={() => scrollToSection(projectRef)}
         >
@@ -114,12 +141,18 @@ const Header = (props: HeaderProps) => {
       >
         <Box
           className={`${styles.headerLink} ${
-            activeSection === contactRef.current ? styles.active : ""
+            darkTheme ? styles.headerLinkDark : styles.headerLinkLight
+          } ${
+            activeSection === contactRef.current
+              ? darkTheme
+                ? styles.activeDark
+                : styles.activeLight
+              : ""
           }`}
           sx={{
             border: darkTheme
-              ? "2px solid var(--text-grey-800)"
-              : "2px solid var(--grey-color-dark)",
+              ? "2px solid var(--dark_border_color)"
+              : "2px solid var(--light_border_color)",
             padding: "5px 10px",
             borderRadius: "8px",
           }}
@@ -132,8 +165,8 @@ const Header = (props: HeaderProps) => {
             display: "flex",
             alignItems: "center",
             border: darkTheme
-              ? "2px solid var(--text-grey-800)"
-              : "2px solid var(--grey-color-dark)",
+              ? "2px solid var(--dark_border_color)"
+              : "2px solid var(--light_border_color)",
             padding: "2px",
             borderRadius: "8px",
             cursor: "pointer",
@@ -152,14 +185,14 @@ const Header = (props: HeaderProps) => {
           {!darkTheme ? (
             <DarkModeIcon
               sx={{
-                color: "var(--primary-main)",
+                color: "var(--dark_tag_bg_color)",
                 transition: "transform 0.4s ease, opacity 0.3s ease",
               }}
             />
           ) : (
             <LightModeIcon
               sx={{
-                color: "var(--primary-main)",
+                color: "var(--light_tag_bg_color)",
                 transition: "transform 0.4s ease, opacity 0.3s ease",
               }}
             />

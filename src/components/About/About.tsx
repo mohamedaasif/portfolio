@@ -23,8 +23,10 @@ const About = (props: AboutProps) => {
       <Box
         sx={{
           fontSize: { xs: "24px", md: "32px" },
-          fontFamily: "var(--ff-black)",
-          color: "var(--primary-main)",
+          fontFamily: "var(--ff-bold)",
+          color: darkTheme
+            ? "var(--dark_accent_color)"
+            : "var(--light_accent_color)",
           mb: "24px",
         }}
       >
@@ -47,7 +49,7 @@ const About = (props: AboutProps) => {
         >
           <Typography
             sx={{
-              fontFamily: "var(--ff-medium)",
+              fontFamily: "var(--ff-regular)",
             }}
           >
             Hello! I’m Aasif — a passionate web developer who loves building
@@ -55,7 +57,7 @@ const About = (props: AboutProps) => {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "var(--ff-medium)",
+              fontFamily: "var(--ff-regular)",
             }}
           >
             My interest in web development began in 2018 when I created a simple
@@ -65,14 +67,16 @@ const About = (props: AboutProps) => {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "var(--ff-medium)",
+              fontFamily: "var(--ff-regular)",
             }}
           >
             Currently, I build accessible, user-friendly digital experiences at{" "}
             <Typography
               component="span"
               sx={{
-                color: "var(--primary-dark)",
+                color: darkTheme
+                  ? "var(--dark_accent_color)"
+                  : "var(--light_accent_color)",
               }}
             >
               Reach Mobile
@@ -81,7 +85,7 @@ const About = (props: AboutProps) => {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "var(--ff-medium)",
+              fontFamily: "var(--ff-regular)",
             }}
           >
             Here are a few technologies I’ve been working with recently:
@@ -97,8 +101,10 @@ const About = (props: AboutProps) => {
                 <Box
                   key={id}
                   sx={{
-                    color: darkTheme ? "var(--text-grey-500)" : "inherit",
-                    fontFamily: "var(--ff-medium)",
+                    color: darkTheme
+                      ? "var(--dark_secondary_text_color)"
+                      : "var(--light_secondary_text_color)",
+                    fontFamily: "var(--ff-regular)",
                     fontSize: "14px",
                     mb: "24px",
                     position: "relative",
@@ -107,7 +113,9 @@ const About = (props: AboutProps) => {
                       content: '"▹"',
                       position: "absolute",
                       left: "0px",
-                      color: "var(--primary-main)",
+                      color: darkTheme
+                        ? "var(--dark_accent_color)"
+                        : "var(--light_accent_color)",
                     },
                   }}
                 >
@@ -120,8 +128,10 @@ const About = (props: AboutProps) => {
                 <Box
                   key={id}
                   sx={{
-                    color: darkTheme ? "var(--text-grey-500)" : "inherit",
-                    fontFamily: "var(--ff-medium)",
+                    color: darkTheme
+                      ? "var(--dark_secondary_text_color)"
+                      : "var(--light_secondary_text_color)",
+                    fontFamily: "var(--ff-regular)",
                     fontSize: "14px",
                     mb: "24px",
                     position: "relative",
@@ -130,7 +140,9 @@ const About = (props: AboutProps) => {
                       content: '"▹"',
                       position: "absolute",
                       left: "0px",
-                      color: "var(--primary-main)",
+                      color: darkTheme
+                        ? "var(--dark_accent_color)"
+                        : "var(--light_accent_color)",
                     },
                   }}
                 >

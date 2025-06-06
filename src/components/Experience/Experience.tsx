@@ -27,8 +27,10 @@ const Experience = (props: ExperienceProps) => {
       <Box
         sx={{
           fontSize: { xs: "24px", md: "32px" },
-          fontFamily: "var(--ff-black)",
-          color: "var(--primary-main)",
+          fontFamily: "var(--ff-bold)",
+          color: darkTheme
+            ? "var(--dark_accent_color)"
+            : "var(--light_accent_color)",
           mb: "36px",
         }}
       >
@@ -62,29 +64,37 @@ const Experience = (props: ExperienceProps) => {
                   },
                   cursor: "pointer",
                   fontSize: { xs: "14px", sm: "16px" },
-                  fontFamily: "var(--ff-bold)",
+                  fontFamily: "var(--ff-medium)",
                   transition:
                     "background 0.3s ease, color 0.3s ease, border 0.3s ease",
                   borderLeft: {
                     xs: "none",
                     md:
                       data === selectItem
-                        ? "2px solid var(--primary-dark)"
+                        ? darkTheme
+                          ? "2px solid var(--dark_accent_color)"
+                          : "2px solid var(--light_accent_color)"
                         : darkTheme
-                        ? "2px solid var(--text-grey-800)"
-                        : "2px solid var(--grey-color-dark)",
+                        ? "2px solid var(--dark_secondary_text_color)"
+                        : "2px solid var(--light_secondary_text_color)",
                   },
                   borderBottom: {
                     xs:
                       data === selectItem
-                        ? "2px solid var(--primary-dark)"
+                        ? darkTheme
+                          ? "2px solid var(--dark_accent_color)"
+                          : "2px solid var(--light_accent_color)"
                         : darkTheme
-                        ? "2px solid var(--text-grey-800)"
-                        : "2px solid var(--grey-color-dark)",
+                        ? "2px solid var(--dark_secondary_text_color)"
+                        : "2px solid var(--light_secondary_text_color)",
                     md: "none",
                   },
                   color:
-                    data === selectItem ? "var(--primary-dark)" : "inherit",
+                    data === selectItem
+                      ? darkTheme
+                        ? "var(--dark_accent_color)"
+                        : "var(--light_accent_color)"
+                      : "inherit",
                   background:
                     data === selectItem
                       ? darkTheme
@@ -105,8 +115,7 @@ const Experience = (props: ExperienceProps) => {
           <Box>
             <Box
               sx={{
-                color: "var(--primary-light)",
-                fontFamily: "var(--ff-black)",
+                fontFamily: "var(--ff-semibold)",
                 fontSize: "24px",
                 mb: "24px",
               }}
@@ -115,8 +124,10 @@ const Experience = (props: ExperienceProps) => {
             </Box>
             <Box
               sx={{
-                color: darkTheme ? "var(--text-grey-500)" : "inherit",
-                fontFamily: "var(--ff-medium)",
+                color: darkTheme
+                  ? "var(--dark_secondary_text_color)"
+                  : "var(--light_secondary_text_color)",
+                fontFamily: "var(--ff-regular)",
                 fontSize: "14px",
                 mb: "24px",
               }}
@@ -129,8 +140,7 @@ const Experience = (props: ExperienceProps) => {
                 <Box
                   key={selectItem + id}
                   sx={{
-                    color: darkTheme ? "var(--text-grey-500)" : "inherit",
-                    fontFamily: "var(--ff-medium)",
+                    fontFamily: "var(--ff-regular)",
                     fontSize: "14px",
                     mb: "24px",
                     position: "relative",
@@ -139,7 +149,9 @@ const Experience = (props: ExperienceProps) => {
                       content: '"▹"',
                       position: "absolute",
                       left: "0px",
-                      color: "var(--primary-main)",
+                      color: darkTheme
+                        ? "var(--dark_accent_color)"
+                        : "var(--light_accent_color)",
                     },
                   }}
                 >
