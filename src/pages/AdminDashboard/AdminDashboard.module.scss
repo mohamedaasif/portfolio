@@ -1,0 +1,11 @@
+.sideBarListItem {
+  display: flex;
+  align-items: center;
+  font-family: var(--ff-medium);
+  gap: 8px;
+  padding: 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--white);
+  }
+}

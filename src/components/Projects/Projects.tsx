@@ -23,7 +23,7 @@ const Projects = (props: ProjectsProps) => {
     <Box
       ref={projectRef}
       sx={{
-        width: { xs: "95%", sm: "80%" },
+        width: { xs: "95%", sm: "75%" },
         margin: "0 auto",
       }}
     >
