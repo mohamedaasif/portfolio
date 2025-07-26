@@ -9,11 +9,11 @@ interface HomeProps {
 const Home = (props: HomeProps) => {
   const handleViewPdf = () => {
     const pdfUrl =
-      "https://mohamedaasif.github.io/portfolio/mohamed-aasif-frontend-developer.pdf";
+      "https://mohamedaasif.github.io/portfolio/Mohamed_Aasif_FrontendDeveloper.pdf";
 
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "mohamed-aasif-frontend-developer.pdf";
+    link.download = "Mohamed_Aasif_FrontendDeveloper.pdf";
     link.click();
   };
   return (
