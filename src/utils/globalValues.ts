@@ -78,11 +78,11 @@ export const jobTitle: any = {
   },
   QuikieApps: {
     title: "Software Development Engineer",
-    duration: "February 2020 - August 2022",
+    duration: "June 2021 - August 2022",
   },
   "Zeroes & Ones": {
     title: "Frontend Developer",
-    duration: "September 2019 - January 2020",
+    duration: "February 2021 - June 2021",
   },
 };
 
@@ -235,7 +235,7 @@ export const archiveProjectDetails: any = [
     webLink: "",
   },
   {
-    year: 2020,
+    year: 2021,
     project: "Art Marketplace",
     madeAt: "QuikieApps",
     builtWith: ["Next.js", "JavaScript"],
@@ -243,7 +243,7 @@ export const archiveProjectDetails: any = [
     webLink: "",
   },
   {
-    year: 2019,
+    year: 2021,
     project: "Finance Web App",
     madeAt: "Zeroes & Ones",
     builtWith: ["React", "JavaScript"],
@@ -251,7 +251,7 @@ export const archiveProjectDetails: any = [
     webLink: "",
   },
   {
-    year: 2019,
+    year: 2021,
     project: "Banner Advertising Platform",
     madeAt: "Zeroes & Ones",
     builtWith: ["HTML", "CSS", "JavaScript"],
@@ -259,7 +259,7 @@ export const archiveProjectDetails: any = [
     webLink: "",
   },
   {
-    year: 2019,
+    year: 2021,
     project: "Ecopack: Paper baking molds for industries and distributors",
     madeAt: "Zeroes & Ones",
     builtWith: ["Angular", "JavaScript"],
