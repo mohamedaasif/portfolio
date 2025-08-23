@@ -1,17 +1,8 @@
-import {
-  IconButton,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  Typography,
-  Box,
-} from "@mui/material";
 import { useState } from "react";
-import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import WorkHistoryOutlinedIcon from "@mui/icons-material/WorkHistoryOutlined";
-import BookOutlinedIcon from "@mui/icons-material/BookOutlined";
-import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
+import { Box } from "@mui/material";
 import styles from "./AdminDashboard.module.scss";
+import SideBar from "./SideBar/SideBar";
+import DashboardCard from "./DashboardCard/DashboardCard";
 
 const AdminDashboard = () => {
   return (
@@ -24,47 +15,7 @@ const AdminDashboard = () => {
         display: "flex",
       }}
     >
-      <Box
-        sx={{
-          width: "20%",
-          background: "var(--light_bg_color)",
-          py: "24px",
-        }}
-      >
-        <Box
-          sx={{
-            fontFamily: "var(--ff-semibold)",
-            fontSize: { xs: "16px", md: "18px" },
-            px: "16px",
-          }}
-        >
-          Admin dashboard
-        </Box>
-        <Box
-          sx={{
-            mt: "24px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Typography className={styles.sideBarListItem}>
-            <DashboardOutlinedIcon />
-            Dashboard
-          </Typography>
-          <Typography className={styles.sideBarListItem}>
-            <WorkHistoryOutlinedIcon />
-            Projects
-          </Typography>
-          <Typography className={styles.sideBarListItem}>
-            <BookOutlinedIcon />
-            Blog posts
-          </Typography>
-          <Typography className={styles.sideBarListItem}>
-            <CommentOutlinedIcon />
-            Comments
-          </Typography>
-        </Box>
-      </Box>
+      <SideBar />
       <Box
         sx={{
           width: "80%",
@@ -79,22 +30,10 @@ const AdminDashboard = () => {
         >
           Dashboard
         </Box>
-        <Box sx={{ mt: "24px" }}>
-          <Box
-            sx={{
-              background: "var(--light_bg_color)",
-              borderRadius: "8px",
-              width: "150px",
-              height: "100px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Typography>10</Typography>
-            <Typography>Projects</Typography>
-          </Box>
+        <Box sx={{ mt: "24px", display: "flex", gap: "16px" }}>
+          <DashboardCard count={10} title={"Project"} />
+          <DashboardCard count={0} title={"Blogs"} />
+          <DashboardCard count={5} title={"Comments"} />
         </Box>
       </Box>
     </Box>
