@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import styles from "./AdminDashboard.module.scss";
 import SideBar from "./SideBar/SideBar";
 import DashboardCard from "./DashboardCard/DashboardCard";
+import RecentList from "./RecentList/RecentList";
 
 const AdminDashboard = () => {
   return (
@@ -35,6 +36,8 @@ const AdminDashboard = () => {
           <DashboardCard count={0} title={"Blogs"} />
           <DashboardCard count={5} title={"Comments"} />
         </Box>
+        <RecentList title={"Recent Projects"} />
+        <RecentList title={"Recent Blogs"} />
       </Box>
     </Box>
   );

@@ -1,0 +1,36 @@
+.recentListTable {
+  border: 1px solid var(--light_border_color);
+  border-radius: 8px;
+  width: 65%;
+  overflow: hidden;
+  .recentListTableHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--light_bg_color);
+    padding: 8px 16px;
+    .recentListHeaderItem {
+      float: left;
+      flex: 1;
+      color: var(--light_secondary_text_color);
+    }
+  }
+  .recentListTableItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+  }
+  .recentListItem {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    float: left;
+  }
+  .recentListActionItem {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    color: white;
+    padding: 4px 16px;
+    cursor: pointer;
+  }
+}
