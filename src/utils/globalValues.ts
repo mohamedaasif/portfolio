@@ -66,15 +66,20 @@ export const skills: any = [
 ];
 
 export const experience: string[] = [
+  "Side International",
   "Reach Mobile",
   "QuikieApps",
   "Zeroes & Ones",
 ];
 
 export const jobTitle: any = {
+  "Side International": {
+    title: "Senior Software Engineer",
+    duration: "August 2025 - Present",
+  },
   "Reach Mobile": {
     title: "ReactJS Developer",
-    duration: "September 2022 - Present",
+    duration: "September 2022 - July 2025",
   },
   QuikieApps: {
     title: "Software Development Engineer",
@@ -87,6 +92,11 @@ export const jobTitle: any = {
 };
 
 export const experienceInDetails: any = {
+  "Side International": [
+    "Developed Import and Export functionality via Excel to enable bulk creation and updates of Contacts, Accounts, and Opportunities, improving data management efficiency and user productivity.",
+    "Developed a “What’s New” feature enabling admins to publish version-based product updates via a rich text editor and notify users through a top-nav icon, enhancing feature visibility and user adoption.",
+    "Resolved critical bugs and UI inconsistencies across CRM modules, improving application stability, performance, and overall user experience.",
+  ],
   "Reach Mobile": [
     "Developed and launched a user-friendly web application with an optimized check-out page that boosted user clicks and drove a 20% rise in customer purchases.",
     "Implemented Single Sign-On (SSO) login feature to elevate customer experience and enhance security, resulting in significant savings by reducing password reset costs by $70 per incident.",
@@ -138,6 +148,14 @@ export const projectDesc: any = [
 ];
 
 export const archiveProjectDetails: any = [
+  {
+    year: 2025,
+    project: "Side CRM",
+    madeAt: "Side International",
+    builtWith: ["React", "Tailwind CSS", "Tanstack Query", "TypeScript"],
+    gitLink: "",
+    webLink: "",
+  },
   {
     year: 2025,
     project: "Lyca Mobile",
