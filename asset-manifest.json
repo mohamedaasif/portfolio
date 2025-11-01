@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.bf1d2dda.css",
-    "main.js": "/portfolio/static/js/main.d370417a.js",
+    "main.js": "/portfolio/static/js/main.bff15732.js",
     "static/js/453.ed3810f9.chunk.js": "/portfolio/static/js/453.ed3810f9.chunk.js",
     "static/media/Happy_Laptop.svg": "/portfolio/static/media/Happy_Laptop.c4fa712abf467e420d5fb49b15771623.svg",
     "static/media/airtel.png": "/portfolio/static/media/airtel.c0d1f9647f30c5abaa35.png",
@@ -14,11 +14,11 @@
     "static/media/mcc.png": "/portfolio/static/media/mcc.b7890821c8957b2fe829.png",
     "index.html": "/portfolio/index.html",
     "main.bf1d2dda.css.map": "/portfolio/static/css/main.bf1d2dda.css.map",
-    "main.d370417a.js.map": "/portfolio/static/js/main.d370417a.js.map",
+    "main.bff15732.js.map": "/portfolio/static/js/main.bff15732.js.map",
     "453.ed3810f9.chunk.js.map": "/portfolio/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bf1d2dda.css",
-    "static/js/main.d370417a.js"
+    "static/js/main.bff15732.js"
   ]
 }
