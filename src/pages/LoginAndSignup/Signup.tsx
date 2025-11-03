@@ -10,8 +10,10 @@ import {
   Box,
 } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState<Boolean>(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -27,7 +29,6 @@ const Signup = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "var(--light_bg_color) !important",
       }}
     >
       <Box
@@ -44,7 +45,7 @@ const Signup = () => {
             textAlign: "center",
             fontFamily: "var(--ff-bold)",
             fontSize: "24px",
-            color: "var(--light_primary_text_color) !important",
+            color: "var(--light_accent_color) !important",
           }}
         >
           Create an account
@@ -105,6 +106,10 @@ const Signup = () => {
             width: "100%",
             mt: "24px",
             fontFamily: "var(--ff-medium)",
+            background: "var(--dark_accent_color)",
+            "&:hover": {
+              background: "var(--dark_accent_hover_color)",
+            },
           }}
           onClick={handleSignup}
         >
@@ -122,13 +127,14 @@ const Signup = () => {
           <Typography>Already have an account?</Typography>
           <Typography
             sx={{
-              color: "var(--dark_tag_bg_color)",
+              color: "var(--light_accent_color)",
               cursor: "pointer",
               fontFamily: "var(--ff-medium)",
               "&:hover": {
                 textDecoration: "underline",
               },
             }}
+            onClick={() => navigate("/login")}
           >
             Login
           </Typography>

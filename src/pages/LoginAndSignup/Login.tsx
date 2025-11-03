@@ -10,14 +10,28 @@ import {
   Box,
 } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { loginUser } from "../../api/authApi";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [showPassword, setShowPassword] = useState<Boolean>(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
-  const handleLogin = () => {
-    console.log("Login button clicked");
+  const handleLogin = async () => {
+    const payload = {
+      email,
+      password,
+    };
+    const data = await loginUser(payload, "/api/auth/login");
+    if (data?.authToken) {
+      sessionStorage.setItem("authToken", data?.authToken);
+      navigate("/dashboard");
+    }
   };
   return (
     <Box
@@ -27,7 +41,6 @@ const Login = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "var(--light_bg_color) !important",
       }}
     >
       <Box
@@ -44,7 +57,7 @@ const Login = () => {
             textAlign: "center",
             fontFamily: "var(--ff-bold)",
             fontSize: "24px",
-            color: "var(--light_primary_text_color) !important",
+            color: "var(--light_accent_color) !important",
           }}
         >
           Admin Login
@@ -58,6 +71,8 @@ const Login = () => {
             type="text"
             label="Email address"
             fullWidth
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </FormControl>
         <FormControl sx={{ width: "100%", mt: "24px" }} variant="outlined">
@@ -88,6 +103,8 @@ const Login = () => {
             }
             label="Password"
             fullWidth
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </FormControl>
         <Button
@@ -96,6 +113,10 @@ const Login = () => {
             width: "100%",
             mt: "24px",
             fontFamily: "var(--ff-medium)",
+            background: "var(--dark_accent_color)",
+            "&:hover": {
+              background: "var(--dark_accent_hover_color)",
+            },
           }}
           onClick={handleLogin}
         >
@@ -111,13 +132,14 @@ const Login = () => {
           <Typography>If you don't have an account already?</Typography>
           <Typography
             sx={{
-              color: "var(--dark_tag_bg_color)",
+              color: "var(--light_accent_color)",
               cursor: "pointer",
               fontFamily: "var(--ff-medium)",
               "&:hover": {
                 textDecoration: "underline",
               },
             }}
+            onClick={() => navigate("/signup")}
           >
             Create an account
           </Typography>
