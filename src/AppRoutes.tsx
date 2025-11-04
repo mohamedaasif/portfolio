@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import { useRef, useState, useEffect } from "react";
 import Signup from "./pages/LoginAndSignup/Signup";
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
+import { ProtectedRoute, PublicRoute } from "./ProtectedRoute";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -73,9 +74,13 @@ const AppRoutes = () => {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<AdminDashboard />} />
+        <Route element={<PublicRoute />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Route>
+        <Route element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<AdminDashboard />} />
+        </Route>
       </Routes>
 
       {!shouldHideLayout && (
