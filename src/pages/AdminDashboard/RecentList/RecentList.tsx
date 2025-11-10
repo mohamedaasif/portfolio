@@ -31,48 +31,60 @@ const RecentList = (props: RecentListProps) => {
             Actions
           </Typography>
         </Box>
-        {projects?.map((item: any, idx: number) => {
-          return (
-            <Box
-              className={styles.recentListTableItem}
-              key={item?.title + idx}
-              sx={{
-                borderBottom:
-                  idx !== projects?.length - 1
-                    ? "1px solid var(--light_border_color)"
-                    : "none",
-              }}
-            >
-              <Typography className={styles.recentListItem}>
-                {item?.title}
-              </Typography>
-              <Box className={styles.recentListItem}>
-                <Typography
-                  className={styles.recentListActionItem}
-                  sx={{
-                    background: "var(--light_accent_color)",
-                    "&:hover": {
-                      background: "var(--light_accent_hover_color)",
-                    },
-                  }}
-                >
-                  Edit
+        {!projects?.length ? (
+          <Typography
+            sx={{
+              textAlign: "center",
+              opacity: "0.5",
+              py: "10px",
+            }}
+          >
+            No Data Found
+          </Typography>
+        ) : (
+          projects?.map((item: any, idx: number) => {
+            return (
+              <Box
+                className={styles.recentListTableItem}
+                key={item?.title + idx}
+                sx={{
+                  borderBottom:
+                    idx !== projects?.length - 1
+                      ? "1px solid var(--light_border_color)"
+                      : "none",
+                }}
+              >
+                <Typography className={styles.recentListItem}>
+                  {item?.title}
                 </Typography>
-                <Typography
-                  className={styles.recentListActionItem}
-                  sx={{
-                    background: "var(--danger)",
-                    "&:hover": {
-                      background: "var(--danger_hover)",
-                    },
-                  }}
-                >
-                  Delete
-                </Typography>
+                <Box className={styles.recentListItem}>
+                  <Typography
+                    className={styles.recentListActionItem}
+                    sx={{
+                      background: "var(--light_accent_color)",
+                      "&:hover": {
+                        background: "var(--light_accent_hover_color)",
+                      },
+                    }}
+                  >
+                    Edit
+                  </Typography>
+                  <Typography
+                    className={styles.recentListActionItem}
+                    sx={{
+                      background: "var(--danger)",
+                      "&:hover": {
+                        background: "var(--danger_hover)",
+                      },
+                    }}
+                  >
+                    Delete
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
-          );
-        })}
+            );
+          })
+        )}
       </Box>
     </Box>
   );

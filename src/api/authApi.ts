@@ -6,10 +6,5 @@ export const loginUser = async (payload: any, endpoint: any) => {
     },
     body: JSON.stringify(payload),
   });
-
-  // if (!response.ok) {
-  //   throw new Error("Login failed");
-  // }
-
   return await response.json();
 };
