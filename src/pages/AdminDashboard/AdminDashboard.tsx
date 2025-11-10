@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import styles from "./AdminDashboard.module.scss";
 import SideBar from "./SideBar/SideBar";
 import DashboardCard from "./DashboardCard/DashboardCard";
 import RecentList from "./RecentList/RecentList";
+import { commonFetchFunction } from "../../api/projectApi";
+import { getAllProjectsApi } from "../../utils/apiEndpoints";
 
 const AdminDashboard = () => {
+  const [projects, setProjects] = useState([]);
+  const getAllProjects = async () => {
+    const data = await commonFetchFunction(getAllProjectsApi);
+    setProjects(data?.data ?? []);
+  };
+  useEffect(() => {
+    getAllProjects();
+  }, []);
+
   return (
     <Box
       sx={{
@@ -32,12 +43,12 @@ const AdminDashboard = () => {
           Dashboard
         </Box>
         <Box sx={{ mt: "24px", display: "flex", gap: "16px" }}>
-          <DashboardCard count={10} title={"Project"} />
+          <DashboardCard count={projects?.length} title={"Project"} />
           <DashboardCard count={0} title={"Blogs"} />
           <DashboardCard count={5} title={"Comments"} />
         </Box>
-        <RecentList title={"Recent Projects"} />
-        <RecentList title={"Recent Blogs"} />
+        <RecentList title={"Recent Projects"} projects={projects} />
+        {/* <RecentList title={"Recent Blogs"} /> */}
       </Box>
     </Box>
   );

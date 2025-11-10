@@ -1,14 +1,14 @@
-import { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import styles from "./RecentList.module.scss";
 
 interface RecentListProps {
   title: string;
+  projects: any;
 }
 
 const RecentList = (props: RecentListProps) => {
-  const { title } = props;
-  const data = ["Portfolio Website", "Airtel OTT"];
+  const { title, projects } = props;
+
   return (
     <Box
       sx={{
@@ -31,19 +31,21 @@ const RecentList = (props: RecentListProps) => {
             Actions
           </Typography>
         </Box>
-        {data?.map((item: string, idx: number) => {
+        {projects?.map((item: any, idx: number) => {
           return (
             <Box
               className={styles.recentListTableItem}
-              key={item + idx}
+              key={item?.title + idx}
               sx={{
                 borderBottom:
-                  idx !== data.length - 1
+                  idx !== projects?.length - 1
                     ? "1px solid var(--light_border_color)"
                     : "none",
               }}
             >
-              <Typography className={styles.recentListItem}>{item}</Typography>
+              <Typography className={styles.recentListItem}>
+                {item?.title}
+              </Typography>
               <Box className={styles.recentListItem}>
                 <Typography
                   className={styles.recentListActionItem}
