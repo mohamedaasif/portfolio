@@ -44,10 +44,14 @@ const AdminDashboard = () => {
         </Box>
         <Box sx={{ mt: "24px", display: "flex", gap: "16px" }}>
           <DashboardCard count={projects?.length} title={"Project"} />
-          <DashboardCard count={0} title={"Blogs"} />
-          <DashboardCard count={5} title={"Comments"} />
+          {/* <DashboardCard count={0} title={"Blogs"} />
+          <DashboardCard count={5} title={"Comments"} /> */}
         </Box>
-        <RecentList title={"Recent Projects"} projects={projects} />
+        <RecentList
+          title={"Recent Projects"}
+          projects={projects}
+          setProjects={setProjects}
+        />
         {/* <RecentList title={"Recent Blogs"} /> */}
       </Box>
     </Box>
