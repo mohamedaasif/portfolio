@@ -12,6 +12,7 @@ import { useRef, useState, useEffect } from "react";
 import Signup from "./pages/LoginAndSignup/Signup";
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 import { ProtectedRoute, PublicRoute } from "./ProtectedRoute";
+import SessionExpired from "./pages/SessionExpired/SessionExpired";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -68,7 +69,12 @@ const AppRoutes = () => {
   }, [scrollingByUser]);
 
   // Define routes where layout should be hidden
-  const hideLayoutRoutes = ["/login", "/signup", "/dashboard"];
+  const hideLayoutRoutes = [
+    "/login",
+    "/signup",
+    "/dashboard",
+    "/session-expired",
+  ];
   const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
 
   return (
@@ -80,6 +86,7 @@ const AppRoutes = () => {
         </Route>
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<AdminDashboard />} />
+          <Route path="/session-expired" element={<SessionExpired />} />
         </Route>
       </Routes>
 
