@@ -1,7 +1,7 @@
 .sideBarListItem {
   display: flex;
   align-items: center;
-  font-family: var(--ff-medium);
+  font-family: var(--ff-medium) !important;
   gap: 8px;
   padding: 16px;
   cursor: pointer;

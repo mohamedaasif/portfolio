@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginApiUrl } from "../../utils/apiEndpoints";
+import { loginApiUrl, userDetailsApiUrl } from "../../utils/apiEndpoints";
 import { fetchWrapper } from "../../api/fetchWrapper";
 
 const Login = () => {
@@ -34,6 +34,8 @@ const Login = () => {
     });
     if (data?.authToken) {
       sessionStorage.setItem("authToken", data?.authToken);
+      const userData = await fetchWrapper(userDetailsApiUrl + email);
+      sessionStorage.setItem("userData", JSON.stringify(userData?.data));
       navigate("/dashboard");
     }
   };
