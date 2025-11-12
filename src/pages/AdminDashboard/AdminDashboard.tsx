@@ -4,13 +4,13 @@ import styles from "./AdminDashboard.module.scss";
 import SideBar from "./SideBar/SideBar";
 import DashboardCard from "./DashboardCard/DashboardCard";
 import RecentList from "./RecentList/RecentList";
-import { commonFetchFunction } from "../../api/projectApi";
 import { getAllProjectsApi } from "../../utils/apiEndpoints";
+import { fetchWrapper } from "../../api/fetchWrapper";
 
 const AdminDashboard = () => {
   const [projects, setProjects] = useState([]);
   const getAllProjects = async () => {
-    const data = await commonFetchFunction(getAllProjectsApi);
+    const data = await fetchWrapper(getAllProjectsApi);
     setProjects(data?.data ?? []);
   };
   useEffect(() => {

@@ -1,8 +1,8 @@
 import { Box, Modal, Typography, Button } from "@mui/material";
 import styles from "./RecentList.module.scss";
 import { useState } from "react";
-import { commonFetchFunction, deleteProjectApi } from "../../../api/projectApi";
 import { deleteProject, getAllProjectsApi } from "../../../utils/apiEndpoints";
+import { fetchWrapper } from "../../../api/fetchWrapper";
 
 interface RecentListProps {
   title: string;
@@ -40,9 +40,11 @@ const RecentList = (props: RecentListProps) => {
   };
 
   const handleConfirmDelete = async () => {
-    const data = await deleteProjectApi(deleteProject, selectedItem?._id);
+    const data = await fetchWrapper(deleteProject + selectedItem?._id, {
+      method: "DELETE",
+    });
     if (data?.message?.toLowerCase() === "success") {
-      const res = await commonFetchFunction(getAllProjectsApi);
+      const res = await fetchWrapper(getAllProjectsApi);
       setProjects(res?.data);
     }
     handleClose();
