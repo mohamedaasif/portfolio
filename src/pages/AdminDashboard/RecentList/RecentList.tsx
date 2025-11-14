@@ -1,7 +1,19 @@
-import { Box, Modal, Typography, Button } from "@mui/material";
+import {
+  Box,
+  Modal,
+  Typography,
+  Button,
+  TextField,
+  InputLabel,
+  Chip,
+} from "@mui/material";
 import styles from "./RecentList.module.scss";
 import { useState } from "react";
-import { deleteProject, getAllProjectsApi } from "../../../utils/apiEndpoints";
+import {
+  createProjectApiUrl,
+  deleteProject,
+  getAllProjectsApi,
+} from "../../../utils/apiEndpoints";
 import { fetchWrapper } from "../../../api/fetchWrapper";
 
 interface RecentListProps {
@@ -27,7 +39,16 @@ const modalStyle = {
 const RecentList = (props: RecentListProps) => {
   const { title, projects, setProjects } = props;
   const [open, setOpen] = useState(false);
+  const [openAddProjectModal, setOpenAddProjectModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState<any>(null);
+  const [techInput, setTechInput] = useState("");
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    technology: [],
+    ghLink: "",
+    webLink: "",
+  });
 
   const handleOpen = (item: any) => {
     setSelectedItem(item);
@@ -37,6 +58,10 @@ const RecentList = (props: RecentListProps) => {
   const handleClose = () => {
     setOpen(false);
     setSelectedItem(null);
+  };
+
+  const handleAddProjectModal = () => {
+    setOpenAddProjectModal(false);
   };
 
   const handleConfirmDelete = async () => {
@@ -50,16 +75,65 @@ const RecentList = (props: RecentListProps) => {
     handleClose();
   };
 
+  const formDataHandler = (key: string, value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [key]: key === "technology" ? [...prev.technology, value] : value,
+    }));
+  };
+
+  const removeSkill = (item: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      technology: prev.technology.filter((tech) => tech !== item),
+    }));
+  };
+
+  const addProjectHandler = async () => {
+    const data = await fetchWrapper(createProjectApiUrl, {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+    if (data?.message?.toLowerCase() === "success") {
+      const res = await fetchWrapper(getAllProjectsApi);
+      setProjects(res?.data);
+    }
+    handleAddProjectModal();
+  };
+
   return (
-    <Box sx={{ my: "24px" }}>
+    <Box sx={{ my: "24px", width: { xs: "100%", md: "65%" } }}>
       <Box
         sx={{
-          mb: "24px",
-          fontFamily: "var(--ff-semibold)",
-          fontSize: { xs: "16px", md: "24px" },
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
-        {title}
+        <Box
+          sx={{
+            mb: "24px",
+            fontFamily: "var(--ff-semibold)",
+            fontSize: { xs: "16px", md: "24px" },
+          }}
+        >
+          {title}
+        </Box>
+        <Button
+          variant="contained"
+          sx={{
+            width: "fit-content",
+            height: "35px",
+            textTransform: "capitalize",
+            fontFamily: "var(--ff-medium)",
+            background: "var(--dark_accent_color)",
+            "&:hover": {
+              background: "var(--dark_accent_hover_color)",
+            },
+          }}
+          onClick={() => setOpenAddProjectModal(true)}
+        >
+          Add Project
+        </Button>
       </Box>
 
       <Box className={styles.recentListTable}>
@@ -157,6 +231,164 @@ const RecentList = (props: RecentListProps) => {
               onClick={handleConfirmDelete}
             >
               Delete
+            </Button>
+          </Box>
+        </Box>
+      </Modal>
+      <Modal
+        open={openAddProjectModal}
+        onClose={handleAddProjectModal}
+        aria-labelledby="add-project-title"
+        aria-describedby="add-project-description"
+        slotProps={{
+          backdrop: {
+            sx: {
+              backgroundColor: "rgba(128, 128, 128, 0.5)",
+            },
+          },
+        }}
+      >
+        <Box sx={modalStyle}>
+          <Typography
+            id="confirm-add-project-title"
+            variant="h6"
+            sx={{
+              mb: 4,
+              fontWeight: 600,
+              color: "var(--light_primary_text_color)",
+            }}
+          >
+            Add Project
+          </Typography>
+
+          <Box
+            sx={{
+              mb: 4,
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+            }}
+          >
+            <Box>
+              <InputLabel shrink>Title*</InputLabel>
+              <TextField
+                placeholder="Enter Project Title"
+                variant="outlined"
+                fullWidth
+                size="small"
+                slotProps={{ inputLabel: { shrink: true } }}
+                value={formData.title}
+                onChange={(e) => formDataHandler("title", e.target.value)}
+              />
+            </Box>
+            <Box>
+              <InputLabel shrink>Description*</InputLabel>
+              <TextField
+                multiline
+                fullWidth
+                minRows={4}
+                maxRows={4}
+                value={formData.description}
+                onChange={(e) => formDataHandler("description", e.target.value)}
+                slotProps={{
+                  input: {
+                    inputProps: {
+                      maxLength: 300,
+                    },
+                  },
+                }}
+              />
+              <Box
+                style={{
+                  fontSize: 12,
+                  textAlign: "right",
+                  color: "var(--light_primary_text_color)",
+                }}
+              >
+                {formData.description.length}/300
+              </Box>
+            </Box>
+            <Box>
+              <InputLabel shrink>
+                Technology Used* (You can add at most 10 skills)
+              </InputLabel>
+              <TextField
+                placeholder="Enter Skills"
+                variant="outlined"
+                fullWidth
+                size="small"
+                slotProps={{ inputLabel: { shrink: true } }}
+                disabled={formData?.technology?.length >= 10}
+                value={techInput}
+                onChange={(e) => setTechInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && techInput.trim() !== "") {
+                    e.preventDefault();
+                    formDataHandler("technology", techInput.trim());
+                    setTechInput("");
+                  }
+                }}
+              />
+              <Box mt={2} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+                {formData?.technology?.map((item) => (
+                  <Chip
+                    key={item}
+                    label={item}
+                    onDelete={() => removeSkill(item)}
+                    color="primary"
+                  />
+                ))}
+              </Box>
+            </Box>
+            <Box>
+              <InputLabel shrink>GitHub Link</InputLabel>
+              <TextField
+                placeholder="Enter GitHub Link"
+                variant="outlined"
+                fullWidth
+                size="small"
+                slotProps={{ inputLabel: { shrink: true } }}
+                value={formData.ghLink}
+                onChange={(e) => formDataHandler("ghLink", e.target.value)}
+              />
+            </Box>
+            <Box>
+              <InputLabel shrink>Project Link</InputLabel>
+              <TextField
+                placeholder="Enter Project Link"
+                variant="outlined"
+                fullWidth
+                size="small"
+                slotProps={{ inputLabel: { shrink: true } }}
+                value={formData.webLink}
+                onChange={(e) => formDataHandler("webLink", e.target.value)}
+              />
+            </Box>
+          </Box>
+
+          <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 2 }}>
+            <Button
+              variant="outlined"
+              color="inherit"
+              onClick={handleAddProjectModal}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                width: "fit-content",
+                height: "35px",
+                textTransform: "capitalize",
+                fontFamily: "var(--ff-medium)",
+                background: "var(--dark_accent_color)",
+                "&:hover": {
+                  background: "var(--dark_accent_hover_color)",
+                },
+              }}
+              onClick={addProjectHandler}
+            >
+              Add Project
             </Button>
           </Box>
         </Box>

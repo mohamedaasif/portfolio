@@ -53,3 +53,8 @@ body {
     font-weight: 700;
   }
 }
+
+label {
+  font-family: var(--ff-semibold) !important;
+  color: var(--light_primary_text_color) !important;
+}
