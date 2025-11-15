@@ -13,6 +13,7 @@ import {
   createProjectApiUrl,
   deleteProject,
   getAllProjectsApi,
+  updateProjectApiUrl,
 } from "../../../utils/apiEndpoints";
 import { fetchWrapper } from "../../../api/fetchWrapper";
 
@@ -41,8 +42,9 @@ const RecentList = (props: RecentListProps) => {
   const [open, setOpen] = useState(false);
   const [openAddProjectModal, setOpenAddProjectModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState<any>(null);
+  const [isEditProject, setIsEditProject] = useState(false);
   const [techInput, setTechInput] = useState("");
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<any>({
     title: "",
     description: "",
     technology: [],
@@ -62,6 +64,15 @@ const RecentList = (props: RecentListProps) => {
 
   const handleAddProjectModal = () => {
     setOpenAddProjectModal(false);
+    setSelectedItem(null);
+    setIsEditProject(false);
+    setFormData({
+      title: "",
+      description: "",
+      technology: [],
+      ghLink: "",
+      webLink: "",
+    });
   };
 
   const handleConfirmDelete = async () => {
@@ -76,16 +87,16 @@ const RecentList = (props: RecentListProps) => {
   };
 
   const formDataHandler = (key: string, value: string) => {
-    setFormData((prev) => ({
+    setFormData((prev: any) => ({
       ...prev,
       [key]: key === "technology" ? [...prev.technology, value] : value,
     }));
   };
 
   const removeSkill = (item: string) => {
-    setFormData((prev) => ({
+    setFormData((prev: any) => ({
       ...prev,
-      technology: prev.technology.filter((tech) => tech !== item),
+      technology: prev.technology.filter((tech: any) => tech !== item),
     }));
   };
 
@@ -93,6 +104,41 @@ const RecentList = (props: RecentListProps) => {
     const data = await fetchWrapper(createProjectApiUrl, {
       method: "POST",
       body: JSON.stringify(formData),
+    });
+    if (data?.message?.toLowerCase() === "success") {
+      const res = await fetchWrapper(getAllProjectsApi);
+      setProjects(res?.data);
+    }
+    handleAddProjectModal();
+  };
+
+  const editProjectHandler = async (item: any) => {
+    setIsEditProject(true);
+    setSelectedItem(item);
+    setFormData({
+      title: item?.title,
+      description: item?.description,
+      technology: item?.technology,
+      ghLink: item?.ghLink || "",
+      webLink: item?.webLink || "",
+    });
+    setOpenAddProjectModal(true);
+  };
+
+  const updateProjectHanler = async () => {
+    const payload: any = {
+      postId: selectedItem?._id,
+      data: {
+        title: formData?.title,
+        description: formData?.description,
+        technology: formData?.technology,
+        ghLink: formData?.ghLink || "",
+        webLink: formData?.webLink || "",
+      },
+    };
+    const data = await fetchWrapper(updateProjectApiUrl, {
+      method: "PUT",
+      body: JSON.stringify(payload),
     });
     if (data?.message?.toLowerCase() === "success") {
       const res = await fetchWrapper(getAllProjectsApi);
@@ -172,6 +218,7 @@ const RecentList = (props: RecentListProps) => {
                       background: "var(--light_accent_hover_color)",
                     },
                   }}
+                  onClick={() => editProjectHandler(item)}
                 >
                   Edit
                 </Typography>
@@ -258,7 +305,7 @@ const RecentList = (props: RecentListProps) => {
               color: "var(--light_primary_text_color)",
             }}
           >
-            Add Project
+            {isEditProject ? "Edit Project" : "Add Project"}
           </Typography>
 
           <Box
@@ -330,7 +377,7 @@ const RecentList = (props: RecentListProps) => {
                 }}
               />
               <Box mt={2} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
-                {formData?.technology?.map((item) => (
+                {formData?.technology?.map((item: any) => (
                   <Chip
                     key={item}
                     label={item}
@@ -386,9 +433,11 @@ const RecentList = (props: RecentListProps) => {
                   background: "var(--dark_accent_hover_color)",
                 },
               }}
-              onClick={addProjectHandler}
+              onClick={() =>
+                isEditProject ? updateProjectHanler() : addProjectHandler()
+              }
             >
-              Add Project
+              {isEditProject ? "Update" : "Add Project"}
             </Button>
           </Box>
         </Box>
