@@ -5,9 +5,9 @@ import {
   IconButton,
   InputAdornment,
   InputLabel,
-  OutlinedInput,
   Typography,
   Box,
+  TextField,
 } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -51,51 +51,65 @@ const Signup = () => {
           Create an account
         </Typography>
         <FormControl sx={{ width: "100%", mt: "24px" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-name">Your name</InputLabel>
-          <OutlinedInput
+          <InputLabel shrink htmlFor="outlined-adornment-name">
+            Your name
+          </InputLabel>
+          <TextField
             id="outlined-adornment-name"
             type="text"
             label="Your name"
             fullWidth
+            slotProps={{ inputLabel: { shrink: true } }}
+            size="small"
           />
         </FormControl>
         <FormControl sx={{ width: "100%", mt: "24px" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-email">
+          <InputLabel shrink htmlFor="outlined-adornment-email">
             Email address
           </InputLabel>
-          <OutlinedInput
+          <TextField
             id="outlined-adornment-email"
             type="text"
             label="Email address"
             fullWidth
+            slotProps={{ inputLabel: { shrink: true } }}
+            size="small"
           />
         </FormControl>
         <FormControl sx={{ width: "100%", mt: "24px" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
+          <InputLabel shrink htmlFor="outlined-adornment-password">
             Password
           </InputLabel>
-          <OutlinedInput
+          <TextField
             id="outlined-adornment-password"
             type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label={
-                    showPassword ? "hide the password" : "display the password"
-                  }
-                  onClick={handleClickShowPassword}
-                  //   onMouseDown={handleMouseDownPassword}
-                  //   onMouseUp={handleMouseUpPassword}
-                  edge="end"
-                >
-                  {showPassword ? (
-                    <VisibilityOffOutlined />
-                  ) : (
-                    <VisibilityOutlined />
-                  )}
-                </IconButton>
-              </InputAdornment>
-            }
+            slotProps={{
+              inputLabel: { shrink: true },
+              input: {
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label={
+                        showPassword
+                          ? "hide the password"
+                          : "display the password"
+                      }
+                      onClick={handleClickShowPassword}
+                      //   onMouseDown={handleMouseDownPassword}
+                      //   onMouseUp={handleMouseUpPassword}
+                      edge="end"
+                    >
+                      {showPassword ? (
+                        <VisibilityOffOutlined />
+                      ) : (
+                        <VisibilityOutlined />
+                      )}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              },
+            }}
+            size="small"
             label="Password"
             fullWidth
           />
