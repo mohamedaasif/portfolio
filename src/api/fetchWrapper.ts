@@ -1,10 +1,11 @@
 export const fetchWrapper = async (url: any, options: any = {}) => {
   const token = sessionStorage.getItem("authToken");
+  const isFormData = options.body instanceof FormData;
   const config = {
     ...options,
     headers: {
-      "Content-Type": "application/json",
       Authorization: token ? `Bearer ${token}` : "",
+      ...(isFormData ? {} : { "Content-Type": "application/json" }),
       ...options.headers,
     },
   };

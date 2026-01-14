@@ -51,6 +51,8 @@ const RecentList = (props: RecentListProps) => {
     ghLink: "",
     webLink: "",
   });
+  const [image, setImage] = useState<string | undefined>(undefined);
+  const [imageFile, setImageFile] = useState<File | null>(null);
 
   const handleOpen = (item: any) => {
     setSelectedItem(item);
@@ -73,6 +75,8 @@ const RecentList = (props: RecentListProps) => {
       ghLink: "",
       webLink: "",
     });
+    setImage(undefined);
+    setImageFile(null);
   };
 
   const handleConfirmDelete = async () => {
@@ -100,10 +104,31 @@ const RecentList = (props: RecentListProps) => {
     }));
   };
 
+  const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !file.type.startsWith("image/") || file.size > 2 * 1024 * 1024)
+      return;
+
+    setImage(URL.createObjectURL(file));
+    setImageFile(file);
+  };
+
   const addProjectHandler = async () => {
+    const payload = new FormData();
+    for (let key in formData) {
+      if (Array.isArray(formData[key])) {
+        payload.append(key, JSON.stringify(formData[key]));
+      } else {
+        payload.append(key, formData[key]);
+      }
+    }
+    if (imageFile) {
+      payload.append("thumbnail", imageFile);
+    }
+
     const data = await fetchWrapper(createProjectApiUrl, {
       method: "POST",
-      body: JSON.stringify(formData),
+      body: payload,
     });
     if (data?.message?.toLowerCase() === "success") {
       const res = await fetchWrapper(getAllProjectsApi);
@@ -122,6 +147,9 @@ const RecentList = (props: RecentListProps) => {
       ghLink: item?.ghLink || "",
       webLink: item?.webLink || "",
     });
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+    setImage(`${API_BASE_URL}/${item.thumbnail}`);
+
     setOpenAddProjectModal(true);
   };
 
@@ -294,8 +322,19 @@ const RecentList = (props: RecentListProps) => {
             },
           },
         }}
+        sx={{
+          width: "40%",
+          margin: "0 auto",
+        }}
       >
-        <Box sx={modalStyle}>
+        <Box
+          sx={{
+            ...modalStyle,
+            width: "100%",
+            maxHeight: "80vh",
+            overflowY: "auto",
+          }}
+        >
           <Typography
             id="confirm-add-project-title"
             variant="h6"
@@ -356,6 +395,38 @@ const RecentList = (props: RecentListProps) => {
               </Box>
             </Box>
             <Box>
+              <InputLabel shrink>Project Thumbnail</InputLabel>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {image && (
+                  <Box
+                    component="img"
+                    alt="thumbnail"
+                    src={image}
+                    sx={{
+                      width: "100%",
+                      height: "auto",
+                      mb: 2,
+                    }}
+                  />
+                )}
+
+                <Button variant="outlined" component="label">
+                  Upload Image
+                  <input
+                    type="file"
+                    accept="image/*"
+                    hidden
+                    onChange={handleImage}
+                  />
+                </Button>
+              </Box>
+            </Box>
+            <Box>
               <InputLabel shrink>
                 Technology Used* (You can add at most 10 skills)
               </InputLabel>
@@ -387,29 +458,36 @@ const RecentList = (props: RecentListProps) => {
                 ))}
               </Box>
             </Box>
-            <Box>
-              <InputLabel shrink>GitHub Link</InputLabel>
-              <TextField
-                placeholder="Enter GitHub Link"
-                variant="outlined"
-                fullWidth
-                size="small"
-                slotProps={{ inputLabel: { shrink: true } }}
-                value={formData.ghLink}
-                onChange={(e) => formDataHandler("ghLink", e.target.value)}
-              />
-            </Box>
-            <Box>
-              <InputLabel shrink>Project Link</InputLabel>
-              <TextField
-                placeholder="Enter Project Link"
-                variant="outlined"
-                fullWidth
-                size="small"
-                slotProps={{ inputLabel: { shrink: true } }}
-                value={formData.webLink}
-                onChange={(e) => formDataHandler("webLink", e.target.value)}
-              />
+            <Box
+              sx={{
+                display: "flex",
+                gap: "16px",
+              }}
+            >
+              <Box sx={{ flex: 1 }}>
+                <InputLabel shrink>GitHub Link</InputLabel>
+                <TextField
+                  placeholder="Enter GitHub Link"
+                  variant="outlined"
+                  fullWidth
+                  size="small"
+                  slotProps={{ inputLabel: { shrink: true } }}
+                  value={formData.ghLink}
+                  onChange={(e) => formDataHandler("ghLink", e.target.value)}
+                />
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                <InputLabel shrink>Project Link</InputLabel>
+                <TextField
+                  placeholder="Enter Project Link"
+                  variant="outlined"
+                  fullWidth
+                  size="small"
+                  slotProps={{ inputLabel: { shrink: true } }}
+                  value={formData.webLink}
+                  onChange={(e) => formDataHandler("webLink", e.target.value)}
+                />
+              </Box>
             </Box>
           </Box>
 
