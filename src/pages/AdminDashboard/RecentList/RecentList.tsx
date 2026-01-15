@@ -50,6 +50,8 @@ const RecentList = (props: RecentListProps) => {
     technology: [],
     ghLink: "",
     webLink: "",
+    workedAt: "",
+    year: "",
   });
   const [image, setImage] = useState<string | undefined>(undefined);
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -74,6 +76,8 @@ const RecentList = (props: RecentListProps) => {
       technology: [],
       ghLink: "",
       webLink: "",
+      workedAt: "",
+      year: "",
     });
     setImage(undefined);
     setImageFile(null);
@@ -146,9 +150,14 @@ const RecentList = (props: RecentListProps) => {
       technology: item?.technology,
       ghLink: item?.ghLink || "",
       webLink: item?.webLink || "",
+      workedAt: item?.workedAt || "",
+      year: item?.year || "",
     });
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-    setImage(`${API_BASE_URL}/${item.thumbnail}`);
+    const imageURL = item.thumbnail
+      ? `${API_BASE_URL}/${item.thumbnail}`
+      : undefined;
+    setImage(imageURL);
 
     setOpenAddProjectModal(true);
   };
@@ -162,6 +171,8 @@ const RecentList = (props: RecentListProps) => {
         technology: formData?.technology,
         ghLink: formData?.ghLink || "",
         webLink: formData?.webLink || "",
+        workedAt: formData?.workedAt || "",
+        year: formData?.year || "",
       },
     };
     const data = await fetchWrapper(updateProjectApiUrl, {
@@ -456,6 +467,37 @@ const RecentList = (props: RecentListProps) => {
                     color="primary"
                   />
                 ))}
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                gap: "16px",
+              }}
+            >
+              <Box sx={{ flex: 1 }}>
+                <InputLabel shrink>Worked at*</InputLabel>
+                <TextField
+                  placeholder="Enter Organization"
+                  variant="outlined"
+                  fullWidth
+                  size="small"
+                  slotProps={{ inputLabel: { shrink: true } }}
+                  value={formData.workedAt}
+                  onChange={(e) => formDataHandler("workedAt", e.target.value)}
+                />
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                <InputLabel shrink>Year*</InputLabel>
+                <TextField
+                  placeholder="Enter Year"
+                  variant="outlined"
+                  fullWidth
+                  size="small"
+                  slotProps={{ inputLabel: { shrink: true } }}
+                  value={formData.year}
+                  onChange={(e) => formDataHandler("year", e.target.value)}
+                />
               </Box>
             </Box>
             <Box
