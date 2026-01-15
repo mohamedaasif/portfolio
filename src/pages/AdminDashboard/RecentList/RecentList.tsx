@@ -52,6 +52,7 @@ const RecentList = (props: RecentListProps) => {
     webLink: "",
     workedAt: "",
     year: "",
+    thumbnail: "",
   });
   const [image, setImage] = useState<string | undefined>(undefined);
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -78,6 +79,7 @@ const RecentList = (props: RecentListProps) => {
       webLink: "",
       workedAt: "",
       year: "",
+      thumbnail: "",
     });
     setImage(undefined);
     setImageFile(null);
@@ -152,6 +154,7 @@ const RecentList = (props: RecentListProps) => {
       webLink: item?.webLink || "",
       workedAt: item?.workedAt || "",
       year: item?.year || "",
+      thumbnail: item?.thumbnail || "",
     });
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const imageURL = item.thumbnail
@@ -163,21 +166,24 @@ const RecentList = (props: RecentListProps) => {
   };
 
   const updateProjectHanler = async () => {
-    const payload: any = {
-      postId: selectedItem?._id,
-      data: {
-        title: formData?.title,
-        description: formData?.description,
-        technology: formData?.technology,
-        ghLink: formData?.ghLink || "",
-        webLink: formData?.webLink || "",
-        workedAt: formData?.workedAt || "",
-        year: formData?.year || "",
-      },
-    };
+    const payload = new FormData();
+    payload.append("postId", selectedItem?._id);
+    for (let key in formData) {
+      if (Array.isArray(formData[key])) {
+        payload.append(key, JSON.stringify(formData[key]));
+      } else {
+        payload.append(key, formData[key]);
+      }
+    }
+
+    if (imageFile) {
+      payload.append("thumbnail", imageFile);
+    } else {
+      payload.append("thumbnail", formData.thumbnail);
+    }
     const data = await fetchWrapper(updateProjectApiUrl, {
       method: "PUT",
-      body: JSON.stringify(payload),
+      body: payload,
     });
     if (data?.message?.toLowerCase() === "success") {
       const res = await fetchWrapper(getAllProjectsApi);
