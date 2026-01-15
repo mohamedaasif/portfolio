@@ -158,7 +158,7 @@ const RecentList = (props: RecentListProps) => {
     });
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const imageURL = item.thumbnail
-      ? `${API_BASE_URL}/${item.thumbnail}`
+      ? `${API_BASE_URL}/uploads/${item.thumbnail}`
       : undefined;
     setImage(imageURL);
 
