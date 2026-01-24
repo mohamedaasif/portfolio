@@ -10,15 +10,15 @@ interface HomeProps {
 
 const Home = (props: HomeProps) => {
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
-    ThemeContext
+    ThemeContext,
   );
   const handleViewPdf = () => {
     const pdfUrl =
-      "https://mohamedaasif.github.io/portfolio/Mohamed_Aasif_FrontendDeveloper.pdf";
+      "https://mohamedaasif.github.io/portfolio/Mohamed_Aasif_Senior_Frontend_Engineer.pdf";
 
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Mohamed_Aasif_FrontendDeveloper.pdf";
+    link.download = "Mohamed_Aasif_Senior_Frontend_Engineer.pdf";
     link.click();
   };
   return (
