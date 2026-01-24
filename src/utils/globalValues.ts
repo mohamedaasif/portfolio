@@ -75,7 +75,7 @@ export const experience: string[] = [
 export const jobTitle: any = {
   "Side International": {
     title: "Senior Software Engineer",
-    duration: "August 2025 - Present",
+    duration: "August 2025 - December 2025",
   },
   "Reach Mobile": {
     title: "ReactJS Developer",
