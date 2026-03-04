@@ -85,7 +85,7 @@ const SideBar = () => {
               borderRadius: "50%",
             }}
           >
-            {userData?.name?.charAt(0)}
+            {userData?.lastName?.charAt(0)}
           </Typography>
           <Typography
             sx={{
@@ -93,7 +93,7 @@ const SideBar = () => {
               fontSize: "16px",
             }}
           >
-            {userData?.name}
+            {userData?.lastName}
           </Typography>
         </Box>
         <Box onClick={handleLogout}>
