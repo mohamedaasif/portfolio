@@ -126,7 +126,7 @@ export const projectDesc: any = [
     desc: "As a Frontend Developer for Lycamobile, I developed a responsive website interface for their U.S. mobile service, focusing on prepaid plans with unlimited talk, text, and data options. My work ensured a seamless platform for customers to access services and international calling features.",
     skills: ["React", "Redux", "TypeScript", "Axios", "Material UI"],
     gitLink: "",
-    webLink: "https://www.lycamobile.us/en/",
+    websiteURL: "https://www.lycamobile.us/en/",
     img: lyca,
   },
   {
@@ -134,7 +134,7 @@ export const projectDesc: any = [
     desc: "As a Frontend Developer for Mediacom Mobile’s 2024 launch, I designed and implemented a responsive user interface for their mobile service website. My work optimized the customer experience for the Unlimited and By the Gig Plans, complementing Mediacom's Xtream Internet service.",
     skills: ["React", "Redux", "TypeScript", "Axios", "Material UI"],
     gitLink: "",
-    webLink: "https://mediacommobile.com/",
+    websiteURL: "https://mediacommobile.com/",
     img: mcc,
   },
   {
@@ -142,7 +142,7 @@ export const projectDesc: any = [
     desc: "Developed a robust OTT hybrid application designed to deliver streaming media content across multiple platforms, including iOS, Android, and web. The application provides users with a seamless viewing experience, offering features such as live TV, on-demand content, and personalized recommendations.",
     skills: ["React", "Redux", "Video.js", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
     img: airtel,
   },
 ];
@@ -154,7 +154,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Side International",
     builtWith: ["React", "Tailwind CSS", "Tanstack Query", "TypeScript"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
   },
   {
     year: 2025,
@@ -162,7 +162,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "https://www.lycamobile.us/en/",
+    websiteURL: "https://www.lycamobile.us/en/",
   },
   {
     year: 2024,
@@ -170,7 +170,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "https://cubemobile.us/en",
+    websiteURL: "https://cubemobile.us/en",
   },
   {
     year: 2024,
@@ -178,7 +178,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "https://mediacommobile.com/",
+    websiteURL: "https://mediacommobile.com/",
   },
   {
     year: 2024,
@@ -186,7 +186,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "https://mobile.tdstelecom.com/",
+    websiteURL: "https://mobile.tdstelecom.com/",
   },
   {
     year: 2024,
@@ -194,7 +194,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "https://www.breezeline.com/",
+    websiteURL: "https://www.breezeline.com/",
   },
   {
     year: 2023,
@@ -202,7 +202,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios", "Firebase"],
     gitLink: "",
-    webLink: "https://flexconnectinternet.com/",
+    websiteURL: "https://flexconnectinternet.com/",
   },
   {
     year: 2023,
@@ -210,7 +210,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios", "Firebase"],
     gitLink: "",
-    webLink: "https://www.astound.com/mobile/",
+    websiteURL: "https://www.astound.com/mobile/",
   },
   {
     year: 2023,
@@ -218,7 +218,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios", "Firebase"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
   },
   {
     year: 2022,
@@ -226,7 +226,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios", "Firebase"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
   },
   {
     year: 2022,
@@ -234,7 +234,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Reach",
     builtWith: ["React", "Redux", "TypeScript", "Axios", "Firebase"],
     gitLink: "",
-    webLink: "https://www.reachmobile.com/",
+    websiteURL: "https://www.reachmobile.com/",
   },
   {
     year: 2021,
@@ -242,7 +242,7 @@ export const archiveProjectDetails: any = [
     madeAt: "QuikieApps",
     builtWith: ["React", "Redux", "Video.js", "TypeScript", "Axios"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
   },
   {
     year: 2021,
@@ -250,7 +250,7 @@ export const archiveProjectDetails: any = [
     madeAt: "-",
     builtWith: ["React", "Express", "Node.js", "MySql"],
     gitLink: "https://github.com/mohamedaasif/gal-e-re",
-    webLink: "",
+    websiteURL: "",
   },
   {
     year: 2021,
@@ -258,7 +258,7 @@ export const archiveProjectDetails: any = [
     madeAt: "QuikieApps",
     builtWith: ["Next.js", "JavaScript"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
   },
   {
     year: 2021,
@@ -266,7 +266,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Zeroes & Ones",
     builtWith: ["React", "JavaScript"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
   },
   {
     year: 2021,
@@ -274,7 +274,7 @@ export const archiveProjectDetails: any = [
     madeAt: "Zeroes & Ones",
     builtWith: ["HTML", "CSS", "JavaScript"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
   },
   {
     year: 2021,
@@ -282,6 +282,6 @@ export const archiveProjectDetails: any = [
     madeAt: "Zeroes & Ones",
     builtWith: ["Angular", "JavaScript"],
     gitLink: "",
-    webLink: "",
+    websiteURL: "",
   },
 ];

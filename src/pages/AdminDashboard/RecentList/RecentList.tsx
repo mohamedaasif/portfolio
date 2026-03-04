@@ -48,8 +48,8 @@ const RecentList = (props: RecentListProps) => {
     title: "",
     description: "",
     technology: [],
-    ghLink: "",
-    webLink: "",
+    githubURL: "",
+    websiteURL: "",
     workedAt: "",
     year: "",
     thumbnail: "",
@@ -75,8 +75,8 @@ const RecentList = (props: RecentListProps) => {
       title: "",
       description: "",
       technology: [],
-      ghLink: "",
-      webLink: "",
+      githubURL: "",
+      websiteURL: "",
       workedAt: "",
       year: "",
       thumbnail: "",
@@ -150,8 +150,8 @@ const RecentList = (props: RecentListProps) => {
       title: item?.title,
       description: item?.description,
       technology: item?.technology,
-      ghLink: item?.ghLink || "",
-      webLink: item?.webLink || "",
+      githubURL: item?.githubURL || "",
+      websiteURL: item?.websiteURL || "",
       workedAt: item?.workedAt || "",
       year: item?.year || "",
       thumbnail: item?.thumbnail || "",
@@ -167,7 +167,7 @@ const RecentList = (props: RecentListProps) => {
 
   const updateProjectHanler = async () => {
     const payload = new FormData();
-    payload.append("postId", selectedItem?._id);
+    payload.append("projectId", selectedItem?._id);
     for (let key in formData) {
       if (Array.isArray(formData[key])) {
         payload.append(key, JSON.stringify(formData[key]));
@@ -520,8 +520,8 @@ const RecentList = (props: RecentListProps) => {
                   fullWidth
                   size="small"
                   slotProps={{ inputLabel: { shrink: true } }}
-                  value={formData.ghLink}
-                  onChange={(e) => formDataHandler("ghLink", e.target.value)}
+                  value={formData.githubURL}
+                  onChange={(e) => formDataHandler("githubURL", e.target.value)}
                 />
               </Box>
               <Box sx={{ flex: 1 }}>
@@ -532,8 +532,10 @@ const RecentList = (props: RecentListProps) => {
                   fullWidth
                   size="small"
                   slotProps={{ inputLabel: { shrink: true } }}
-                  value={formData.webLink}
-                  onChange={(e) => formDataHandler("webLink", e.target.value)}
+                  value={formData.websiteURL}
+                  onChange={(e) =>
+                    formDataHandler("websiteURL", e.target.value)
+                  }
                 />
               </Box>
             </Box>
