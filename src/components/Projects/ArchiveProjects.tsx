@@ -18,7 +18,7 @@ import { ProjectsProps } from "../../utils/typeInterface";
 
 const ArchiveProjects = (props: ProjectsProps) => {
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
-    ThemeContext
+    ThemeContext,
   );
   const { setIsArchiveProjects } = props;
   useEffect(() => {
@@ -217,7 +217,7 @@ const ArchiveProjects = (props: ProjectsProps) => {
                         onClick={() => redirectLinkHandler(row?.gitLink)}
                       />
                     )}
-                    {row?.webLink && (
+                    {row?.websiteURL && (
                       <OpenInNewIcon
                         sx={{
                           transition: "color 0.3s ease",
@@ -227,7 +227,7 @@ const ArchiveProjects = (props: ProjectsProps) => {
                               : "var(--light_accent_color)",
                           },
                         }}
-                        onClick={() => redirectLinkHandler(row?.webLink)}
+                        onClick={() => redirectLinkHandler(row?.websiteURL)}
                       />
                     )}
                   </TableCell>

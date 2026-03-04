@@ -12,7 +12,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 const Projects = (props: ProjectsProps) => {
   const { setIsArchiveProjects, projectRef } = props;
   const { darkTheme }: any = useContext<ThemeContextType | undefined>(
-    ThemeContext
+    ThemeContext,
   );
   const theme = useTheme();
   const largeDesktop = useMediaQuery(theme.breakpoints.up("lg"));
@@ -23,7 +23,7 @@ const Projects = (props: ProjectsProps) => {
     <Box
       ref={projectRef}
       sx={{
-        width: { xs: "95%", sm: "80%" },
+        width: { xs: "95%", sm: "75%" },
         margin: "0 auto",
       }}
     >
@@ -165,9 +165,9 @@ const Projects = (props: ProjectsProps) => {
                   onClick={() => redirectLinkHandler(data?.gitLink)}
                 />
               )}
-              {data?.webLink && (
+              {data?.websiteURL && (
                 <OpenInNewIcon
-                  onClick={() => redirectLinkHandler(data?.webLink)}
+                  onClick={() => redirectLinkHandler(data?.websiteURL)}
                 />
               )}
             </Box>
